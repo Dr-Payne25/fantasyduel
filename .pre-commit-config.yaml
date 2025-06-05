@@ -1,0 +1,99 @@
+# Pre-commit hooks configuration
+repos:
+  # Python formatting with Black
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        files: ^backend/
+        language_version: python3
+
+  # Python linting with flake8
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        files: ^backend/
+        args: ['--config=backend/.flake8']
+
+  # Python import sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        files: ^backend/
+        args: ['--profile', 'black']
+
+  # Python type checking (optional - can be slow)
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v1.13.0
+  #   hooks:
+  #     - id: mypy
+  #       files: ^backend/
+  #       additional_dependencies: [types-requests]
+
+  # Frontend checks are handled by the separate frontend CI job
+  # This avoids needing to install frontend dependencies in pre-commit environment
+
+  # Security checks
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.10
+    hooks:
+      - id: bandit
+        files: ^backend/
+        args: ['-ll']
+        exclude: ^backend/tests/
+
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Commit message linting
+  # - repo: https://github.com/commitizen-tools/commitizen
+  #   rev: v3.31.0
+  #   hooks:
+  #     - id: commitizen
+  #       stages: [commit-msg]
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix']
+
+  # Shell script linting
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+
+  # Dockerfile linting (if we add Docker later)
+  # - repo: https://github.com/hadolint/hadolint
+  #   rev: v2.13.0
+  #   hooks:
+  #     - id: hadolint-docker
+
+# Configuration for specific hooks
+exclude: |
+  (?x)^(
+    frontend/build/|
+    frontend/node_modules/|
+    backend/.venv/|
+    backend/__pycache__/|
+    backend/.pytest_cache/|
+    .*\.min\.js|
+    .*\.min\.css
+  )$

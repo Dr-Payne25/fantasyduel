@@ -1,5 +1,5 @@
 [tool.black]
-line-length = 127
+line-length = 88
 target-version = ['py311']
 include = '\.pyi?$'
 exclude = '''
@@ -11,3 +11,7 @@ exclude = '''
   | dist
 )/
 '''
+
+[tool.isort]
+profile = "black"
+line_length = 88

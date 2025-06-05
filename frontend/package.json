@@ -9,8 +9,6 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.126",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "@types/react-router-dom": "^5.3.3",
@@ -27,7 +25,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "npm run lint:fix",
+    "type-check": "tsc --noEmit",
+    "test:coverage": "npm test -- --coverage --watchAll=false",
+    "test:ci": "CI=true npm test -- --watchAll=false --passWithNoTests",
+    "check-all": "npm run type-check && npm run lint && npm run test:ci && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +53,8 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.30",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.4"
   }
