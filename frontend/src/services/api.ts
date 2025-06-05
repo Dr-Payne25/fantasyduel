@@ -126,6 +126,7 @@ class API {
       league: League;
       users: LeagueUser[];
       pairs: DraftPair[];
+      drafts: Record<number, { id: string; status: string; started_at: string | null }>;
       user_count: number;
     }>(`/api/leagues/${leagueId}`);
   }

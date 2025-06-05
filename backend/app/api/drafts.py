@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List, Optional
 from app.database import get_db
 from app.models import Draft, DraftPick, DraftPair, Player, LeagueUser
+from app.schemas import PlayerBase, DraftBase, LeagueUserBase, DraftPickBase
 from pydantic import BaseModel
 from datetime import datetime
 import uuid
@@ -43,7 +44,13 @@ async def start_draft(request: StartDraftRequest, db: Session = Depends(get_db))
     db.commit()
     
     return {
-        "draft": draft,
+        "draft": {
+            "id": draft.id,
+            "pair_id": draft.pair_id,
+            "status": draft.status,
+            "current_picker_id": draft.current_picker_id,
+            "started_at": draft.started_at.isoformat() if draft.started_at else None
+        },
         "users": [{"id": u.user_id, "name": u.display_name} for u in users],
         "pool_number": pair.pool_number
     }
@@ -116,16 +123,23 @@ async def get_draft(draft_id: str, db: Session = Depends(get_db)):
     pair = db.query(DraftPair).filter_by(id=draft.pair_id).first()
     users = db.query(LeagueUser).filter_by(pair_id=pair.id).all()
     
-    available_players = db.query(Player).filter(
-        Player.pool_assignment == pair.pool_number,
-        ~Player.id.in_([p.player_id for p in picks])
-    ).order_by(Player.composite_rank).all()
+    # Get available players - handle empty picks list
+    picked_player_ids = [p.player_id for p in picks] if picks else []
+    if picked_player_ids:
+        available_players = db.query(Player).filter(
+            Player.pool_assignment == pair.pool_number,
+            ~Player.id.in_(picked_player_ids)
+        ).order_by(Player.composite_rank).all()
+    else:
+        available_players = db.query(Player).filter(
+            Player.pool_assignment == pair.pool_number
+        ).order_by(Player.composite_rank).all()
     
     return {
-        "draft": draft,
-        "users": users,
-        "picks": picks,
-        "available_players": available_players,
+        "draft": DraftBase.model_validate(draft).model_dump(),
+        "users": [LeagueUserBase.model_validate(u).model_dump() for u in users],
+        "picks": [DraftPickBase.model_validate(p).model_dump() for p in picks],
+        "available_players": [PlayerBase.model_validate(p).model_dump() for p in available_players],
         "current_picker": draft.current_picker_id
     }
 

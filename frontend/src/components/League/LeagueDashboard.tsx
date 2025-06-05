@@ -8,6 +8,7 @@ export default function LeagueDashboard() {
   const [league, setLeague] = useState<League | null>(null);
   const [users, setUsers] = useState<LeagueUser[]>([]);
   const [pairs, setPairs] = useState<DraftPair[]>([]);
+  const [drafts, setDrafts] = useState<Record<number, { id: string; status: string; started_at: string | null }>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -23,6 +24,7 @@ export default function LeagueDashboard() {
       setLeague(data.league);
       setUsers(data.users);
       setPairs(data.pairs);
+      setDrafts(data.drafts || {});
     } catch (err) {
       setError('Failed to load league');
       console.error(err);
@@ -44,10 +46,21 @@ export default function LeagueDashboard() {
   const startDraft = async (pairId: number) => {
     try {
       const result = await api.startDraft(pairId);
-      navigate(`/draft/${result.draft.id}`);
-    } catch (err) {
-      setError('Failed to start draft');
-      console.error(err);
+      console.log('Start draft result:', result);
+      if (result.draft && result.draft.id) {
+        navigate(`/draft/${result.draft.id}`);
+      } else {
+        setError('Invalid draft response - no draft ID');
+        console.error('Invalid draft response:', result);
+      }
+    } catch (err: any) {
+      if (err.message.includes('400')) {
+        setError('Draft already exists for this pair. Refreshing...');
+        setTimeout(() => loadLeague(), 1000);
+      } else {
+        setError('Failed to start draft');
+      }
+      console.error('Start draft error:', err);
     }
   };
 
@@ -123,12 +136,21 @@ export default function LeagueDashboard() {
                           <p key={u.id} className="text-sm">{u.display_name}</p>
                         ))}
                       </div>
-                      <button
-                        onClick={() => startDraft(pair.id)}
-                        className="w-full py-2 bg-sleeper-secondary hover:bg-pink-600 rounded text-sm font-semibold transition"
-                      >
-                        Start Draft
-                      </button>
+                      {drafts[pair.id] ? (
+                        <button
+                          onClick={() => navigate(`/draft/${drafts[pair.id].id}`)}
+                          className="w-full py-2 bg-sleeper-primary hover:bg-blue-600 rounded text-sm font-semibold transition"
+                        >
+                          {drafts[pair.id].status === 'completed' ? 'View Draft' : 'Continue Draft'}
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => startDraft(pair.id)}
+                          className="w-full py-2 bg-sleeper-secondary hover:bg-pink-600 rounded text-sm font-semibold transition"
+                        >
+                          Start Draft
+                        </button>
+                      )}
                     </div>
                   );
                 })}

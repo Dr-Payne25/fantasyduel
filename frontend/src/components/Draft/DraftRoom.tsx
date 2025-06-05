@@ -11,7 +11,12 @@ export default function DraftRoom() {
   const [users, setUsers] = useState<LeagueUser[]>([]);
   const [picks, setPicks] = useState<DraftPick[]>([]);
   const [availablePlayers, setAvailablePlayers] = useState<Player[]>([]);
-  const [currentUserId] = useState(() => localStorage.getItem('userId') || '');
+  const [currentUserId] = useState(() => {
+    // Get user ID from localStorage or URL params for testing
+    const urlParams = new URLSearchParams(window.location.search);
+    const userIdFromUrl = urlParams.get('userId');
+    return userIdFromUrl || localStorage.getItem('userId') || '';
+  });
   const [loading, setLoading] = useState(true);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 

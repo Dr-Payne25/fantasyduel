@@ -119,9 +119,22 @@ async def get_league(league_id: str, db: Session = Depends(get_db)):
     users = db.query(LeagueUser).filter_by(league_id=league_id).all()
     pairs = db.query(DraftPair).filter_by(league_id=league_id).all()
     
+    # Get drafts for each pair
+    from app.models import Draft
+    drafts = {}
+    for pair in pairs:
+        draft = db.query(Draft).filter_by(pair_id=pair.id).first()
+        if draft:
+            drafts[pair.id] = {
+                "id": draft.id,
+                "status": draft.status,
+                "started_at": draft.started_at.isoformat() if draft.started_at else None
+            }
+    
     return {
         "league": league,
         "users": users,
         "pairs": pairs,
+        "drafts": drafts,
         "user_count": len(users)
     }
