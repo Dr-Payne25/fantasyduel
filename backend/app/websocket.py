@@ -1,6 +1,6 @@
-from fastapi import WebSocket
 from typing import Dict, List
-import json
+
+from fastapi import WebSocket
 
 
 class ConnectionManager:

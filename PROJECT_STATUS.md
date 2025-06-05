@@ -1,11 +1,13 @@
 # FantasyDuel Project Status
 
 ## 🎯 Project Overview
+
 A unique fantasy football application where 12 players are split into 6 pairs for simultaneous 1v1 drafts, each drafting from equally-valued player pools.
 
 ## 🛠️ Current Tech Stack
 
 ### Backend (Python/FastAPI)
+
 - **Framework**: FastAPI v0.115.6
 - **Server**: Uvicorn v0.34.0 with hot-reload
 - **Database**: SQLite (file-based)
@@ -17,6 +19,7 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 - **Code Quality**: flake8, black
 
 ### Frontend (React/TypeScript)
+
 - **Framework**: React v18.x with TypeScript
 - **Routing**: React Router v6
 - **Styling**: Tailwind CSS v3.x
@@ -26,11 +29,13 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 - **Package Manager**: npm
 
 ### Data Source
-- **Primary API**: Sleeper API (https://api.sleeper.app/v1)
+
+- **Primary API**: Sleeper API (<https://api.sleeper.app/v1>)
 - **Player Data**: All active NFL players (~2,900)
 - **No Authentication Required**: Public API
 
 ### Development Tools
+
 - **Version Control**: Git with GitHub
 - **CI/CD**: GitHub Actions
 - **Branch Strategy**: main (protected) → dev → feature branches
@@ -39,6 +44,7 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 ## ✅ Features Implemented
 
 ### 1. **Project Infrastructure**
+
 - [x] Full-stack project structure
 - [x] Git workflow with protected branches
 - [x] GitHub Actions CI pipeline
@@ -46,12 +52,14 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 - [x] Contributing guidelines
 
 ### 2. **Backend API**
+
 - [x] RESTful API with automatic documentation (/docs)
 - [x] Database models for players, leagues, drafts, and picks
 - [x] WebSocket support for real-time updates
 - [x] CORS configuration for frontend communication
 
 ### 3. **Player Management**
+
 - [x] Sleeper API integration
 - [x] Sync 2,900+ NFL players
 - [x] Composite ranking calculation
@@ -59,6 +67,7 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 - [x] Position-based distribution (QB, RB, WR, TE, K, DEF)
 
 ### 4. **League Management**
+
 - [x] Create leagues with invite codes
 - [x] Join leagues via invite code
 - [x] 12-player league requirement
@@ -66,6 +75,7 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 - [x] Pool assignment for each pair
 
 ### 5. **Draft System**
+
 - [x] 1v1 draft rooms
 - [x] Turn-based picking
 - [x] Real-time updates via WebSocket
@@ -75,6 +85,7 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 - [x] Roster display by position
 
 ### 6. **Frontend UI**
+
 - [x] Sleeper-inspired dark theme
 - [x] Homepage with league creation/joining
 - [x] League dashboard
@@ -83,7 +94,7 @@ A unique fantasy football application where 12 players are split into 6 pairs fo
 
 ## 📁 Project Structure
 
-```
+```text
 fantasyduel/
 ├── backend/
 │   ├── app/
@@ -120,24 +131,28 @@ fantasyduel/
 ## 🔄 API Endpoints
 
 ### Players
+
 - `POST /api/players/sync` - Sync players from Sleeper
 - `POST /api/players/divide-pools` - Create 6 equal pools
 - `GET /api/players` - Get players with filters
 - `GET /api/players/pools/{pool_number}` - Get specific pool
 
 ### Leagues
+
 - `POST /api/leagues/create` - Create new league
 - `POST /api/leagues/join` - Join existing league
 - `GET /api/leagues/{league_id}` - Get league details
 - `POST /api/leagues/{league_id}/create-pairs` - Create draft pairs
 
 ### Drafts
+
 - `POST /api/drafts/start` - Start a draft
 - `POST /api/drafts/pick` - Make a pick
 - `GET /api/drafts/{draft_id}` - Get draft status
 - `GET /api/drafts/{draft_id}/rosters` - Get rosters
 
 ### WebSocket
+
 - `WS /ws/{draft_id}` - Real-time draft updates
 
 ## 🚀 Current Capabilities
@@ -152,6 +167,7 @@ fantasyduel/
 ## 🏃 Running the Application
 
 ### Backend
+
 ```bash
 cd backend
 source venv/bin/activate
@@ -160,6 +176,7 @@ python main.py
 ```
 
 ### Frontend
+
 ```bash
 cd frontend
 npm start

@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, JSON, DateTime
-from sqlalchemy.sql import func
 from app.database import Base
+from sqlalchemy import JSON, Column, DateTime, Float, Integer, String
+from sqlalchemy.sql import func
 
 
 class Player(Base):

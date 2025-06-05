@@ -1,13 +1,12 @@
-from typing import Optional
 import uuid
-
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from typing import Optional
 
 from app.database import get_db
 from app.models import Player
 from app.services.pool_division import PoolDivisionService
 from app.services.sleeper_api import sleeper_api
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
 
 router = APIRouter()
 

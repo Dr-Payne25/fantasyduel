@@ -5,10 +5,9 @@ Test draft endpoints
 import uuid
 
 import pytest
+from app.models import Draft, DraftPair, DraftPick, League, LeagueUser, Player, User
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
-
-from app.models import League, LeagueUser, DraftPair, Draft, DraftPick, Player, User
 
 
 class TestDraftEndpoints:

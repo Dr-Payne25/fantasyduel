@@ -3,7 +3,6 @@ Test pool division service
 """
 
 import pytest
-
 from app.services.pool_division import PoolDivisionService
 
 

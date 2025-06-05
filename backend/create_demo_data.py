@@ -3,15 +3,15 @@
 Create demo data for testing
 """
 import sys
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
-import uuid
 
 # Add the backend directory to Python path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from app.auth.utils import get_password_hash  # noqa: E402
-from app.database import SessionLocal, engine, Base  # noqa: E402
+from app.database import Base, SessionLocal, engine  # noqa: E402
 from app.models.league import League, LeagueUser  # noqa: E402
 from app.models.user import User  # noqa: E402
 

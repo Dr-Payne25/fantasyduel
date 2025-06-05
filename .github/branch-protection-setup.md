@@ -3,11 +3,13 @@
 Follow these steps to protect your branches on GitHub:
 
 ## 1. Navigate to Settings
-1. Go to https://github.com/Dr-Payne25/fantasyduel
+
+1. Go to <https://github.com/Dr-Payne25/fantasyduel>
 2. Click on "Settings" tab
 3. In the left sidebar, click "Branches" under "Code and automation"
 
 ## 2. Protect the `main` branch
+
 1. Click "Add rule" or "Add branch protection rule"
 2. Branch name pattern: `main`
 3. Check these options:
@@ -24,6 +26,7 @@ Follow these steps to protect your branches on GitHub:
 4. Click "Create" to save the rule
 
 ## 3. Protect the `dev` branch (lighter protection)
+
 1. Click "Add rule" again
 2. Branch name pattern: `dev`
 3. Check these options:
@@ -36,24 +39,28 @@ Follow these steps to protect your branches on GitHub:
 
 ## 4. Recommended Additional Settings
 
-### For `main` branch:
+### For `main` branch
+
 - **Do not allow bypassing the above settings**
 - **Restrict who can dismiss pull request reviews**
 - **Do not allow deletions**
 
-### For `dev` branch:
+### For `dev` branch
+
 - **Allow deletions** (for cleaning up merged feature branches)
 - **Allow administrators to bypass** (for emergency fixes)
 
 ## 5. Team Workflow After Protection
 
-### Working with protected branches:
+### Working with protected branches
+
 1. Always create feature branches for new work
 2. Push feature branches and create Pull Requests
 3. Get reviews (if required) before merging
 4. Delete feature branches after merging
 
-### If working solo:
+### If working solo
+
 - You can set "Required approvals" to 0 for `dev`
 - Still use PRs for better history and CI/CD integration
 - Consider using "Auto-merge" for approved PRs
@@ -75,7 +82,9 @@ gh pr merge
 ```
 
 ## Bypass Protection (Emergency Only)
+
 If you need to push directly in an emergency:
+
 1. Go to Settings → Branches
 2. Edit the rule
 3. Temporarily disable or add yourself to bypass list

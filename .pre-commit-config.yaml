@@ -68,7 +68,7 @@ repos:
     hooks:
       - id: bandit
         files: ^backend/
-        args: ['-r', 'backend/', '-ll']
+        args: ['-ll']
         exclude: ^backend/tests/
 
   # General file checks

@@ -3,6 +3,7 @@
 ## 🚀 Most Used Commands
 
 ### Starting Development
+
 ```bash
 # First time setup
 ./scripts/setup-dev.sh
@@ -15,6 +16,7 @@ make dev-frontend # Terminal 2
 ```
 
 ### Before Committing
+
 ```bash
 # Run all checks
 make check-all
@@ -27,6 +29,7 @@ make build       # Build frontend
 ```
 
 ### Quick Fixes
+
 ```bash
 # Fix Python formatting
 cd backend && black .
@@ -41,6 +44,7 @@ make format
 ## 📝 Git Workflow
 
 ### Starting New Feature
+
 ```bash
 # Create feature branch
 make feature name=my-cool-feature
@@ -52,6 +56,7 @@ git checkout -b feature/my-cool-feature
 ```
 
 ### Committing
+
 ```bash
 # Stage changes
 git add .
@@ -66,8 +71,9 @@ git commit -m "feat(auth): add password reset"
 ```
 
 ### Common Commit Types
+
 - `feat`: New feature
-- `fix`: Bug fix  
+- `fix`: Bug fix
 - `docs`: Documentation
 - `test`: Tests only
 - `refactor`: Code restructuring
@@ -77,6 +83,7 @@ git commit -m "feat(auth): add password reset"
 ## 🔍 Testing
 
 ### Backend Tests
+
 ```bash
 # All tests
 cd backend && pytest
@@ -92,6 +99,7 @@ pytest --cov=app --cov-report=html
 ```
 
 ### Frontend Tests
+
 ```bash
 # All tests
 cd frontend && npm test -- --watchAll=false
@@ -109,18 +117,21 @@ npm test -- Auth.test.tsx
 ## 🐛 Common Issues & Fixes
 
 ### "Import not found" in Python
+
 ```bash
 # Make sure you're in virtual environment
 cd backend && source .venv/bin/activate
 ```
 
 ### ESLint errors
+
 ```bash
 # Auto-fix most issues
 cd frontend && npm run lint:fix
 ```
 
 ### Pre-commit failing
+
 ```bash
 # Update hooks
 pre-commit autoupdate
@@ -133,6 +144,7 @@ git commit -m "message" --no-verify
 ```
 
 ### Database issues
+
 ```bash
 # Reset database
 make db-reset
@@ -144,13 +156,14 @@ cd backend && alembic upgrade head
 ## 🏃‍♂️ Quick Scripts
 
 Add to your `.bashrc` or `.zshrc`:
+
 ```bash
 # Quick navigation
 alias fd='cd ~/code/fantasyduel'
 alias fdb='cd ~/code/fantasyduel/backend'
 alias fdf='cd ~/code/fantasyduel/frontend'
 
-# Quick commands  
+# Quick commands
 alias fdcheck='cd ~/code/fantasyduel && make check-all'
 alias fdtest='cd ~/code/fantasyduel && make test'
 
@@ -169,6 +182,7 @@ alias fdvenv='cd ~/code/fantasyduel/backend && source .venv/bin/activate'
 ## 🎯 Daily Workflow
 
 1. **Morning**
+
    ```bash
    git checkout main
    git pull origin main
@@ -176,6 +190,7 @@ alias fdvenv='cd ~/code/fantasyduel/backend && source .venv/bin/activate'
    ```
 
 2. **Before Each Commit**
+
    ```bash
    make format
    make test
@@ -184,6 +199,7 @@ alias fdvenv='cd ~/code/fantasyduel/backend && source .venv/bin/activate'
    ```
 
 3. **End of Day**
+
    ```bash
    make check-all
    git push origin feature/todays-work

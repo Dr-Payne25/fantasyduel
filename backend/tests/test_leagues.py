@@ -3,10 +3,9 @@ Test league endpoints
 """
 
 import pytest
+from app.models import DraftPair, League, LeagueUser, User
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
-
-from app.models import League, LeagueUser, DraftPair, User
 
 
 class TestLeagueEndpoints:

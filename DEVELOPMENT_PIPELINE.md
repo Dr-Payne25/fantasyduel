@@ -1,9 +1,11 @@
 # Development Pipeline Guide
 
 ## Overview
+
 This guide outlines our development pipeline to ensure code quality and prevent CI/CD failures. All checks should pass locally before pushing to remote.
 
 ## 🎯 Core Principles
+
 1. **Fail Fast, Fail Local** - Catch issues on developer machines, not in CI
 2. **Automate Everything** - If it can be automated, it should be
 3. **Consistency** - Same checks locally and in CI/CD
@@ -12,6 +14,7 @@ This guide outlines our development pipeline to ensure code quality and prevent 
 ## 📋 Pre-Commit Hooks
 
 ### Currently Installed
+
 - **Black** - Python code formatting
 - **Flake8** - Python linting
 - **ESLint** - TypeScript/JavaScript linting
@@ -21,6 +24,7 @@ This guide outlines our development pipeline to ensure code quality and prevent 
 - **Large file checker** - Prevent accidental large file commits
 
 ### Installation
+
 ```bash
 # Install pre-commit
 pip install pre-commit  # or brew install pre-commit
@@ -35,6 +39,7 @@ pre-commit run --all-files
 ## 🔧 Local Development Workflow
 
 ### 1. Before Starting Work
+
 ```bash
 # Always start from latest main
 git checkout main
@@ -51,6 +56,7 @@ cd ../frontend && npm install
 ### 2. During Development
 
 #### Backend Development
+
 ```bash
 # Format code
 cd backend
@@ -70,6 +76,7 @@ mypy app/
 ```
 
 #### Frontend Development
+
 ```bash
 # Format code
 cd frontend
@@ -91,6 +98,7 @@ npm run build
 ### 3. Before Committing
 
 #### Run All Checks
+
 ```bash
 # Pre-commit will run automatically on commit, but you can test first
 pre-commit run --all-files
@@ -100,6 +108,7 @@ pre-commit run --files backend/app/api/auth.py frontend/src/App.tsx
 ```
 
 #### Manual Checks
+
 ```bash
 # Backend
 cd backend
@@ -115,6 +124,7 @@ npm run build
 ```
 
 ### 4. Committing Changes
+
 ```bash
 # Stage changes
 git add .
@@ -132,12 +142,14 @@ git commit -m "message" --no-verify
 Our CI pipeline runs the following checks:
 
 ### Backend (Python)
+
 1. Black formatting check
 2. Flake8 linting
 3. Pytest with coverage
 4. FastAPI import test
 
 ### Frontend (React/TypeScript)
+
 1. ESLint
 2. Jest tests
 3. Production build
@@ -146,7 +158,7 @@ Our CI pipeline runs the following checks:
 
 Follow conventional commits for clear history:
 
-```
+```text
 <type>(<scope>): <subject>
 
 <body>
@@ -155,6 +167,7 @@ Follow conventional commits for clear history:
 ```
 
 Types:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -164,6 +177,7 @@ Types:
 - `chore`: Build process, dependencies, etc
 
 Examples:
+
 ```bash
 git commit -m "feat(auth): add JWT refresh token support"
 git commit -m "fix(draft): resolve pick order calculation bug"
@@ -191,10 +205,12 @@ alias test-front='cd frontend && npm test -- --watchAll=false'
 ## 🔍 Troubleshooting Common Issues
 
 ### Black and Flake8 Conflicts
+
 - Ensure flake8 config has `extend-ignore = E203, W503`
 - Line length should be 88 for both
 
 ### ESLint Errors
+
 ```bash
 # Auto-fix what's possible
 npm run lint -- --fix
@@ -203,6 +219,7 @@ npm run lint -- --fix
 ```
 
 ### Pre-commit Failures
+
 ```bash
 # Update pre-commit hooks
 pre-commit autoupdate
@@ -213,18 +230,21 @@ pre-commit install --install-hooks
 ```
 
 ### Import Errors in Tests
+
 - Ensure `__init__.py` files exist in all packages
 - Check PYTHONPATH in test configuration
 
 ## 📊 Code Quality Metrics
 
 ### Target Metrics
+
 - Python test coverage: >80%
 - TypeScript strict mode: enabled
 - Zero linting errors
 - All tests passing
 
 ### Checking Coverage
+
 ```bash
 # Backend
 cd backend
@@ -239,6 +259,7 @@ npm test -- --coverage --watchAll=false
 ## 🔄 Pull Request Checklist
 
 Before creating a PR:
+
 - [ ] All pre-commit hooks pass
 - [ ] All tests pass
 - [ ] Code coverage maintained/improved
@@ -252,11 +273,13 @@ Before creating a PR:
 If you need to push urgently:
 
 1. **Create a hotfix branch**
+
    ```bash
    git checkout -b hotfix/critical-bug
    ```
 
 2. **Document why checks are skipped**
+
    ```bash
    git commit -m "hotfix: emergency fix for production issue
 

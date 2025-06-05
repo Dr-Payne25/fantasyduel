@@ -1,13 +1,12 @@
-from datetime import datetime, timezone
 import uuid
+from datetime import datetime, timezone
 
+from app.database import get_db
+from app.models import Draft, DraftPair, DraftPick, LeagueUser, Player
+from app.schemas import DraftBase, DraftPickBase, LeagueUserBase, PlayerBase
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-
-from app.database import get_db
-from app.models import Draft, DraftPick, DraftPair, Player, LeagueUser
-from app.schemas import PlayerBase, DraftBase, LeagueUserBase, DraftPickBase
 
 router = APIRouter()
 

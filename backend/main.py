@@ -1,10 +1,11 @@
+from contextlib import asynccontextmanager
+
+import uvicorn
+from app.api import auth, drafts, leagues, players
+from app.database import init_db
+from app.websocket import manager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from contextlib import asynccontextmanager
-import uvicorn
-from app.database import init_db
-from app.api import players, leagues, drafts, auth
-from app.websocket import manager
 
 
 @asynccontextmanager
@@ -51,4 +52,4 @@ async def websocket_endpoint(websocket: WebSocket, draft_id: str):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)  # nosec B104

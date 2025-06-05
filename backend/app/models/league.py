@@ -1,7 +1,7 @@
-from sqlalchemy import Column, Integer, String, DateTime, Boolean, JSON, ForeignKey
+from app.database import Base
+from sqlalchemy import JSON, Column, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from app.database import Base
 
 
 class League(Base):

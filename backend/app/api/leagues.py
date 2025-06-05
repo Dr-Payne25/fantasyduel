@@ -1,13 +1,12 @@
-import uuid
 import random
-
-from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel
-from sqlalchemy.orm import Session
+import uuid
 
 from app.auth.dependencies import get_current_user
 from app.database import get_db
-from app.models import League, LeagueUser, DraftPair, User
+from app.models import DraftPair, League, LeagueUser, User
+from fastapi import APIRouter, Depends, HTTPException
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
 
 router = APIRouter()
 

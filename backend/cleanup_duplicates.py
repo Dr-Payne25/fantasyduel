@@ -8,10 +8,9 @@ from pathlib import Path
 # Add the backend directory to Python path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from sqlalchemy import func  # noqa: E402
-
 from app.database import SessionLocal  # noqa: E402
 from app.models.league import LeagueUser  # noqa: E402
+from sqlalchemy import func  # noqa: E402
 
 
 def cleanup_duplicate_league_users():

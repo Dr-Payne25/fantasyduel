@@ -1,22 +1,21 @@
-from datetime import datetime, timezone
 import uuid
+from datetime import datetime, timezone
 
+from app.auth.dependencies import get_current_active_user
+from app.auth.utils import (
+    create_access_token,
+    create_refresh_token,
+    create_verification_token,
+    decode_token,
+    get_password_hash,
+    verify_password,
+)
+from app.database import get_db
+from app.models import User
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel, EmailStr
 from sqlalchemy.orm import Session
-
-from app.auth.dependencies import get_current_active_user
-from app.auth.utils import (
-    verify_password,
-    get_password_hash,
-    create_access_token,
-    create_refresh_token,
-    decode_token,
-    create_verification_token,
-)
-from app.database import get_db
-from app.models import User
 
 router = APIRouter()
 

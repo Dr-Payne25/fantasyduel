@@ -2,7 +2,8 @@
 
 ## Phase 1: User Authentication System
 
-### Backend Changes:
+### Backend Changes
+
 1. **Update User Model** (app/models.py)
    - Add password_hash field
    - Add created_at, updated_at timestamps
@@ -26,7 +27,8 @@
    - Add user context to requests
    - Handle token validation
 
-### Frontend Changes:
+### Frontend Changes
+
 1. **Auth Context & Provider**
    - Global auth state management
    - Token storage (localStorage/sessionStorage)
@@ -45,7 +47,8 @@
 
 ## Phase 2: Comprehensive Test Suite
 
-### Backend Tests (pytest):
+### Backend Tests (pytest)
+
 1. **Unit Tests**
    - Model tests (user, league, draft, player)
    - Service tests (pool division, sleeper API)
@@ -62,7 +65,8 @@
    - WebSocket connections
    - Database transactions
 
-### Frontend Tests (Jest + RTL):
+### Frontend Tests (Jest + RTL)
+
 1. **Component Tests**
    - Auth forms (login/signup)
    - Draft room interactions
@@ -79,7 +83,8 @@
    - Draft simulation
    - Navigation flows
 
-### Test Infrastructure:
+### Test Infrastructure
+
 1. **Test Database**
    - Separate SQLite for tests
    - Fixtures for common data
@@ -97,7 +102,8 @@
 
 ## Phase 3: Deployment Preparation
 
-### Environment Setup:
+### Environment Setup
+
 1. **Environment Variables**
    - JWT_SECRET_KEY
    - DATABASE_URL
@@ -114,7 +120,8 @@
    - AWS (EC2 + RDS)
    - Vercel (frontend) + Railway (backend)
 
-### Demo Requirements:
+### Demo Requirements
+
 1. **Sample Data**
    - Pre-populated leagues
    - Demo accounts
@@ -127,7 +134,8 @@
    - Real-time updates
    - Player pool balance
 
-## Implementation Timeline:
+## Implementation Timeline
+
 - **Wednesday PM**: Auth backend + basic frontend
 - **Thursday AM**: Complete auth + start tests
 - **Thursday PM**: Finish test suite + deployment
