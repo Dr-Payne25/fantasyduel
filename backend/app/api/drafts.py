@@ -155,12 +155,22 @@ async def get_draft(draft_id: str, db: Session = Depends(get_db)):
             .all()
         )
 
+    # Get all drafted players for roster display
+    drafted_players = []
+    if picked_player_ids:
+        drafted_players = (
+            db.query(Player).filter(Player.id.in_(picked_player_ids)).all()
+        )
+
     return {
         "draft": DraftBase.model_validate(draft).model_dump(),
         "users": [LeagueUserBase.model_validate(u).model_dump() for u in users],
         "picks": [DraftPickBase.model_validate(p).model_dump() for p in picks],
         "available_players": [
             PlayerBase.model_validate(p).model_dump() for p in available_players
+        ],
+        "drafted_players": [
+            PlayerBase.model_validate(p).model_dump() for p in drafted_players
         ],
         "current_picker": draft.current_picker_id,
     }

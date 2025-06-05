@@ -49,7 +49,7 @@ export default function LeagueDashboard() {
       const result = await api.startDraft(pairId);
       console.log('Start draft result:', result);
       if (result.draft && result.draft.id) {
-        navigate(`/draft/${result.draft.id}`);
+        navigate(`/drafts/${result.draft.id}`);
       } else {
         setError('Invalid draft response - no draft ID');
         console.error('Invalid draft response:', result);
@@ -146,7 +146,7 @@ export default function LeagueDashboard() {
                       </div>
                       {drafts[pair.id] ? (
                         <button
-                          onClick={() => navigate(`/draft/${drafts[pair.id].id}`)}
+                          onClick={() => navigate(`/drafts/${drafts[pair.id].id}`)}
                           className="w-full py-2 bg-sleeper-primary hover:bg-blue-600 rounded text-sm font-semibold transition"
                         >
                           {drafts[pair.id].status === 'completed' ? 'View Draft' : 'Continue Draft'}

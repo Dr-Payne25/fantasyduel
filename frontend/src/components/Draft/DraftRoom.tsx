@@ -12,6 +12,7 @@ export default function DraftRoom() {
   const [users, setUsers] = useState<LeagueUser[]>([]);
   const [picks, setPicks] = useState<DraftPick[]>([]);
   const [availablePlayers, setAvailablePlayers] = useState<Player[]>([]);
+  const [draftedPlayers, setDraftedPlayers] = useState<Player[]>([]);
   const [currentUserId] = useState(() => {
     // Get user ID from localStorage or URL params for testing
     const urlParams = new URLSearchParams(window.location.search);
@@ -24,7 +25,13 @@ export default function DraftRoom() {
   const handleWebSocketMessage = useCallback((message: any) => {
     if (message.type === 'pick_made') {
       setPicks(prev => [...prev, message.pick]);
-      setAvailablePlayers(prev => prev.filter(p => p.id !== message.pick.player_id));
+      setAvailablePlayers(prev => {
+        const pickedPlayer = prev.find(p => p.id === message.pick.player_id);
+        if (pickedPlayer) {
+          setDraftedPlayers(drafted => [...drafted, pickedPlayer]);
+        }
+        return prev.filter(p => p.id !== message.pick.player_id);
+      });
       setDraft(prev => prev ? { ...prev, current_picker_id: message.next_picker } : null);
     }
   }, []);
@@ -36,6 +43,7 @@ export default function DraftRoom() {
       setUsers(data.users);
       setPicks(data.picks);
       setAvailablePlayers(data.available_players);
+      setDraftedPlayers(data.drafted_players || []);
     } catch (err) {
       console.error('Failed to load draft:', err);
     } finally {
@@ -68,7 +76,6 @@ export default function DraftRoom() {
   };
 
   const isMyTurn = draft?.current_picker_id === currentUserId;
-  const currentUser = users.find(u => u.user_id === draft?.current_picker_id);
 
   if (loading) {
     return (
@@ -81,82 +88,248 @@ export default function DraftRoom() {
     );
   }
 
+  // Get the current user's display name
+  const myUser = users.find(u => u.user_id === currentUserId);
+  const otherUser = users.find(u => u.user_id !== currentUserId);
+  const myPickCount = picks.filter(p => p.user_id === currentUserId).length;
+  const otherPickCount = picks.filter(p => p.user_id === otherUser?.user_id).length;
+
   return (
     <div className="min-h-screen bg-sleeper-darker">
       <NavBar />
-      <div className="flex" style={{ height: 'calc(100vh - 73px)' }}>
-        {/* Left Panel - Draft Board */}
-        <div className="w-96 bg-sleeper-dark border-r border-gray-800 overflow-y-auto">
-          <div className="p-4 border-b border-gray-800">
-            <h2 className="text-xl font-bold mb-2">Draft Board</h2>
-            <div className="text-sm text-gray-400">
-              Pick #{picks.length + 1} - {currentUser?.display_name}'s turn
-              {isMyTurn && <span className="text-sleeper-primary ml-2">(Your pick!)</span>}
+
+      {/* Draft Info Header - Sleeper Style */}
+      <div className="bg-sleeper-dark border-b border-gray-800">
+        <div className="px-4 py-2">
+          <div className="flex items-center justify-between">
+            {/* Left: Draft Info */}
+            <div className="flex items-center gap-4">
+              <div>
+                <h1 className="text-lg font-bold">Draft Room</h1>
+                <p className="text-xs text-gray-500">Pool {draft?.pair_id || ''}</p>
+              </div>
+
+              {/* Turn Indicator */}
+              <div className="flex items-center gap-3">
+                <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${
+                  draft?.current_picker_id === myUser?.user_id
+                    ? 'bg-sleeper-primary text-white'
+                    : 'bg-gray-800 text-gray-400'
+                }`}>
+                  <div className={`w-2 h-2 rounded-full ${
+                    draft?.current_picker_id === myUser?.user_id
+                      ? 'bg-white animate-pulse'
+                      : 'bg-gray-600'
+                  }`} />
+                  <span className="text-sm font-medium">{myUser?.display_name || 'You'}</span>
+                </div>
+
+                <span className="text-gray-600 text-sm">vs</span>
+
+                <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${
+                  draft?.current_picker_id === otherUser?.user_id
+                    ? 'bg-sleeper-primary text-white'
+                    : 'bg-gray-800 text-gray-400'
+                }`}>
+                  <div className={`w-2 h-2 rounded-full ${
+                    draft?.current_picker_id === otherUser?.user_id
+                      ? 'bg-white animate-pulse'
+                      : 'bg-gray-600'
+                  }`} />
+                  <span className="text-sm font-medium">{otherUser?.display_name || 'Opponent'}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Pick Info & Timer */}
+            <div className="flex items-center gap-6">
+              {/* Pick Counter */}
+              <div className="text-center">
+                <p className="text-xs text-gray-500 uppercase tracking-wider">Pick</p>
+                <p className="text-2xl font-bold">{picks.length + 1}</p>
+              </div>
+
+              {/* Timer (placeholder for now) */}
+              <div className="text-center">
+                <p className="text-xs text-gray-500 uppercase tracking-wider">Time</p>
+                <p className="text-2xl font-bold tabular-nums">1:30</p>
+              </div>
+
+              {/* Draft Button - Always visible but disabled when not your turn */}
+              <button
+                onClick={makePick}
+                disabled={!isMyTurn || !selectedPlayer}
+                className={`px-6 py-2.5 rounded-full font-bold transition-all ${
+                  isMyTurn && selectedPlayer
+                    ? 'bg-sleeper-primary hover:bg-blue-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
+                    : 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                DRAFT
+              </button>
             </div>
           </div>
-          <DraftBoard picks={picks} users={users} />
+        </div>
+      </div>
+
+      <div className="flex" style={{ height: 'calc(100vh - 73px - 56px)' }}>
+        {/* Left Panel - Draft Board & Rosters */}
+        <div className="w-80 bg-sleeper-dark border-r border-gray-800 flex flex-col">
+          {/* Tabs */}
+          <div className="flex border-b border-gray-800">
+            <button className="flex-1 px-4 py-3 text-sm font-semibold border-b-2 border-sleeper-primary">
+              Draft Board
+            </button>
+            <button className="flex-1 px-4 py-3 text-sm font-semibold text-gray-500 hover:text-white">
+              Rosters
+            </button>
+          </div>
+
+          {/* Draft Board Content */}
+          <div className="flex-1 overflow-y-auto">
+            <DraftBoard
+              picks={picks}
+              users={users}
+              availablePlayers={availablePlayers}
+              draftedPlayers={draftedPlayers}
+            />
+          </div>
         </div>
 
         {/* Center - Available Players */}
-        <div className="flex-1 overflow-y-auto">
-          <div className="p-4 border-b border-gray-800 bg-sleeper-dark sticky top-0 z-10">
-            <h2 className="text-xl font-bold mb-2">Available Players</h2>
-            {selectedPlayer && isMyTurn && (
-              <div className="flex items-center gap-4 mt-2">
-                <div className="flex-1 bg-sleeper-gray rounded p-3">
-                  <span className="font-semibold">{selectedPlayer.full_name}</span>
-                  <span className="text-sm text-gray-400 ml-2">
-                    {selectedPlayer.position} - {selectedPlayer.team}
-                  </span>
+        <div className="flex-1 bg-sleeper-darker flex flex-col overflow-hidden">
+          {/* Selected Player Banner */}
+          {selectedPlayer && (
+            <div className={`bg-sleeper-dark border-b ${
+              isMyTurn ? 'border-sleeper-primary/50' : 'border-gray-800'
+            }`}>
+              <div className="px-6 py-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    {/* Player Avatar Placeholder */}
+                    <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center">
+                      <span className="text-2xl font-bold text-gray-600">
+                        {selectedPlayer.position}
+                      </span>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-3 mb-1">
+                        <h3 className="text-xl font-bold">{selectedPlayer.full_name}</h3>
+                        <span className={`text-xs px-2 py-0.5 rounded font-bold ${
+                          selectedPlayer.position === 'QB' ? 'bg-red-900 text-red-300' :
+                          selectedPlayer.position === 'RB' ? 'bg-green-900 text-green-300' :
+                          selectedPlayer.position === 'WR' ? 'bg-blue-900 text-blue-300' :
+                          selectedPlayer.position === 'TE' ? 'bg-orange-900 text-orange-300' :
+                          selectedPlayer.position === 'K' ? 'bg-purple-900 text-purple-300' :
+                          'bg-gray-700 text-gray-300'
+                        }`}>
+                          {selectedPlayer.position}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-gray-400">
+                        <span>{selectedPlayer.team || 'FA'}</span>
+                        <span>Age {selectedPlayer.age}</span>
+                        <span className="text-sleeper-primary font-semibold">
+                          Rank #{Math.round(selectedPlayer.composite_rank)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {!isMyTurn && (
+                    <div className="text-sm text-gray-500">
+                      Not your turn
+                    </div>
+                  )}
                 </div>
-                <button
-                  onClick={makePick}
-                  className="px-6 py-2 bg-sleeper-primary hover:bg-blue-600 rounded font-semibold transition"
-                >
-                  Draft Player
-                </button>
               </div>
-            )}
+            </div>
+          )}
+
+          {/* Player List */}
+          <div className="flex-1 overflow-hidden">
+            <PlayerList
+              players={availablePlayers}
+              onSelectPlayer={setSelectedPlayer}
+              selectedPlayer={selectedPlayer}
+              canSelect={isMyTurn}
+            />
           </div>
-          <PlayerList
-            players={availablePlayers}
-            onSelectPlayer={setSelectedPlayer}
-            selectedPlayer={selectedPlayer}
-            canSelect={isMyTurn}
-          />
         </div>
 
-        {/* Right Panel - My Roster */}
-        <div className="w-80 bg-sleeper-dark border-l border-gray-800 overflow-y-auto">
+        {/* Right Panel - Rosters (Sleeper Style) */}
+        <div className="w-96 bg-sleeper-dark border-l border-gray-800 flex flex-col">
           <div className="p-4 border-b border-gray-800">
-            <h2 className="text-xl font-bold">My Roster</h2>
+            <h2 className="font-bold">Team Rosters</h2>
           </div>
-          <div className="p-4">
-            {['QB', 'RB', 'WR', 'TE', 'K', 'DEF'].map(position => {
-              const myPicks = picks.filter(
-                p => p.user_id === currentUserId &&
-                availablePlayers.find(pl => pl.id === p.player_id)?.position === position
-              );
-              return (
-                <div key={position} className="mb-4">
-                  <h3 className="font-semibold text-sm text-gray-400 mb-2">{position}</h3>
-                  <div className="space-y-1">
-                    {myPicks.length === 0 ? (
-                      <p className="text-sm text-gray-600">Empty</p>
-                    ) : (
-                      myPicks.map(pick => {
-                        const player = availablePlayers.find(p => p.id === pick.player_id);
-                        return player ? (
-                          <div key={pick.id} className="text-sm bg-sleeper-gray rounded p-2">
-                            {player.full_name} - {player.team}
-                          </div>
-                        ) : null;
-                      })
-                    )}
+
+          <div className="flex-1 overflow-y-auto p-4">
+            <div className="space-y-6">
+              {users.map(user => {
+                const isCurrentUser = user.user_id === currentUserId;
+                const userPicks = picks.filter(p => p.user_id === user.user_id);
+                const allPlayers = [...availablePlayers, ...draftedPlayers];
+
+                return (
+                  <div key={user.user_id} className="space-y-3">
+                    {/* User Header */}
+                    <div className={`flex items-center justify-between px-3 py-2 rounded-lg ${
+                      isCurrentUser ? 'bg-sleeper-primary/20' : 'bg-gray-800'
+                    }`}>
+                      <span className="font-bold">
+                        {user.display_name}
+                        {isCurrentUser && <span className="text-sm text-gray-400 ml-2">(You)</span>}
+                      </span>
+                      <span className="text-sm text-gray-400">
+                        {userPicks.length} / 8 picks
+                      </span>
+                    </div>
+
+                    {/* Roster Grid */}
+                    <div className="grid grid-cols-2 gap-2">
+                      {['QB', 'RB', 'WR', 'TE', 'K', 'DEF'].map(position => {
+                        const positionPicks = userPicks.filter(pick => {
+                          const player = allPlayers.find(pl => pl.id === pick.player_id);
+                          return player?.position === position;
+                        });
+
+                        const requirements = { QB: 1, RB: 2, WR: 2, TE: 1, K: 1, DEF: 1 };
+                        const slots = requirements[position as keyof typeof requirements] || 0;
+
+                        return Array.from({ length: slots }, (_, i) => {
+                          const pick = positionPicks[i];
+                          const player = pick ? allPlayers.find(p => p.id === pick.player_id) : null;
+
+                          return (
+                            <div
+                              key={`${position}-${i}`}
+                              className={`bg-gray-800 rounded-lg p-2.5 ${
+                                player ? 'border border-gray-700' : 'border border-dashed border-gray-700'
+                              }`}
+                            >
+                              <div className="text-xs font-bold text-gray-400 mb-1">{position}</div>
+                              {player ? (
+                                <div>
+                                  <div className="text-sm font-semibold truncate">
+                                    {player.full_name}
+                                  </div>
+                                  <div className="text-xs text-gray-500">
+                                    {player.team || 'FA'}
+                                  </div>
+                                </div>
+                              ) : (
+                                <div className="text-xs text-gray-600 italic">Empty</div>
+                              )}
+                            </div>
+                          );
+                        });
+                      })}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

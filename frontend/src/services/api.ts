@@ -214,6 +214,7 @@ class API {
       users: LeagueUser[];
       picks: DraftPick[];
       available_players: Player[];
+      drafted_players: Player[];
       current_picker: string;
     }>(`/api/drafts/${draftId}`);
   }
