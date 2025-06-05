@@ -25,16 +25,21 @@ export const mockAuthContext = {
   refreshToken: jest.fn(),
 };
 
+// Mock the auth context module
+jest.mock('../contexts/AuthContext', () => ({
+  ...jest.requireActual('../contexts/AuthContext'),
+  useAuth: () => mockAuthContext,
+}));
+
 interface AllTheProvidersProps {
   children: React.ReactNode;
-  authValue?: any;
 }
 
 // Custom provider that wraps components with all necessary providers
-const AllTheProviders: React.FC<AllTheProvidersProps> = ({ children, authValue }) => {
+const AllTheProviders: React.FC<AllTheProvidersProps> = ({ children }) => {
   return (
     <BrowserRouter>
-      <AuthProvider value={authValue || mockAuthContext}>
+      <AuthProvider>
         {children}
       </AuthProvider>
     </BrowserRouter>
@@ -48,10 +53,13 @@ const customRender = (
 ) => {
   const { authValue, ...renderOptions } = options || {};
   
+  // If authValue is provided, update the mock
+  if (authValue) {
+    Object.assign(mockAuthContext, authValue);
+  }
+  
   return render(ui, {
-    wrapper: ({ children }) => (
-      <AllTheProviders authValue={authValue}>{children}</AllTheProviders>
-    ),
+    wrapper: AllTheProviders,
     ...renderOptions,
   });
 };
