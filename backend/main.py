@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import uvicorn
 from app.database import init_db
-from app.api import players, leagues, drafts
+from app.api import players, leagues, drafts, auth
 from app.websocket import manager
 
 
@@ -28,6 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(players.router, prefix="/api/players", tags=["players"])
 app.include_router(leagues.router, prefix="/api/leagues", tags=["leagues"])
 app.include_router(drafts.router, prefix="/api/drafts", tags=["drafts"])

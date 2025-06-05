@@ -25,13 +25,14 @@ class LeagueUser(Base):
 
     id = Column(Integer, primary_key=True)
     league_id = Column(String, ForeignKey("leagues.id"))
-    user_id = Column(String, nullable=False)
-    email = Column(String)
+    user_id = Column(String, ForeignKey("users.id"))
+    email = Column(String)  # Keep for backward compatibility
     display_name = Column(String, nullable=False)
     pair_id = Column(Integer, ForeignKey("draft_pairs.id"))
 
     league = relationship("League", back_populates="users")
     pair = relationship("DraftPair", back_populates="users")
+    user = relationship("User")
 
 
 class DraftPair(Base):
