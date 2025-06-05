@@ -45,7 +45,7 @@ export default function NavBar() {
                 <ArrowLeftIcon className="h-5 w-5" />
               </button>
             )}
-            
+
             <Link to="/" className="flex items-center gap-2">
               <h1 className="text-2xl font-bold text-sleeper-primary">FantasyDuel</h1>
             </Link>
@@ -78,7 +78,7 @@ export default function NavBar() {
                       <HomeIcon className="inline h-4 w-4 mr-2" />
                       Home
                     </Link>
-                    
+
                     <button
                       onClick={() => {
                         setDropdownOpen(false);

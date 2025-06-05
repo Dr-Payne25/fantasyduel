@@ -5,8 +5,9 @@ Test authentication endpoints
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
-from app.models import User
+
 from app.auth.utils import verify_password, decode_token
+from app.models import User
 
 
 class TestAuthEndpoints:

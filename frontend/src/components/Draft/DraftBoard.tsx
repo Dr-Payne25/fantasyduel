@@ -29,7 +29,7 @@ export default function DraftBoard({ picks, users }: DraftBoardProps) {
             </div>
           );
         })}
-        
+
         {picks.length === 0 && (
           <div className="text-center text-gray-500 py-8">
             No picks made yet

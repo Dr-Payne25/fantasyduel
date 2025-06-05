@@ -1,11 +1,13 @@
+from typing import Optional
+import uuid
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List, Optional
+
 from app.database import get_db
 from app.models import Player
-from app.services.sleeper_api import sleeper_api
 from app.services.pool_division import PoolDivisionService
-import uuid
+from app.services.sleeper_api import sleeper_api
 
 router = APIRouter()
 
@@ -18,14 +20,8 @@ async def sync_players(db: Session = Depends(get_db)):
 
         active_players = []
         for sleeper_id, player_data in players_data.items():
-            if player_data.get("active") and player_data.get("position") in [
-                "QB",
-                "RB",
-                "WR",
-                "TE",
-                "K",
-                "DEF",
-            ]:
+            positions = ["QB", "RB", "WR", "TE", "K", "DEF"]
+            if player_data.get("active") and player_data.get("position") in positions:
                 player = Player(
                     id=str(uuid.uuid4()),
                     sleeper_id=sleeper_id,
@@ -59,15 +55,15 @@ async def sync_players(db: Session = Depends(get_db)):
 @router.post("/divide-pools")
 async def divide_player_pools(db: Session = Depends(get_db)):
     """Divide all players into 6 equal-value pools"""
-    players = (
-        db.query(Player)
-        .filter(Player.position.in_(["QB", "RB", "WR", "TE", "K", "DEF"]))
-        .all()
-    )
+    positions = ["QB", "RB", "WR", "TE", "K", "DEF"]
+    players = db.query(Player).filter(
+        Player.position.in_(positions)
+    ).all()
 
     if len(players) < 192:
         raise HTTPException(
-            status_code=400, detail="Not enough players to create pools"
+            status_code=400,
+            detail="Not enough players to create pools"
         )
 
     players_dict = []
@@ -98,7 +94,9 @@ async def divide_player_pools(db: Session = Depends(get_db)):
     return {
         "pools_created": len(pools),
         "validation": validation,
-        "pool_sizes": {idx: len(players) for idx, players in pools.items()},
+        "pool_sizes": {
+            idx: len(players) for idx, players in pools.items()
+        },
     }
 
 

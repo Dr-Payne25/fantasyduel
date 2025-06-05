@@ -88,11 +88,11 @@ export default function MyLeagues() {
                 <span className="text-xs bg-sleeper-primary px-2 py-1 rounded">Commissioner</span>
               )}
             </div>
-            
+
             <div className="text-sm text-gray-400 space-y-1">
               <p>{user_count}/12 members</p>
               <p className="capitalize">Status: {league.status.replace('_', ' ')}</p>
-              
+
               {active_draft && (
                 <div className="mt-2 pt-2 border-t border-gray-700">
                   <p className="text-sleeper-primary font-medium">

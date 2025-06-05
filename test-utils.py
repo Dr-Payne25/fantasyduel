@@ -51,13 +51,13 @@ def get_available_players(draft_id, position=None):
     if response.status_code == 200:
         result = response.json()
         players = result['available_players']
-        
+
         if position:
             players = [p for p in players if p['position'] == position]
-        
+
         # Sort by composite rank
         players.sort(key=lambda x: x.get('composite_rank', 999))
-        
+
         return players[:10]  # Return top 10
     else:
         print(f"❌ Failed to get draft info: {response.text}")
@@ -71,7 +71,7 @@ def show_league_status(league_id):
         print(f"\n📊 League Status: {data['league']['name']}")
         print(f"   Status: {data['league']['status']}")
         print(f"   Users: {data['user_count']}/12")
-        
+
         if data['pairs']:
             print("\n🎯 Draft Pairs:")
             for pair in data['pairs']:
@@ -100,25 +100,25 @@ if __name__ == "__main__":
         print("  python test-utils.py pick <draft_id> <user_id> <player_id>")
         print("  python test-utils.py load  # Load saved test data")
         sys.exit(1)
-    
+
     command = sys.argv[1]
-    
+
     if command == "status" and len(sys.argv) >= 3:
         show_league_status(sys.argv[2])
-    
+
     elif command == "start-draft" and len(sys.argv) >= 3:
         start_draft(int(sys.argv[2]))
-    
+
     elif command == "players" and len(sys.argv) >= 3:
         position = sys.argv[3] if len(sys.argv) >= 4 else None
         players = get_available_players(sys.argv[2], position)
         print(f"\n🏈 Top Available Players" + (f" ({position})" if position else ""))
         for i, p in enumerate(players, 1):
             print(f"{i:2d}. {p['full_name']:20s} {p['position']:3s} {p['team'] or 'FA':3s} Rank: {p.get('composite_rank', 999):.1f}")
-    
+
     elif command == "pick" and len(sys.argv) >= 5:
         make_pick(sys.argv[2], sys.argv[3], sys.argv[4])
-    
+
     elif command == "load":
         data = load_test_data()
         if data:
@@ -128,6 +128,6 @@ if __name__ == "__main__":
             print("\n👥 Users:")
             for user in data['users']:
                 print(f"   {user['name']} (ID: {user['user_id']})")
-    
+
     else:
         print("❌ Invalid command or missing arguments")

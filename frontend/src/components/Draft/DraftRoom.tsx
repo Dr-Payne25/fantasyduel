@@ -134,7 +134,7 @@ export default function DraftRoom() {
           <div className="p-4">
             {['QB', 'RB', 'WR', 'TE', 'K', 'DEF'].map(position => {
               const myPicks = picks.filter(
-                p => p.user_id === currentUserId && 
+                p => p.user_id === currentUserId &&
                 availablePlayers.find(pl => pl.id === p.player_id)?.position === position
               );
               return (

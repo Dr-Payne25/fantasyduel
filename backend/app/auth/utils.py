@@ -1,7 +1,9 @@
 from datetime import datetime, timedelta, timezone
-from typing import Optional, Union
+from typing import Optional
+
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+
 from app.config import get_settings
 
 settings = get_settings()
@@ -26,7 +28,10 @@ def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
+def create_access_token(
+    data: dict,
+    expires_delta: Optional[timedelta] = None
+) -> str:
     """Create a JWT access token"""
     to_encode = data.copy()
     if expires_delta:

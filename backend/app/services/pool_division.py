@@ -1,7 +1,5 @@
-from typing import List, Dict, Tuple
 from collections import defaultdict
-import random
-from app.models import Player
+from typing import List, Dict, Tuple
 
 
 class PoolDivisionService:
@@ -44,7 +42,9 @@ class PoolDivisionService:
 
         return avg_rank * position_multiplier
 
-    def divide_players_into_pools(self, players: List[Dict]) -> Dict[int, List[Dict]]:
+    def divide_players_into_pools(  # noqa: C901
+        self, players: List[Dict]
+    ) -> Tuple[Dict[int, List[Dict]], Dict[int, float]]:
         """Divide players into equal-value pools using a snake draft approach"""
         players_by_position = defaultdict(list)
 
@@ -64,9 +64,9 @@ class PoolDivisionService:
             players_per_pool = requirements
 
             for tier in range(players_per_pool):
-                tier_players = position_players[
-                    tier * self.num_pools : (tier + 1) * self.num_pools
-                ]
+                tier_start = tier * self.num_pools
+                tier_end = (tier + 1) * self.num_pools
+                tier_players = position_players[tier_start:tier_end]
 
                 if tier % 2 == 0:
                     pool_order = list(range(self.num_pools))
@@ -86,10 +86,14 @@ class PoolDivisionService:
                 self.position_requirements.get(position, 0) * self.num_pools
             )
             if len(position_players) > required_count:
-                remaining_players.extend(position_players[required_count:])
+                remaining_players.extend(
+                    position_players[required_count:]
+                )
 
         remaining_players.sort(key=lambda x: x["composite_value"])
-        pool_order = sorted(range(self.num_pools), key=lambda x: pool_values[x])
+        pool_order = sorted(
+            range(self.num_pools), key=lambda x: pool_values[x]
+        )
 
         for i, player in enumerate(remaining_players):
             pool_idx = pool_order[i % self.num_pools]
@@ -100,7 +104,8 @@ class PoolDivisionService:
         return pools, pool_values
 
     def validate_pool_balance(
-        self, pools: Dict[int, List[Dict]], pool_values: Dict[int, float]
+        self, pools: Dict[int, List[Dict]],
+        pool_values: Dict[int, float]
     ) -> Dict:
         """Validate that pools are balanced in value and position distribution"""
         validation_results = {"balanced": True, "pool_stats": {}, "warnings": []}
@@ -131,8 +136,10 @@ class PoolDivisionService:
 
             for position, required in self.position_requirements.items():
                 if pool_positions.get(position, 0) < required:
-                    validation_results["warnings"].append(
-                        f"Pool {pool_idx} has insufficient {position}s: {pool_positions.get(position, 0)}/{required}"
+                    msg = (
+                        f"Pool {pool_idx} has insufficient {position}s: "
+                        f"{pool_positions.get(position, 0)}/{required}"
                     )
+                    validation_results["warnings"].append(msg)
 
         return validation_results

@@ -1,8 +1,8 @@
-import httpx
 from typing import List, Dict, Optional
+
+import httpx
+
 from app.config import get_settings
-import asyncio
-from datetime import datetime
 
 settings = get_settings()
 
@@ -20,7 +20,11 @@ class SleeperAPI:
         return response.json()
 
     async def get_trending_players(
-        self, sport: str = "nfl", type: str = "add", hours: int = 24, limit: int = 100
+        self,
+        sport: str = "nfl",
+        type: str = "add",
+        hours: int = 24,
+        limit: int = 100
     ) -> List[Dict]:
         """Get trending players based on adds/drops"""
         url = f"{self.base_url}/players/{sport}/trending/{type}"
@@ -30,7 +34,10 @@ class SleeperAPI:
         return response.json()
 
     async def get_projections(
-        self, season: int, week: int, positions: Optional[List[str]] = None
+        self,
+        season: int,
+        week: int,
+        positions: Optional[List[str]] = None
     ) -> Dict:
         """Get player projections for a specific week"""
         # Note: Sleeper doesn't provide projections via API, this is a placeholder

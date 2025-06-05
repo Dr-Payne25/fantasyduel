@@ -2,11 +2,13 @@
 Test draft endpoints
 """
 
+import uuid
+
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
+
 from app.models import League, LeagueUser, DraftPair, Draft, DraftPick, Player, User
-import uuid
 
 
 class TestDraftEndpoints:
@@ -83,7 +85,9 @@ class TestDraftEndpoints:
 
         # Start first draft
         client.post(
-            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+            "/api/drafts/start",
+            json={"pair_id": pair.id},
+            headers=auth_headers
         )
 
         # Try to start another
@@ -100,7 +104,6 @@ class TestDraftEndpoints:
     ):
         """Test making a draft pick"""
         pair = draft_setup["pair"]
-        users = draft_setup["users"]
         players = draft_setup["players"]
 
         # Start draft
@@ -132,11 +135,9 @@ class TestDraftEndpoints:
         assert data["draft_status"] == "active"
 
         # Verify pick was saved
-        pick = (
-            db.query(DraftPick)
-            .filter_by(draft_id=draft_id, player_id=player.id)
-            .first()
-        )
+        pick = db.query(DraftPick).filter_by(
+            draft_id=draft_id, player_id=player.id
+        ).first()
         assert pick is not None
         assert pick.user_id == current_picker
 
@@ -162,7 +163,11 @@ class TestDraftEndpoints:
 
         response = client.post(
             "/api/drafts/pick",
-            json={"draft_id": draft_id, "user_id": wrong_user, "player_id": player.id},
+            json={
+                "draft_id": draft_id,
+                "user_id": wrong_user,
+                "player_id": player.id
+            },
             headers=auth_headers,
         )
 
@@ -232,8 +237,6 @@ class TestDraftEndpoints:
     ):
         """Test a complete draft with multiple picks"""
         pair = draft_setup["pair"]
-        users = draft_setup["users"]
-        players = [p for p in draft_setup["players"] if p.pool_assignment == 0]
 
         # Start draft
         start_resp = client.post(

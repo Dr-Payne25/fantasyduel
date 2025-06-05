@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey, JSON
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
+
 from app.database import Base
 
 
@@ -18,7 +19,9 @@ class Draft(Base):
 
     pair = relationship("DraftPair", back_populates="draft")
     picks = relationship(
-        "DraftPick", back_populates="draft", order_by="DraftPick.pick_number"
+        "DraftPick",
+        back_populates="draft",
+        order_by="DraftPick.pick_number"
     )
 
 

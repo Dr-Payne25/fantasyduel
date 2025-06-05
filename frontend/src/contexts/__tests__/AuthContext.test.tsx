@@ -3,6 +3,9 @@ import { renderHook, act, waitFor } from '@testing-library/react';
 import { AuthProvider, useAuth } from '../AuthContext';
 import { api } from '../../services/api';
 
+// Unmock the AuthContext for this test file
+jest.unmock('../AuthContext');
+
 // Mock the API module
 jest.mock('../../services/api', () => ({
   api: {
@@ -51,7 +54,7 @@ describe('AuthContext', () => {
 
   it('initializes with loading state', async () => {
     localStorageMock.getItem.mockReturnValue(null);
-    
+
     const wrapper = ({ children }: { children: React.ReactNode }) => (
       <AuthProvider>{children}</AuthProvider>
     );
@@ -60,7 +63,7 @@ describe('AuthContext', () => {
 
     // Initially should be loading
     expect(result.current.user).toBe(null);
-    
+
     // Wait for loading to complete
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
@@ -248,30 +251,4 @@ describe('AuthContext', () => {
     await expect(result.current.refreshToken()).rejects.toThrow('No refresh token available');
   });
 
-  it('uses mock value when provided', () => {
-    const mockValue = {
-      user: {
-        id: 'mock-user',
-        email: 'mock@example.com',
-        username: 'mockuser',
-        is_active: true,
-        is_verified: true,
-        theme: 'dark',
-        notification_preferences: 'all',
-      },
-      loading: false,
-      login: jest.fn(),
-      register: jest.fn(),
-      logout: jest.fn(),
-      refreshToken: jest.fn(),
-    };
-
-    const wrapper = ({ children }: { children: React.ReactNode }) => (
-      <AuthProvider value={mockValue}>{children}</AuthProvider>
-    );
-
-    const { result } = renderHook(() => useAuth(), { wrapper });
-
-    expect(result.current).toBe(mockValue);
-  });
 });

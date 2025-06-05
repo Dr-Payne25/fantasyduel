@@ -108,7 +108,7 @@ export default function LeagueDashboard() {
               </div>
             ))}
           </div>
-          
+
           {users.length < 12 && (
             <div className="mt-4 p-4 bg-blue-900/20 border border-blue-700 rounded">
               <p className="text-sm">Waiting for {12 - users.length} more players to join</p>
@@ -131,7 +131,7 @@ export default function LeagueDashboard() {
                 </button>
               )}
             </div>
-            
+
             {pairs.length > 0 && (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {pairs.map((pair) => {

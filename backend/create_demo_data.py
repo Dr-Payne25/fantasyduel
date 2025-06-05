@@ -3,18 +3,17 @@
 Create demo data for testing
 """
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
+import uuid
 
 # Add the backend directory to Python path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from sqlalchemy.orm import Session
-from app.database import SessionLocal, engine, Base
-from app.models.user import User
-from app.models.league import League, LeagueUser
-from app.auth.utils import get_password_hash
-import uuid
-from datetime import datetime, timezone
+from app.auth.utils import get_password_hash  # noqa: E402
+from app.database import SessionLocal, engine, Base  # noqa: E402
+from app.models.league import League, LeagueUser  # noqa: E402
+from app.models.user import User  # noqa: E402
 
 
 def create_demo_data():
@@ -39,7 +38,9 @@ def create_demo_data():
                 created_at=datetime.now(timezone.utc),
             )
             db.add(admin)
-            print("✅ Created admin user - Username: admin, Password: admin123")
+            print(
+                "✅ Created admin user - Username: admin, Password: admin123"
+            )
         else:
             print("ℹ️  Admin user already exists - Username: admin")
 
@@ -80,11 +81,13 @@ def create_demo_data():
             db.add(league_user)
 
             print(
-                f"✅ Created demo league - Name: Demo League 2025, ID: {demo_league.id}"
+                f"✅ Created demo league - Name: Demo League 2025, "
+                f"ID: {demo_league.id}"
             )
         else:
             print(
-                f"ℹ️  Demo league already exists - Name: {demo_league.name}, ID: {demo_league.id}"
+                f"ℹ️  Demo league already exists - Name: {demo_league.name}, "
+                f"ID: {demo_league.id}"
             )
 
         # Create additional test users if needed
@@ -106,7 +109,8 @@ def create_demo_data():
                 db.add(user)
                 test_users.append(user)
                 print(
-                    f"✅ Created test user - Username: {username}, Password: password123"
+                    f"✅ Created test user - Username: {username}, "
+                    f"Password: password123"
                 )
 
         db.commit()

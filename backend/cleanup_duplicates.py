@@ -8,10 +8,10 @@ from pathlib import Path
 # Add the backend directory to Python path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from sqlalchemy.orm import Session
-from sqlalchemy import func
-from app.database import SessionLocal, engine
-from app.models.league import LeagueUser
+from sqlalchemy import func  # noqa: E402
+
+from app.database import SessionLocal  # noqa: E402
+from app.models.league import LeagueUser  # noqa: E402
 
 
 def cleanup_duplicate_league_users():
@@ -36,17 +36,15 @@ def cleanup_duplicate_league_users():
             print(f"\nLeague {league_id} has {count} entries for user {user_id}")
 
             # Get all entries for this user in this league
-            entries = (
-                db.query(LeagueUser)
-                .filter_by(league_id=league_id, user_id=user_id)
-                .order_by(LeagueUser.id)
-                .all()
-            )
+            entries = db.query(LeagueUser).filter_by(
+                league_id=league_id, user_id=user_id
+            ).order_by(LeagueUser.id).all()
 
             # Keep the first entry, delete the rest
             for entry in entries[1:]:
                 print(
-                    f"  - Removing duplicate entry: {entry.display_name} (ID: {entry.id})"
+                    f"  - Removing duplicate entry: {entry.display_name} "
+                    f"(ID: {entry.id})"
                 )
                 db.delete(entry)
 
@@ -55,7 +53,7 @@ def cleanup_duplicate_league_users():
 
         # Show current league counts
         print("\n📊 Current league member counts:")
-        from app.models.league import League
+        from app.models.league import League  # noqa: E402
 
         leagues = db.query(League).all()
         for league in leagues:

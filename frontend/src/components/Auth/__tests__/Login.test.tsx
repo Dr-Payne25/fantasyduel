@@ -46,10 +46,8 @@ describe('Login Component', () => {
     fireEvent.change(passwordInput, { target: { value: 'password123' } });
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(mockLogin).toHaveBeenCalledWith('testuser', 'password123');
-      expect(mockNavigate).toHaveBeenCalledWith('/');
-    });
+    await waitFor(() => expect(mockLogin).toHaveBeenCalledWith('testuser', 'password123'));
+    expect(mockNavigate).toHaveBeenCalledWith('/');
   });
 
   it('displays error message on login failure', async () => {
@@ -74,10 +72,9 @@ describe('Login Component', () => {
     fireEvent.change(passwordInput, { target: { value: 'wrongpassword' } });
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(screen.getByText('Invalid credentials')).toBeInTheDocument();
-      expect(mockNavigate).not.toHaveBeenCalled();
-    });
+    const errorMessage = await screen.findByText('Invalid credentials');
+    expect(errorMessage).toBeInTheDocument();
+    expect(mockNavigate).not.toHaveBeenCalled();
   });
 
   it('disables submit button while loading', async () => {
@@ -95,7 +92,7 @@ describe('Login Component', () => {
     });
 
     const submitButton = screen.getByRole('button', { name: /sign in/i });
-    
+
     fireEvent.change(screen.getByPlaceholderText('Username or email'), {
       target: { value: 'testuser' }
     });
@@ -104,10 +101,8 @@ describe('Login Component', () => {
     });
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(submitButton).toBeDisabled();
-      expect(screen.getByText('Signing in...')).toBeInTheDocument();
-    });
+    await waitFor(() => expect(submitButton).toBeDisabled());
+    expect(screen.getByText('Signing in...')).toBeInTheDocument();
   });
 
   it('links to signup page', () => {

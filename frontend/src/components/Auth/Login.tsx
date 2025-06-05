@@ -5,7 +5,7 @@ import { useAuth } from '../../contexts/AuthContext';
 export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
-  
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -42,7 +42,7 @@ export default function Login() {
             </Link>
           </p>
         </div>
-        
+
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded">

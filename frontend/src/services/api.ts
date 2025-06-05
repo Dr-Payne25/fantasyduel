@@ -118,7 +118,7 @@ class API {
     const params = new URLSearchParams();
     if (position) params.append('position', position);
     if (pool !== undefined) params.append('pool', pool.toString());
-    
+
     return this.request<Player[]>(`/api/players?${params}`);
   }
 

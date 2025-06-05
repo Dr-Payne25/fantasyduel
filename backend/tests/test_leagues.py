@@ -5,6 +5,7 @@ Test league endpoints
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
+
 from app.models import League, LeagueUser, DraftPair, User
 
 
@@ -42,11 +43,10 @@ class TestLeagueEndpoints:
         assert db_league is not None
 
         # Verify commissioner was added as user
-        league_user = (
-            db.query(LeagueUser)
-            .filter_by(league_id=db_league.id, user_id=league["commissioner_id"])
-            .first()
-        )
+        league_user = db.query(LeagueUser).filter_by(
+            league_id=db_league.id,
+            user_id=league["commissioner_id"]
+        ).first()
         assert league_user is not None
         assert league_user.email == test_user.email
 
@@ -72,10 +72,13 @@ class TestLeagueEndpoints:
         assert register_resp.status_code == 200
 
         login_resp = client.post(
-            "/api/auth/login", data={"username": "joiner", "password": "password123"}
+            "/api/auth/login",
+            data={"username": "joiner", "password": "password123"}
         )
         assert login_resp.status_code == 200
-        new_auth = {"Authorization": f"Bearer {login_resp.json()['access_token']}"}
+        new_auth = {
+            "Authorization": f"Bearer {login_resp.json()['access_token']}"
+        }
 
         response = client.post(
             "/api/leagues/join",
@@ -92,11 +95,10 @@ class TestLeagueEndpoints:
         assert data["message"] == "Successfully joined league"
 
         # Verify user was added to league
-        league_user = (
-            db.query(LeagueUser)
-            .filter_by(league_id=test_league.id, email="joiner@example.com")
-            .first()
-        )
+        league_user = db.query(LeagueUser).filter_by(
+            league_id=test_league.id,
+            email="joiner@example.com"
+        ).first()
         assert league_user is not None
 
     @pytest.mark.unit
@@ -169,7 +171,8 @@ class TestLeagueEndpoints:
         db.commit()
 
         response = client.post(
-            f"/api/leagues/{test_league.id}/create-pairs", headers=auth_headers
+            f"/api/leagues/{test_league.id}/create-pairs",
+            headers=auth_headers
         )
 
         assert response.status_code == 200
@@ -203,7 +206,8 @@ class TestLeagueEndpoints:
         db.commit()
 
         response = client.post(
-            f"/api/leagues/{test_league.id}/create-pairs", headers=auth_headers
+            f"/api/leagues/{test_league.id}/create-pairs",
+            headers=auth_headers
         )
 
         assert response.status_code == 400

@@ -62,11 +62,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const login = async (username: string, password: string) => {
     const response = await api.login(username, password);
-    
+
     localStorage.setItem('access_token', response.access_token);
     localStorage.setItem('refresh_token', response.refresh_token);
     api.setAuthToken(response.access_token);
-    
+
     // Get user info
     const userInfo = await api.getCurrentUser();
     setUser(userInfo);
@@ -74,7 +74,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const register = async (email: string, username: string, password: string) => {
     await api.register(email, username, password);
-    
+
     // Auto-login after registration
     await login(username, password);
   };
@@ -93,7 +93,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     const response = await api.refreshToken(refreshToken);
-    
+
     localStorage.setItem('access_token', response.access_token);
     localStorage.setItem('refresh_token', response.refresh_token);
     api.setAuthToken(response.access_token);

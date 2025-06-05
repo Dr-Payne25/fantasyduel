@@ -5,7 +5,7 @@ import { useAuth } from '../../contexts/AuthContext';
 export default function SignUp() {
   const navigate = useNavigate();
   const { register } = useAuth();
-  
+
   const [formData, setFormData] = useState({
     email: '',
     username: '',
@@ -57,7 +57,7 @@ export default function SignUp() {
             </Link>
           </p>
         </div>
-        
+
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-900/50 border border-red-700 text-red-300 px-4 py-3 rounded">

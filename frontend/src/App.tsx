@@ -20,7 +20,7 @@ function HomePage() {
 
   const createLeague = async () => {
     if (!user) return;
-    
+
     try {
       const result = await api.createLeague(leagueName, user.username, user.email);
       setInviteCode(result.invite_code);
@@ -31,7 +31,7 @@ function HomePage() {
 
   const joinLeague = async () => {
     if (!user) return;
-    
+
     try {
       setError(null);
       await api.joinLeague(joinCode, user.username, user.email);
@@ -45,18 +45,18 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-sleeper-darker">
       <NavBar />
-      
+
       <div className="max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-sleeper-primary mb-2">FantasyDuel</h1>
         <p className="text-xl text-gray-400 mb-12">Unique 1v1 draft mechanics for fantasy football</p>
-        
+
         {user ? (
           <>
             {/* My Leagues Section */}
             <div className="mb-12">
               <MyLeagues />
             </div>
-            
+
             {/* Create/Join Section */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-sleeper-dark rounded-lg p-8">
@@ -93,7 +93,7 @@ function HomePage() {
               )}
             </div>
           </div>
-          
+
             <div className="bg-sleeper-dark rounded-lg p-8">
               <h2 className="text-2xl font-semibold mb-6">Join Existing League</h2>
               <div className="space-y-4">
@@ -107,7 +107,7 @@ function HomePage() {
                 <div className="text-sm text-gray-400">
                   Joining as: {user.username} ({user.email})
                 </div>
-                <button 
+                <button
                   onClick={joinLeague}
                   className="w-full py-3 bg-sleeper-secondary hover:bg-pink-600 rounded font-semibold transition"
                   disabled={!joinCode}
@@ -143,7 +143,7 @@ function HomePage() {
             </div>
           </div>
         )}
-        
+
         <div className="mt-12 text-center">
           <h3 className="text-xl font-semibold mb-4">How It Works</h3>
           <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-400">
@@ -177,21 +177,21 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route 
-            path="/league/:leagueId" 
+          <Route
+            path="/league/:leagueId"
             element={
               <ProtectedRoute>
                 <LeagueDashboard />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/draft/:draftId" 
+          <Route
+            path="/draft/:draftId"
             element={
               <ProtectedRoute>
                 <DraftRoom />
               </ProtectedRoute>
-            } 
+            }
           />
         </Routes>
       </AuthProvider>

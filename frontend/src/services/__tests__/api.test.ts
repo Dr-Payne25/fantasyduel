@@ -13,7 +13,7 @@ describe('API Service - Authentication', () => {
   describe('setAuthToken', () => {
     it('stores auth token for use in requests', async () => {
       api.setAuthToken('test-token');
-      
+
       (global.fetch as jest.Mock).mockResolvedValueOnce({
         ok: true,
         json: async () => ({ data: 'test' }),
@@ -34,7 +34,7 @@ describe('API Service - Authentication', () => {
     it('removes auth token when set to null', async () => {
       api.setAuthToken('test-token');
       api.setAuthToken(null);
-      
+
       (global.fetch as jest.Mock).mockResolvedValueOnce({
         ok: true,
         json: async () => ({ data: 'test' }),
@@ -121,7 +121,7 @@ describe('API Service - Authentication', () => {
           body: expect.any(URLSearchParams),
         })
       );
-      
+
       const callArgs = (global.fetch as jest.Mock).mock.calls[0];
       expect(callArgs[1].body.toString()).toBe('username=testuser&password=password123');
       expect(result).toEqual(mockTokenResponse);

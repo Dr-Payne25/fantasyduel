@@ -52,12 +52,12 @@ const customRender = (
   options?: Omit<RenderOptions, 'wrapper'> & { authValue?: any }
 ) => {
   const { authValue, ...renderOptions } = options || {};
-  
+
   // If authValue is provided, update the mock
   if (authValue) {
     Object.assign(mockAuthContext, authValue);
   }
-  
+
   return render(ui, {
     wrapper: AllTheProviders,
     ...renderOptions,

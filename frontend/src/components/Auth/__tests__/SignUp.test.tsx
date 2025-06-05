@@ -97,10 +97,8 @@ describe('SignUp Component', () => {
     });
     fireEvent.click(screen.getByRole('button', { name: /create account/i }));
 
-    await waitFor(() => {
-      expect(mockRegister).toHaveBeenCalledWith('test@example.com', 'testuser', 'password123');
-      expect(mockNavigate).toHaveBeenCalledWith('/');
-    });
+    await waitFor(() => expect(mockRegister).toHaveBeenCalledWith('test@example.com', 'testuser', 'password123'));
+    expect(mockNavigate).toHaveBeenCalledWith('/');
   });
 
   it('displays error message on registration failure', async () => {
@@ -131,10 +129,9 @@ describe('SignUp Component', () => {
     });
     fireEvent.click(screen.getByRole('button', { name: /create account/i }));
 
-    await waitFor(() => {
-      expect(screen.getByText('Username already taken')).toBeInTheDocument();
-      expect(mockNavigate).not.toHaveBeenCalled();
-    });
+    const errorMessage = await screen.findByText('Username already taken');
+    expect(errorMessage).toBeInTheDocument();
+    expect(mockNavigate).not.toHaveBeenCalled();
   });
 
   it('links to login page', () => {
