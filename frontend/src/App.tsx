@@ -1,36 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
-const API_URL = 'http://localhost:8000';
-
-interface League {
-  id: string;
-  name: string;
-  status: string;
-  commissioner_id: string;
-}
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import LeagueDashboard from './components/League/LeagueDashboard';
+import DraftRoom from './components/Draft/DraftRoom';
+import { api } from './services/api';
 
 function HomePage() {
+  const navigate = useNavigate();
   const [leagueName, setLeagueName] = useState('');
   const [commissionerName, setCommissionerName] = useState('');
   const [email, setEmail] = useState('');
   const [inviteCode, setInviteCode] = useState('');
+  const [joinCode, setJoinCode] = useState('');
+  const [joinName, setJoinName] = useState('');
+  const [joinEmail, setJoinEmail] = useState('');
+
+  // Set a simple user ID in localStorage for demo purposes
+  useEffect(() => {
+    if (!localStorage.getItem('userId')) {
+      localStorage.setItem('userId', `user-${Date.now()}`);
+    }
+  }, []);
 
   const createLeague = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/leagues/create`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: leagueName,
-          commissioner_name: commissionerName,
-          commissioner_email: email
-        })
-      });
-      const data = await response.json();
-      setInviteCode(data.invite_code);
+      const result = await api.createLeague(leagueName, commissionerName, email);
+      setInviteCode(result.invite_code);
+      // Store user info for demo
+      localStorage.setItem('userId', result.league.commissioner_id);
+      localStorage.setItem('userName', commissionerName);
     } catch (error) {
       console.error('Error creating league:', error);
+    }
+  };
+
+  const joinLeague = async () => {
+    try {
+      const result = await api.joinLeague(joinCode, joinName, joinEmail);
+      // Store user info for demo
+      localStorage.setItem('userId', result.user.user_id);
+      localStorage.setItem('userName', joinName);
+      navigate(`/league/${joinCode}`);
+    } catch (error) {
+      console.error('Error joining league:', error);
     }
   };
 
@@ -75,6 +86,12 @@ function HomePage() {
                 <div className="mt-4 p-4 bg-green-900/20 border border-green-700 rounded">
                   <p className="text-sm text-gray-400">League created! Share this code:</p>
                   <p className="text-lg font-mono text-green-400">{inviteCode}</p>
+                  <Link
+                    to={`/league/${inviteCode}`}
+                    className="mt-2 inline-block text-sm text-sleeper-primary hover:underline"
+                  >
+                    Go to League →
+                  </Link>
                 </div>
               )}
             </div>
@@ -87,18 +104,27 @@ function HomePage() {
                 type="text"
                 placeholder="League Invite Code"
                 className="w-full px-4 py-3 bg-sleeper-gray rounded border border-gray-700 focus:border-sleeper-primary focus:outline-none"
+                value={joinCode}
+                onChange={(e) => setJoinCode(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Your Name"
                 className="w-full px-4 py-3 bg-sleeper-gray rounded border border-gray-700 focus:border-sleeper-primary focus:outline-none"
+                value={joinName}
+                onChange={(e) => setJoinName(e.target.value)}
               />
               <input
                 type="email"
                 placeholder="Email"
                 className="w-full px-4 py-3 bg-sleeper-gray rounded border border-gray-700 focus:border-sleeper-primary focus:outline-none"
+                value={joinEmail}
+                onChange={(e) => setJoinEmail(e.target.value)}
               />
-              <button className="w-full py-3 bg-sleeper-secondary hover:bg-pink-600 rounded font-semibold transition">
+              <button 
+                onClick={joinLeague}
+                className="w-full py-3 bg-sleeper-secondary hover:bg-pink-600 rounded font-semibold transition"
+              >
                 Join League
               </button>
             </div>
@@ -135,6 +161,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/league/:leagueId" element={<LeagueDashboard />} />
+        <Route path="/draft/:draftId" element={<DraftRoom />} />
       </Routes>
     </Router>
   );
