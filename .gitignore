@@ -5,6 +5,9 @@ backend/app/*/__pycache__/
 backend/*.db
 backend/.env
 backend/venv/
+backend/*.log
+backend/server.log
+backend/setup_test_*.py
 
 # Frontend
 frontend/node_modules/
@@ -16,6 +19,8 @@ frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
 frontend/build/
+frontend/*.log
+frontend/coverage/
 
 # IDE
 .vscode/
@@ -27,3 +32,11 @@ frontend/build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Test files
+test-*.py
+test-*.json
+create-*.py
+add-*.py
+cleanup-*.py
+check-*.py

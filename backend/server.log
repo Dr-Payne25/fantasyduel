@@ -34,3 +34,1830 @@ INFO:     Finished server process [2718]
 INFO:     Started server process [2772]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'check_admin_draft.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2772]
+INFO:     Started server process [3534]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53688 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53689 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53689 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53689 - "OPTIONS /api/leagues/my-leagues HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "OPTIONS /api/leagues/my-leagues HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/leagues/my-leagues HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53689 - "GET /api/leagues/my-leagues HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53689 - "OPTIONS /api/drafts/test-draft-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "OPTIONS /api/drafts/test-draft-1 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 53695) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53688 - "GET /api/drafts/test-draft-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53689 - "GET /api/drafts/test-draft-1 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53698) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53701) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53704) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53707) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53710) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53714) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53717) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53720) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53723) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53726) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53729) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53732) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53736) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53739) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53742) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53746) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53751) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 53754) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53759) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53762) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53765) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53770) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53773) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53788) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53798) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53803) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53807) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53810) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53813) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53816) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53820) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53824) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53827) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53831) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53834) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53838) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53851) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53855) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53858) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53861) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53865) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53868) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53871) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53874) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53877) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53880) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53883) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53886) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53889) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53893) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53896) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53899) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53902) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53907) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53914) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53917) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53923) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53926) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53929) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53932) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53935) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53938) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53941) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53945) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53948) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53957) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53962) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53980) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53987) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53993) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 53998) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54002) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54008) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54014) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54024) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54030) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54046) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54051) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54057) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54064) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54082) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54088) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54099) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54106) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54111) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54115) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54119) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54123) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54127) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'check_player_rankings.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3534]
+INFO:     Started server process [3678]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 54146) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54149) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54153) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54157) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54163) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54179) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54184) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54187) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54191) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54197) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54202) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54207) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54211) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54215) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54220) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54224) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54228) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54232) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54236) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54241) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54247) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54254) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54263) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54269) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54275) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54281) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54291) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54296) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54301) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54306) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54310) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54314) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54318) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'fix_player_rankings.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3678]
+INFO:     Started server process [3782]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 54338) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54341) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54348) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54352) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54357) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54361) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54386) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54390) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54394) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54399) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54407) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54420) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54424) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54429) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54434) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54438) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54442) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54447) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54451) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54467) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54474) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54478) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54485) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54490) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54495) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54499) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54503) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54513) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 54515) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'fix_player_rankings.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3782]
+INFO:     Started server process [3875]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 54535) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54539) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54542) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54547) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54552) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54556) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54560) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'fix_player_rankings.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3875]
+INFO:     Started server process [3882]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 54579) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 54582) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54586) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54590) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54595) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54599) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54606) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54614) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54618) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'fix_player_rankings.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3882]
+INFO:     Started server process [3888]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 54628) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54631) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54635) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54640) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54646) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54655) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54659) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54664) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54669) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54676) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54680) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54690) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54694) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54698) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54711) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54716) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54720) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54724) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54737) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54741) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54747) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54751) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54757) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54769) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54773) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54778) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54782) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54787) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54792) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54796) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54800) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54805) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54809) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54815) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54821) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54826) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54833) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54837) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54841) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54847) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54853) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54857) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54861) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54865) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54869) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54873) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54877) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54881) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54885) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54889) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54894) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54898) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54903) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54907) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54912) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54916) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54920) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54924) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54930) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54939) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54947) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54953) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54958) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54963) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54969) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54975) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54980) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54991) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 54999) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55004) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55010) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55014) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55020) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55024) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55028) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55037) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55045) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55051) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55058) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55063) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55068) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55074) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55079) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55083) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55088) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55092) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55097) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55102) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55108) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55112) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55116) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55120) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55125) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55131) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55137) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55142) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55146) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55150) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55157) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55165) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55174) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55179) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55184) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55188) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55193) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55199) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55203) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55212) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55219) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55223) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55227) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55231) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55235) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55239) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55245) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55250) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55254) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55259) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55268) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55272) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55278) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55290) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55296) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55300) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55304) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55308) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55313) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55318) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55322) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55338) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55345) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55349) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55355) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55360) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55366) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55374) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55389) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55396) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55401) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55406) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55410) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55424) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55431) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55435) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55446) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55451) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55456) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55460) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55465) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55469) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55474) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55481) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55489) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55495) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55500) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55504) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55508) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55512) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55516) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55521) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55526) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55533) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55541) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55548) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55567) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55572) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55576) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55581) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55586) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55594) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55598) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55602) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55607) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55612) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55617) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55623) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55630) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55636) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55642) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55646) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55650) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55654) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55659) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55664) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55670) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55674) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55679) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55683) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55687) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55692) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55697) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55701) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55712) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55718) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55728) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55732) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55744) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55749) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55754) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55758) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55763) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55767) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55771) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55774) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55789) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 55799) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55821) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55825) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55831) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55852) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55856) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55860) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55870) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55876) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55881) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55885) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55896) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55911) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55915) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55919) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55931) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55938) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55942) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55947) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55950) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55954) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55957) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55960) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55963) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55966) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55969) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55972) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55982) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55988) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55991) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55994) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55997) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56000) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56004) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56007) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56011) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56019) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56023) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56026) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56029) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56032) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56036) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56039) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56043) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56046) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56049) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56052) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56055) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56058) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56061) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56064) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56071) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56076) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56080) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56084) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56098) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56102) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56108) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56112) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56116) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56120) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56124) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56128) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56133) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56139) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56143) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56147) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56152) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56156) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56161) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56173) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56177) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56181) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56186) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56189) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56193) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56200) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56211) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56220) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56225) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56229) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56240) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56247) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56252) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56260) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56267) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56275) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56282) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56286) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56290) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56294) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56302) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56306) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56310) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56328) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56338) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56351) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56356) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56360) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56365) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56370) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56380) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56391) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56395) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56399) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56403) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56408) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56412) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56417) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56421) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56427) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56431) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56436) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56440) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56445) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56449) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56453) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56457) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56463) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56468) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56481) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56505) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56512) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56518) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56524) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56532) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56545) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56551) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56556) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56571) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56581) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'app/services/rankings_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3888]
+INFO:     Started server process [4235]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 56593) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56597) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56601) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56607) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56612) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56616) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56621) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56633) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56637) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56642) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56655) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56659) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56663) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56667) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56678) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56683) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56687) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56693) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56707) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56711) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56716) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56722) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56732) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56737) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56743) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56752) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56760) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56765) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56769) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'venv/lib/python3.13/site-packages/bs4/tests/test_navigablestring.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_lxml.py', 'venv/lib/python3.13/site-packages/bs4/element.py', 'venv/lib/python3.13/site-packages/soupsieve/css_types.py', 'venv/lib/python3.13/site-packages/bs4/tests/__init__.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_html5lib.py', 'venv/lib/python3.13/site-packages/bs4/formatter.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_dammit.py', 'venv/lib/python3.13/site-packages/soupsieve/pretty.py', 'venv/lib/python3.13/site-packages/bs4/css.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_element.py', 'venv/lib/python3.13/site-packages/bs4/dammit.py', 'venv/lib/python3.13/site-packages/soupsieve/__meta__.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_soup.py', 'venv/lib/python3.13/site-packages/soupsieve/util.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_tag.py', 'venv/lib/python3.13/site-packages/bs4/builder/_lxml.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_tree.py', 'venv/lib/python3.13/site-packages/bs4/diagnose.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_fuzz.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_pageelement.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_builder_registry.py', 'venv/lib/python3.13/site-packages/soupsieve/__init__.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_css.py', 'venv/lib/python3.13/site-packages/soupsieve/css_parser.py', 'venv/lib/python3.13/site-packages/bs4/builder/_html5lib.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_builder.py', 'venv/lib/python3.13/site-packages/bs4/builder/_htmlparser.py', 'venv/lib/python3.13/site-packages/bs4/builder/__init__.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_formatter.py', 'venv/lib/python3.13/site-packages/soupsieve/css_match.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_htmlparser.py', 'venv/lib/python3.13/site-packages/bs4/__init__.py', 'venv/lib/python3.13/site-packages/bs4/tests/test_docs.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4235]
+INFO:     Started server process [4355]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 56782) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56787) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56791) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56796) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56801) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56808) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56812) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56826) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56830) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56835) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56840) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56846) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56851) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56861) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56865) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'app/services/rankings_service.py', 'fix_player_rankings.py', 'check_player_rankings.py', 'check_admin_draft.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4355]
+WARNING:  WatchFiles detected changes in 'fix_player_rankings.py', 'check_admin_draft.py', 'check_player_rankings.py'. Reloading...
+INFO:     Started server process [4431]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 56875) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 56877) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'app/services/rankings_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4431]
+INFO:     Started server process [4453]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 56902) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56905) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56909) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56913) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56917) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'check_player_rankings.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4453]
+INFO:     Started server process [4454]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 56930) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 56932) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'app/services/rankings_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4454]
+INFO:     Started server process [4546]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     ('127.0.0.1', 56988) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56991) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 56996) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57000) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57005) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57009) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 57013) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57020) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57029) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57033) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57037) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57041) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57049) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57062) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57066) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 57070) - "WebSocket /ws/test-draft-1" [accepted]
+INFO:     connection open
