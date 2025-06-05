@@ -7,14 +7,15 @@ import uuid
 from typing import Generator
 
 import pytest
-from app.auth.utils import get_password_hash
-from app.database import Base, get_db
-from app.models import League, Player, User
 from fastapi.testclient import TestClient
-from main import app
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy.pool import StaticPool
+
+from app.auth.utils import get_password_hash
+from app.database import Base, get_db
+from app.models import League, Player, User
+from main import app
 
 # Test database setup
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"

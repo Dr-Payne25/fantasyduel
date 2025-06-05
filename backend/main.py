@@ -1,11 +1,12 @@
 from contextlib import asynccontextmanager
 
 import uvicorn
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.middleware.cors import CORSMiddleware
+
 from app.api import auth, drafts, leagues, players
 from app.database import init_db
 from app.websocket import manager
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from fastapi.middleware.cors import CORSMiddleware
 
 
 @asynccontextmanager
