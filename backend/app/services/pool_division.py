@@ -42,7 +42,9 @@ class PoolDivisionService:
 
         return avg_rank * position_multiplier
 
-    def divide_players_into_pools(self, players: List[Dict]) -> Tuple[Dict[int, List[Dict]], Dict[int, float]]:  # noqa: C901
+    def divide_players_into_pools(
+        self, players: List[Dict]
+    ) -> Tuple[Dict[int, List[Dict]], Dict[int, float]]:  # noqa: C901
         """Divide players into equal-value pools using a snake draft approach"""
         players_by_position = defaultdict(list)
 
@@ -80,7 +82,9 @@ class PoolDivisionService:
 
         remaining_players = []
         for position, position_players in players_by_position.items():
-            required_count = self.position_requirements.get(position, 0) * self.num_pools
+            required_count = (
+                self.position_requirements.get(position, 0) * self.num_pools
+            )
             if len(position_players) > required_count:
                 remaining_players.extend(position_players[required_count:])
 
@@ -95,7 +99,9 @@ class PoolDivisionService:
 
         return pools, pool_values
 
-    def validate_pool_balance(self, pools: Dict[int, List[Dict]], pool_values: Dict[int, float]) -> Dict:
+    def validate_pool_balance(
+        self, pools: Dict[int, List[Dict]], pool_values: Dict[int, float]
+    ) -> Dict:
         """Validate that pools are balanced in value and position distribution"""
         validation_results = {"balanced": True, "pool_stats": {}, "warnings": []}
 
@@ -119,11 +125,16 @@ class PoolDivisionService:
 
             if deviation > max_deviation:
                 validation_results["balanced"] = False
-                validation_results["warnings"].append(f"Pool {pool_idx} value deviation too high: {deviation:.2f}")
+                validation_results["warnings"].append(
+                    f"Pool {pool_idx} value deviation too high: {deviation:.2f}"
+                )
 
             for position, required in self.position_requirements.items():
                 if pool_positions.get(position, 0) < required:
-                    msg = f"Pool {pool_idx} has insufficient {position}s: " f"{pool_positions.get(position, 0)}/{required}"
+                    msg = (
+                        f"Pool {pool_idx} has insufficient {position}s: "
+                        f"{pool_positions.get(position, 0)}/{required}"
+                    )
                     validation_results["warnings"].append(msg)
 
         return validation_results

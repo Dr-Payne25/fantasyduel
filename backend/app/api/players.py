@@ -1,12 +1,13 @@
 import uuid
 from typing import Optional
 
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+
 from app.database import get_db
 from app.models import Player
 from app.services.pool_division import PoolDivisionService
 from app.services.sleeper_api import sleeper_api
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
 
 router = APIRouter()
 
@@ -58,7 +59,9 @@ async def divide_player_pools(db: Session = Depends(get_db)):
     players = db.query(Player).filter(Player.position.in_(positions)).all()
 
     if len(players) < 192:
-        raise HTTPException(status_code=400, detail="Not enough players to create pools")
+        raise HTTPException(
+            status_code=400, detail="Not enough players to create pools"
+        )
 
     players_dict = []
     for player in players:
@@ -115,7 +118,10 @@ async def get_players(
 async def get_pool_players(pool_number: int, db: Session = Depends(get_db)):
     """Get all players in a specific pool"""
     players = (
-        db.query(Player).filter(Player.pool_assignment == pool_number).order_by(Player.position, Player.composite_rank).all()
+        db.query(Player)
+        .filter(Player.pool_assignment == pool_number)
+        .order_by(Player.position, Player.composite_rank)
+        .all()
     )
 
     if not players:

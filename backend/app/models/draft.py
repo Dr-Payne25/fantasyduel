@@ -1,7 +1,8 @@
-from app.database import Base
 from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
+
+from app.database import Base
 
 
 class Draft(Base):
@@ -17,7 +18,9 @@ class Draft(Base):
     completed_at = Column(DateTime(timezone=True))
 
     pair = relationship("DraftPair", back_populates="draft")
-    picks = relationship("DraftPick", back_populates="draft", order_by="DraftPick.pick_number")
+    picks = relationship(
+        "DraftPick", back_populates="draft", order_by="DraftPick.pick_number"
+    )
 
 
 class DraftPick(Base):

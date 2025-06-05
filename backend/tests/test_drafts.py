@@ -5,16 +5,19 @@ Test draft endpoints
 import uuid
 
 import pytest
-from app.models import Draft, DraftPair, DraftPick, League, LeagueUser, Player, User
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
+
+from app.models import Draft, DraftPair, DraftPick, League, LeagueUser, Player, User
 
 
 class TestDraftEndpoints:
     """Test draft API endpoints"""
 
     @pytest.fixture
-    def draft_setup(self, db: Session, test_league: League, sample_players: list[Player]):
+    def draft_setup(
+        self, db: Session, test_league: League, sample_players: list[Player]
+    ):
         """Set up a league with pairs ready for drafting"""
         # Create 2 users for a pair
         users = []
@@ -49,11 +52,15 @@ class TestDraftEndpoints:
         return {"pair": pair, "users": users, "players": sample_players}
 
     @pytest.mark.unit
-    def test_start_draft(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_start_draft(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test starting a draft for a pair"""
         pair = draft_setup["pair"]
 
-        response = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        response = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
 
         assert response.status_code == 200
         data = response.json()
@@ -70,27 +77,37 @@ class TestDraftEndpoints:
         assert draft.status == "active"
 
     @pytest.mark.unit
-    def test_start_duplicate_draft(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_start_duplicate_draft(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test starting a draft when one already exists"""
         pair = draft_setup["pair"]
 
         # Start first draft
-        client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
 
         # Try to start another
-        response = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        response = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
 
         assert response.status_code == 400
         assert "Draft already exists" in response.json()["detail"]
 
     @pytest.mark.unit
-    def test_make_pick(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_make_pick(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test making a draft pick"""
         pair = draft_setup["pair"]
         players = draft_setup["players"]
 
         # Start draft
-        start_resp = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        start_resp = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
         draft_id = start_resp.json()["draft"]["id"]
         current_picker = start_resp.json()["draft"]["current_picker_id"]
 
@@ -116,19 +133,27 @@ class TestDraftEndpoints:
         assert data["draft_status"] == "active"
 
         # Verify pick was saved
-        pick = db.query(DraftPick).filter_by(draft_id=draft_id, player_id=player.id).first()
+        pick = (
+            db.query(DraftPick)
+            .filter_by(draft_id=draft_id, player_id=player.id)
+            .first()
+        )
         assert pick is not None
         assert pick.user_id == current_picker
 
     @pytest.mark.unit
-    def test_pick_wrong_turn(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_pick_wrong_turn(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test making a pick when it's not your turn"""
         pair = draft_setup["pair"]
         users = draft_setup["users"]
         players = draft_setup["players"]
 
         # Start draft
-        start_resp = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        start_resp = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
         draft_id = start_resp.json()["draft"]["id"]
         current_picker = start_resp.json()["draft"]["current_picker_id"]
 
@@ -146,13 +171,17 @@ class TestDraftEndpoints:
         assert "Not your turn" in response.json()["detail"]
 
     @pytest.mark.unit
-    def test_pick_wrong_pool(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_pick_wrong_pool(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test picking a player from wrong pool"""
         pair = draft_setup["pair"]
         players = draft_setup["players"]
 
         # Start draft
-        start_resp = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        start_resp = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
         draft_id = start_resp.json()["draft"]["id"]
         current_picker = start_resp.json()["draft"]["current_picker_id"]
 
@@ -173,12 +202,16 @@ class TestDraftEndpoints:
         assert "not available in your pool" in response.json()["detail"]
 
     @pytest.mark.unit
-    def test_get_draft(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_get_draft(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test getting draft details"""
         pair = draft_setup["pair"]
 
         # Start draft
-        start_resp = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        start_resp = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
         draft_id = start_resp.json()["draft"]["id"]
 
         response = client.get(f"/api/drafts/{draft_id}")
@@ -195,12 +228,16 @@ class TestDraftEndpoints:
             assert player["pool_assignment"] == 0
 
     @pytest.mark.integration
-    def test_complete_draft_flow(self, client: TestClient, db: Session, draft_setup, auth_headers: dict):
+    def test_complete_draft_flow(
+        self, client: TestClient, db: Session, draft_setup, auth_headers: dict
+    ):
         """Test a complete draft with multiple picks"""
         pair = draft_setup["pair"]
 
         # Start draft
-        start_resp = client.post("/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers)
+        start_resp = client.post(
+            "/api/drafts/start", json={"pair_id": pair.id}, headers=auth_headers
+        )
         draft_id = start_resp.json()["draft"]["id"]
 
         # Make several picks alternating between users

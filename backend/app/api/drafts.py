@@ -1,12 +1,13 @@
 import uuid
 from datetime import datetime, timezone
 
-from app.database import get_db
-from app.models import Draft, DraftPair, DraftPick, LeagueUser, Player
-from app.schemas import DraftBase, DraftPickBase, LeagueUserBase, PlayerBase
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
+
+from app.database import get_db
+from app.models import Draft, DraftPair, DraftPick, LeagueUser, Player
+from app.schemas import DraftBase, DraftPickBase, LeagueUserBase, PlayerBase
 
 router = APIRouter()
 
@@ -30,7 +31,9 @@ async def start_draft(request: StartDraftRequest, db: Session = Depends(get_db))
 
     existing_draft = db.query(Draft).filter_by(pair_id=pair.id).first()
     if existing_draft:
-        raise HTTPException(status_code=400, detail="Draft already exists for this pair")
+        raise HTTPException(
+            status_code=400, detail="Draft already exists for this pair"
+        )
 
     users = db.query(LeagueUser).filter_by(pair_id=pair.id).all()
     if len(users) != 2:
@@ -80,7 +83,9 @@ async def make_pick(request: MakePickRequest, db: Session = Depends(get_db)):
     if player.pool_assignment != pair.pool_number:
         raise HTTPException(status_code=400, detail="Player not available in your pool")
 
-    already_picked = db.query(DraftPick).filter_by(draft_id=draft.id, player_id=player.id).first()
+    already_picked = (
+        db.query(DraftPick).filter_by(draft_id=draft.id, player_id=player.id).first()
+    )
     if already_picked:
         raise HTTPException(status_code=400, detail="Player already drafted")
 
@@ -121,7 +126,12 @@ async def get_draft(draft_id: str, db: Session = Depends(get_db)):
     if not draft:
         raise HTTPException(status_code=404, detail="Draft not found")
 
-    picks = db.query(DraftPick).filter_by(draft_id=draft_id).order_by(DraftPick.pick_number).all()
+    picks = (
+        db.query(DraftPick)
+        .filter_by(draft_id=draft_id)
+        .order_by(DraftPick.pick_number)
+        .all()
+    )
     pair = db.query(DraftPair).filter_by(id=draft.pair_id).first()
     users = db.query(LeagueUser).filter_by(pair_id=pair.id).all()
 
@@ -139,14 +149,19 @@ async def get_draft(draft_id: str, db: Session = Depends(get_db)):
         )
     else:
         available_players = (
-            db.query(Player).filter(Player.pool_assignment == pair.pool_number).order_by(Player.composite_rank).all()
+            db.query(Player)
+            .filter(Player.pool_assignment == pair.pool_number)
+            .order_by(Player.composite_rank)
+            .all()
         )
 
     return {
         "draft": DraftBase.model_validate(draft).model_dump(),
         "users": [LeagueUserBase.model_validate(u).model_dump() for u in users],
         "picks": [DraftPickBase.model_validate(p).model_dump() for p in picks],
-        "available_players": [PlayerBase.model_validate(p).model_dump() for p in available_players],
+        "available_players": [
+            PlayerBase.model_validate(p).model_dump() for p in available_players
+        ],
         "current_picker": draft.current_picker_id,
     }
 
