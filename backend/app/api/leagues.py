@@ -45,9 +45,13 @@ async def create_league(request: CreateLeagueRequest, db: Session = Depends(get_
     )
     db.add(league)
 
+    # For now, create a dummy user ID if not authenticated
+    commissioner_id = league.commissioner_id or str(uuid.uuid4())
+    league.commissioner_id = commissioner_id
+    
     commissioner = LeagueUser(
         league_id=league.id,
-        user_id=league.commissioner_id,
+        user_id=commissioner_id,
         email=request.commissioner_email,
         display_name=request.commissioner_name,
     )

@@ -5,7 +5,7 @@ from app.database import get_db
 from app.models import Draft, DraftPick, DraftPair, Player, LeagueUser
 from app.schemas import PlayerBase, DraftBase, LeagueUserBase, DraftPickBase
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import datetime, timezone
 import uuid
 
 router = APIRouter()
@@ -43,7 +43,7 @@ async def start_draft(request: StartDraftRequest, db: Session = Depends(get_db))
         pair_id=pair.id,
         status="active",
         current_picker_id=users[0].user_id,
-        started_at=datetime.utcnow(),
+        started_at=datetime.now(timezone.utc),
     )
     db.add(draft)
     db.commit()
@@ -106,7 +106,7 @@ async def make_pick(request: MakePickRequest, db: Session = Depends(get_db)):
     max_picks = 30
     if total_picks >= max_picks:
         draft.status = "completed"
-        draft.completed_at = datetime.utcnow()
+        draft.completed_at = datetime.now(timezone.utc)
 
     db.commit()
 
