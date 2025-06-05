@@ -5,6 +5,8 @@ import DraftRoom from './components/Draft/DraftRoom';
 import Login from './components/Auth/Login';
 import SignUp from './components/Auth/SignUp';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
+import MyLeagues from './components/League/MyLeagues';
+import NavBar from './components/Navigation/NavBar';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { api } from './services/api';
 
@@ -14,6 +16,7 @@ function HomePage() {
   const [leagueName, setLeagueName] = useState('');
   const [inviteCode, setInviteCode] = useState('');
   const [joinCode, setJoinCode] = useState('');
+  const [error, setError] = useState<string | null>(null);
 
   const createLeague = async () => {
     if (!user) return;
@@ -30,54 +33,33 @@ function HomePage() {
     if (!user) return;
     
     try {
+      setError(null);
       const result = await api.joinLeague(joinCode, user.username, user.email);
       navigate(`/league/${joinCode}`);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error joining league:', error);
+      setError(error.message || 'Failed to join league');
     }
   };
 
   return (
     <div className="min-h-screen bg-sleeper-darker">
-      <nav className="bg-sleeper-dark border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-sleeper-primary">FantasyDuel</h1>
-          {user ? (
-            <div className="flex items-center gap-4">
-              <span className="text-gray-400">Welcome, {user.username}</span>
-              <button
-                onClick={logout}
-                className="px-4 py-2 text-sm bg-gray-800 hover:bg-gray-700 rounded transition"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div className="flex gap-4">
-              <Link
-                to="/login"
-                className="px-4 py-2 text-sm bg-gray-800 hover:bg-gray-700 rounded transition"
-              >
-                Login
-              </Link>
-              <Link
-                to="/signup"
-                className="px-4 py-2 text-sm bg-sleeper-primary hover:bg-blue-600 rounded transition"
-              >
-                Sign Up
-              </Link>
-            </div>
-          )}
-        </div>
-      </nav>
+      <NavBar />
       
       <div className="max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-sleeper-primary mb-2">FantasyDuel</h1>
         <p className="text-xl text-gray-400 mb-12">Unique 1v1 draft mechanics for fantasy football</p>
         
         {user ? (
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-sleeper-dark rounded-lg p-8">
+          <>
+            {/* My Leagues Section */}
+            <div className="mb-12">
+              <MyLeagues />
+            </div>
+            
+            {/* Create/Join Section */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-sleeper-dark rounded-lg p-8">
               <h2 className="text-2xl font-semibold mb-6">Create New League</h2>
               <div className="space-y-4">
                 <input
@@ -132,9 +114,15 @@ function HomePage() {
                 >
                   Join League
                 </button>
+                {error && (
+                  <div className="mt-4 p-4 bg-red-900/20 border border-red-700 rounded">
+                    <p className="text-sm text-red-400">{error}</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
+          </>
         ) : (
           <div className="bg-sleeper-dark rounded-lg p-8 text-center">
             <h2 className="text-2xl font-semibold mb-4">Welcome to FantasyDuel</h2>

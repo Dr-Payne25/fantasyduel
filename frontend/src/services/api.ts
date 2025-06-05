@@ -87,13 +87,17 @@ class API {
   }
 
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
-    const headers: HeadersInit = {
+    const headers: Record<string, string> = {
       'Content-Type': 'application/json',
-      ...options?.headers,
     };
 
     if (this.authToken) {
       headers['Authorization'] = `Bearer ${this.authToken}`;
+    }
+
+    // Merge with any headers from options
+    if (options?.headers) {
+      Object.assign(headers, options.headers);
     }
 
     const response = await fetch(`${API_URL}${endpoint}`, {
@@ -102,7 +106,8 @@ class API {
     });
 
     if (!response.ok) {
-      throw new Error(`API Error: ${response.statusText}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.detail || `API Error: ${response.statusText}`);
     }
 
     return response.json();
@@ -148,6 +153,20 @@ class API {
         email,
       }),
     });
+  }
+
+  async getLeagues() {
+    return this.request<League[]>('/api/leagues');
+  }
+
+  async getMyLeagues() {
+    return this.request<Array<{
+      league: League;
+      user_count: number;
+      my_pair_id: number | null;
+      active_draft: { id: string; status: string } | null;
+      is_commissioner: boolean;
+    }>>('/api/leagues/my-leagues');
   }
 
   async getLeague(leagueId: string) {
@@ -225,7 +244,8 @@ class API {
     });
 
     if (!response.ok) {
-      throw new Error(`Login failed: ${response.statusText}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.detail || `Login failed: ${response.statusText}`);
     }
 
     return response.json();
