@@ -13,15 +13,10 @@ router = APIRouter()
 
 
 @router.get("/my-leagues")
-async def get_my_leagues(
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
-):
+async def get_my_leagues(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     """Get all leagues the current user is in"""
     # Get all league memberships for the user
-    league_users = db.query(LeagueUser).filter_by(
-        user_id=current_user.id
-    ).all()
+    league_users = db.query(LeagueUser).filter_by(user_id=current_user.id).all()
 
     # Get the league details for each membership
     user_leagues = []
@@ -36,10 +31,7 @@ async def get_my_leagues(
 
             active_draft = None
             if lu.pair_id:
-                draft = db.query(Draft).filter_by(
-                    pair_id=lu.pair_id,
-                    status="active"
-                ).first()
+                draft = db.query(Draft).filter_by(pair_id=lu.pair_id, status="active").first()
                 if draft:
                     active_draft = {"id": draft.id, "status": draft.status}
 
@@ -119,10 +111,7 @@ async def join_league(
         raise HTTPException(status_code=404, detail="League not found")
 
     # Check if current user is already in the league
-    existing_user = db.query(LeagueUser).filter_by(
-        league_id=league.id,
-        user_id=current_user.id
-    ).first()
+    existing_user = db.query(LeagueUser).filter_by(league_id=league.id, user_id=current_user.id).first()
     if existing_user:
         raise HTTPException(status_code=400, detail="You are already in this league")
 
@@ -205,9 +194,7 @@ async def get_league(league_id: str, db: Session = Depends(get_db)):
             drafts[pair.id] = {
                 "id": draft.id,
                 "status": draft.status,
-                "started_at": (
-                    draft.started_at.isoformat() if draft.started_at else None
-                ),
+                "started_at": (draft.started_at.isoformat() if draft.started_at else None),
             }
 
     return {

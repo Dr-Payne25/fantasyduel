@@ -91,9 +91,7 @@ class TestPoolDivisionService:
         # Check that no pool deviates more than 5% from average
         for pool_idx, value in pool_values.items():
             deviation = abs(value - avg_value) / avg_value
-            assert deviation <= 0.05, (
-                f"Pool {pool_idx} value deviation: {deviation:.2%}"
-            )
+            assert deviation <= 0.05, f"Pool {pool_idx} value deviation: {deviation:.2%}"
 
     @pytest.mark.unit
     def test_pool_division_snake_draft(self, sample_player_data):

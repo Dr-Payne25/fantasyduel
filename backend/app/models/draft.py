@@ -18,11 +18,7 @@ class Draft(Base):
     completed_at = Column(DateTime(timezone=True))
 
     pair = relationship("DraftPair", back_populates="draft")
-    picks = relationship(
-        "DraftPick",
-        back_populates="draft",
-        order_by="DraftPick.pick_number"
-    )
+    picks = relationship("DraftPick", back_populates="draft", order_by="DraftPick.pick_number")
 
 
 class DraftPick(Base):

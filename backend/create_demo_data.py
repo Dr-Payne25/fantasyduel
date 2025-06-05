@@ -38,9 +38,7 @@ def create_demo_data():
                 created_at=datetime.now(timezone.utc),
             )
             db.add(admin)
-            print(
-                "✅ Created admin user - Username: admin, Password: admin123"
-            )
+            print("✅ Created admin user - Username: admin, Password: admin123")
         else:
             print("ℹ️  Admin user already exists - Username: admin")
 
@@ -80,15 +78,9 @@ def create_demo_data():
             )
             db.add(league_user)
 
-            print(
-                f"✅ Created demo league - Name: Demo League 2025, "
-                f"ID: {demo_league.id}"
-            )
+            print(f"✅ Created demo league - Name: Demo League 2025, " f"ID: {demo_league.id}")
         else:
-            print(
-                f"ℹ️  Demo league already exists - Name: {demo_league.name}, "
-                f"ID: {demo_league.id}"
-            )
+            print(f"ℹ️  Demo league already exists - Name: {demo_league.name}, " f"ID: {demo_league.id}")
 
         # Create additional test users if needed
         test_users = []
@@ -108,10 +100,7 @@ def create_demo_data():
                 )
                 db.add(user)
                 test_users.append(user)
-                print(
-                    f"✅ Created test user - Username: {username}, "
-                    f"Password: password123"
-                )
+                print(f"✅ Created test user - Username: {username}, " f"Password: password123")
 
         db.commit()
 

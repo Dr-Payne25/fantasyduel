@@ -36,16 +36,11 @@ def cleanup_duplicate_league_users():
             print(f"\nLeague {league_id} has {count} entries for user {user_id}")
 
             # Get all entries for this user in this league
-            entries = db.query(LeagueUser).filter_by(
-                league_id=league_id, user_id=user_id
-            ).order_by(LeagueUser.id).all()
+            entries = db.query(LeagueUser).filter_by(league_id=league_id, user_id=user_id).order_by(LeagueUser.id).all()
 
             # Keep the first entry, delete the rest
             for entry in entries[1:]:
-                print(
-                    f"  - Removing duplicate entry: {entry.display_name} "
-                    f"(ID: {entry.id})"
-                )
+                print(f"  - Removing duplicate entry: {entry.display_name} " f"(ID: {entry.id})")
                 db.delete(entry)
 
         db.commit()

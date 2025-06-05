@@ -56,15 +56,10 @@ async def sync_players(db: Session = Depends(get_db)):
 async def divide_player_pools(db: Session = Depends(get_db)):
     """Divide all players into 6 equal-value pools"""
     positions = ["QB", "RB", "WR", "TE", "K", "DEF"]
-    players = db.query(Player).filter(
-        Player.position.in_(positions)
-    ).all()
+    players = db.query(Player).filter(Player.position.in_(positions)).all()
 
     if len(players) < 192:
-        raise HTTPException(
-            status_code=400,
-            detail="Not enough players to create pools"
-        )
+        raise HTTPException(status_code=400, detail="Not enough players to create pools")
 
     players_dict = []
     for player in players:
@@ -94,9 +89,7 @@ async def divide_player_pools(db: Session = Depends(get_db)):
     return {
         "pools_created": len(pools),
         "validation": validation,
-        "pool_sizes": {
-            idx: len(players) for idx, players in pools.items()
-        },
+        "pool_sizes": {idx: len(players) for idx, players in pools.items()},
     }
 
 
@@ -123,10 +116,7 @@ async def get_players(
 async def get_pool_players(pool_number: int, db: Session = Depends(get_db)):
     """Get all players in a specific pool"""
     players = (
-        db.query(Player)
-        .filter(Player.pool_assignment == pool_number)
-        .order_by(Player.position, Player.composite_rank)
-        .all()
+        db.query(Player).filter(Player.pool_assignment == pool_number).order_by(Player.position, Player.composite_rank).all()
     )
 
     if not players:

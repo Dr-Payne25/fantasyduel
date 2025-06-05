@@ -111,9 +111,7 @@ class TestAuthEndpoints:
         assert "Incorrect username or password" in response.json()["detail"]
 
     @pytest.mark.unit
-    def test_get_current_user(
-        self, client: TestClient, test_user: User, auth_headers: dict
-    ):
+    def test_get_current_user(self, client: TestClient, test_user: User, auth_headers: dict):
         """Test getting current user info"""
         response = client.get("/api/auth/me", headers=auth_headers)
 
@@ -142,9 +140,7 @@ class TestAuthEndpoints:
         refresh_token = login_response.json()["refresh_token"]
 
         # Use refresh token to get new access token
-        response = client.post(
-            "/api/auth/refresh", json={"refresh_token": refresh_token}
-        )
+        response = client.post("/api/auth/refresh", json={"refresh_token": refresh_token})
 
         assert response.status_code == 200
         data = response.json()

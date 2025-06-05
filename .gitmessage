@@ -1,0 +1,32 @@
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# <footer>
+#
+# Type should be one of the following:
+# - feat (new feature)
+# - fix (bug fix)
+# - docs (changes to documentation)
+# - style (formatting, missing semi colons, etc; no code change)
+# - refactor (refactoring production code)
+# - test (adding missing tests, refactoring tests; no production code change)
+# - chore (updating grunt tasks etc; no production code change)
+#
+# Scope is optional and can be anything specifying the place of the commit change.
+# For example: auth, draft, league, frontend, backend, etc.
+#
+# Subject is a brief description of the change, written in the imperative mood.
+#
+# Body should include the motivation for the change and contrast with previous behavior.
+#
+# Footer should contain any information about Breaking Changes and is also the place
+# to reference GitHub issues that this commit closes.
+#
+# Example:
+# feat(auth): add refresh token rotation
+#
+# Implement refresh token rotation for improved security. Each time a refresh
+# token is used, a new one is generated and the old one is invalidated.
+#
+# Closes #123

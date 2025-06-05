@@ -31,10 +31,7 @@ async def start_draft(request: StartDraftRequest, db: Session = Depends(get_db))
 
     existing_draft = db.query(Draft).filter_by(pair_id=pair.id).first()
     if existing_draft:
-        raise HTTPException(
-            status_code=400,
-            detail="Draft already exists for this pair"
-        )
+        raise HTTPException(status_code=400, detail="Draft already exists for this pair")
 
     users = db.query(LeagueUser).filter_by(pair_id=pair.id).all()
     if len(users) != 2:
@@ -56,9 +53,7 @@ async def start_draft(request: StartDraftRequest, db: Session = Depends(get_db))
             "pair_id": draft.pair_id,
             "status": draft.status,
             "current_picker_id": draft.current_picker_id,
-            "started_at": (
-                draft.started_at.isoformat() if draft.started_at else None
-            ),
+            "started_at": (draft.started_at.isoformat() if draft.started_at else None),
         },
         "users": [{"id": u.user_id, "name": u.display_name} for u in users],
         "pool_number": pair.pool_number,
@@ -84,15 +79,9 @@ async def make_pick(request: MakePickRequest, db: Session = Depends(get_db)):
 
     pair = db.query(DraftPair).filter_by(id=draft.pair_id).first()
     if player.pool_assignment != pair.pool_number:
-        raise HTTPException(
-            status_code=400,
-            detail="Player not available in your pool"
-        )
+        raise HTTPException(status_code=400, detail="Player not available in your pool")
 
-    already_picked = db.query(DraftPick).filter_by(
-        draft_id=draft.id,
-        player_id=player.id
-    ).first()
+    already_picked = db.query(DraftPick).filter_by(draft_id=draft.id, player_id=player.id).first()
     if already_picked:
         raise HTTPException(status_code=400, detail="Player already drafted")
 
@@ -121,9 +110,7 @@ async def make_pick(request: MakePickRequest, db: Session = Depends(get_db)):
     return {
         "pick": pick,
         "player": player,
-        "next_picker": (
-            draft.current_picker_id if draft.status == "active" else None
-        ),
+        "next_picker": (draft.current_picker_id if draft.status == "active" else None),
         "draft_status": draft.status,
     }
 
@@ -135,9 +122,7 @@ async def get_draft(draft_id: str, db: Session = Depends(get_db)):
     if not draft:
         raise HTTPException(status_code=404, detail="Draft not found")
 
-    picks = db.query(DraftPick).filter_by(
-        draft_id=draft_id
-    ).order_by(DraftPick.pick_number).all()
+    picks = db.query(DraftPick).filter_by(draft_id=draft_id).order_by(DraftPick.pick_number).all()
     pair = db.query(DraftPair).filter_by(id=draft.pair_id).first()
     users = db.query(LeagueUser).filter_by(pair_id=pair.id).all()
 
@@ -155,19 +140,14 @@ async def get_draft(draft_id: str, db: Session = Depends(get_db)):
         )
     else:
         available_players = (
-            db.query(Player)
-            .filter(Player.pool_assignment == pair.pool_number)
-            .order_by(Player.composite_rank)
-            .all()
+            db.query(Player).filter(Player.pool_assignment == pair.pool_number).order_by(Player.composite_rank).all()
         )
 
     return {
         "draft": DraftBase.model_validate(draft).model_dump(),
         "users": [LeagueUserBase.model_validate(u).model_dump() for u in users],
         "picks": [DraftPickBase.model_validate(p).model_dump() for p in picks],
-        "available_players": [
-            PlayerBase.model_validate(p).model_dump() for p in available_players
-        ],
+        "available_players": [PlayerBase.model_validate(p).model_dump() for p in available_players],
         "current_picker": draft.current_picker_id,
     }
 
@@ -188,16 +168,12 @@ async def get_draft_rosters(draft_id: str, db: Session = Depends(get_db)):
         rosters[user.user_id] = {
             "user": user,
             "picks": user_picks,
-            "roster": {
-                "QB": [], "RB": [], "WR": [], "TE": [], "K": [], "DEF": []
-            },
+            "roster": {"QB": [], "RB": [], "WR": [], "TE": [], "K": [], "DEF": []},
         }
 
         for pick in user_picks:
             player = db.query(Player).filter_by(id=pick.player_id).first()
             if player and player.position in rosters[user.user_id]["roster"]:
-                rosters[user.user_id]["roster"][player.position].append(
-                    player
-                )
+                rosters[user.user_id]["roster"][player.position].append(player)
 
     return rosters

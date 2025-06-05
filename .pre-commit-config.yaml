@@ -14,7 +14,23 @@ repos:
     hooks:
       - id: flake8
         files: ^backend/
-        args: ['--max-line-length=88', '--extend-ignore=E203,W503']
+        args: ['--config=backend/.flake8']
+
+  # Python import sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        files: ^backend/
+        args: ['--profile', 'black']
+
+  # Python type checking (optional - can be slow)
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v1.13.0
+  #   hooks:
+  #     - id: mypy
+  #       files: ^backend/
+  #       additional_dependencies: [types-requests]
 
   # Frontend linting with ESLint
   - repo: local
@@ -26,7 +42,36 @@ repos:
         files: \.(js|jsx|ts|tsx)$
         pass_filenames: false
 
-  # Check for trailing whitespace
+  # Frontend type checking
+  - repo: local
+    hooks:
+      - id: typescript
+        name: TypeScript type check
+        entry: bash -c 'cd frontend && npx tsc --noEmit'
+        language: system
+        files: \.(ts|tsx)$
+        pass_filenames: false
+
+  # Prettier formatting for frontend (optional - if you want to add it)
+  # - repo: local
+  #   hooks:
+  #     - id: prettier
+  #       name: prettier
+  #       entry: bash -c 'cd frontend && npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,scss,json}"'
+  #       language: system
+  #       files: \.(js|jsx|ts|tsx|css|scss|json)$
+  #       pass_filenames: false
+
+  # Security checks
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.10
+    hooks:
+      - id: bandit
+        files: ^backend/
+        args: ['-r', 'backend/', '-ll']
+        exclude: ^backend/tests/
+
+  # General file checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
@@ -35,3 +80,47 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
         args: ['--maxkb=1000']
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Commit message linting
+  # - repo: https://github.com/commitizen-tools/commitizen
+  #   rev: v3.31.0
+  #   hooks:
+  #     - id: commitizen
+  #       stages: [commit-msg]
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix']
+
+  # Shell script linting
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+
+  # Dockerfile linting (if we add Docker later)
+  # - repo: https://github.com/hadolint/hadolint
+  #   rev: v2.13.0
+  #   hooks:
+  #     - id: hadolint-docker
+
+# Configuration for specific hooks
+exclude: |
+  (?x)^(
+    frontend/build/|
+    frontend/node_modules/|
+    backend/.venv/|
+    backend/__pycache__/|
+    backend/.pytest_cache/|
+    .*\.min\.js|
+    .*\.min\.css
+  )$
