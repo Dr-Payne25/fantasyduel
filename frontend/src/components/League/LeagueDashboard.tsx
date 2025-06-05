@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { api, League, LeagueUser, DraftPair } from '../../services/api';
+import NavBar from '../Navigation/NavBar';
 
 export default function LeagueDashboard() {
   const { leagueId } = useParams<{ leagueId: string }>();
@@ -66,22 +67,29 @@ export default function LeagueDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-sleeper-darker flex items-center justify-center">
-        <div className="text-xl">Loading league...</div>
+      <div className="min-h-screen bg-sleeper-darker">
+        <NavBar />
+        <div className="flex items-center justify-center h-96">
+          <div className="text-xl">Loading league...</div>
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-sleeper-darker flex items-center justify-center">
-        <div className="text-red-500">{error}</div>
+      <div className="min-h-screen bg-sleeper-darker">
+        <NavBar />
+        <div className="flex items-center justify-center h-96">
+          <div className="text-red-500">{error}</div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-sleeper-darker">
+      <NavBar />
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-sleeper-primary mb-2">{league?.name}</h1>

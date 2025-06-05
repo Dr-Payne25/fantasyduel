@@ -1,1574 +1,540 @@
 INFO:     Will watch for changes in these directories: ['/Users/alexpayne/code/fantasyduel/backend']
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [40400] using WatchFiles
-INFO:     Started server process [40403]
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [44618] using WatchFiles
+INFO:     Started server process [44621]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:49383 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49459 - "GET /api/players/pools/0 HTTP/1.1" 200 OK
-WARNING:  WatchFiles detected changes in 'venv/lib/python3.13/site-packages/urllib3/connectionpool.py', 'venv/lib/python3.13/site-packages/requests/_internal_utils.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/pyopenssl.py', 'venv/lib/python3.13/site-packages/urllib3/_version.py', 'venv/lib/python3.13/site-packages/requests/exceptions.py', 'venv/lib/python3.13/site-packages/urllib3/__init__.py', 'venv/lib/python3.13/site-packages/requests/__init__.py', 'venv/lib/python3.13/site-packages/requests/hooks.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/socks.py', 'venv/lib/python3.13/site-packages/charset_normalizer/__main__.py', 'venv/lib/python3.13/site-packages/urllib3/poolmanager.py', 'venv/lib/python3.13/site-packages/requests/auth.py', 'venv/lib/python3.13/site-packages/urllib3/util/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/http2/probe.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/connection.py', 'venv/lib/python3.13/site-packages/charset_normalizer/version.py', 'venv/lib/python3.13/site-packages/charset_normalizer/constant.py', 'venv/lib/python3.13/site-packages/charset_normalizer/cli/__main__.py', 'venv/lib/python3.13/site-packages/charset_normalizer/models.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/util/proxy.py', 'venv/lib/python3.13/site-packages/charset_normalizer/cd.py', 'venv/lib/python3.13/site-packages/charset_normalizer/utils.py', 'venv/lib/python3.13/site-packages/requests/models.py', 'venv/lib/python3.13/site-packages/urllib3/filepost.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/response.py', 'venv/lib/python3.13/site-packages/urllib3/util/response.py', 'venv/lib/python3.13/site-packages/urllib3/_request_methods.py', 'venv/lib/python3.13/site-packages/charset_normalizer/md.py', 'venv/lib/python3.13/site-packages/requests/help.py', 'venv/lib/python3.13/site-packages/urllib3/util/wait.py', 'venv/lib/python3.13/site-packages/urllib3/util/util.py', 'venv/lib/python3.13/site-packages/requests/__version__.py', 'venv/lib/python3.13/site-packages/requests/compat.py', 'venv/lib/python3.13/site-packages/urllib3/util/timeout.py', 'venv/lib/python3.13/site-packages/urllib3/response.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/request.py', 'venv/lib/python3.13/site-packages/requests/sessions.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/fetch.py', 'venv/lib/python3.13/site-packages/requests/adapters.py', 'venv/lib/python3.13/site-packages/urllib3/exceptions.py', 'venv/lib/python3.13/site-packages/charset_normalizer/cli/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/http2/connection.py', 'venv/lib/python3.13/site-packages/urllib3/http2/__init__.py', 'venv/lib/python3.13/site-packages/requests/cookies.py', 'venv/lib/python3.13/site-packages/urllib3/_collections.py', 'venv/lib/python3.13/site-packages/urllib3/util/request.py', 'venv/lib/python3.13/site-packages/charset_normalizer/__init__.py', 'venv/lib/python3.13/site-packages/requests/api.py', 'venv/lib/python3.13/site-packages/requests/structures.py', 'venv/lib/python3.13/site-packages/requests/status_codes.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/util/ssl_.py', 'venv/lib/python3.13/site-packages/urllib3/connection.py', 'venv/lib/python3.13/site-packages/urllib3/util/retry.py', 'venv/lib/python3.13/site-packages/charset_normalizer/api.py', 'venv/lib/python3.13/site-packages/urllib3/util/ssl_match_hostname.py', 'venv/lib/python3.13/site-packages/urllib3/util/connection.py', 'venv/lib/python3.13/site-packages/urllib3/util/url.py', 'venv/lib/python3.13/site-packages/urllib3/util/ssltransport.py', 'venv/lib/python3.13/site-packages/urllib3/_base_connection.py', 'venv/lib/python3.13/site-packages/requests/packages.py', 'venv/lib/python3.13/site-packages/requests/utils.py', 'venv/lib/python3.13/site-packages/charset_normalizer/legacy.py', 'venv/lib/python3.13/site-packages/urllib3/fields.py', 'venv/lib/python3.13/site-packages/requests/certs.py'. Reloading...
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/alexpayne/code/fantasyduel/backend/venv/lib/python3.13/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:64699 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64732 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:64859 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:64939 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64940 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64942 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65234 - "OPTIONS /api/drafts/38071bde-a949-4f36-8c1e-2b5495c74344 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 65235) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65234 - "GET /api/drafts/38071bde-a949-4f36-8c1e-2b5495c74344 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65274) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65273 - "GET /api/drafts/38071bde-a949-4f36-8c1e-2b5495c74344 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 65278) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     ('127.0.0.1', 65283) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65287) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65291) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65295) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65298) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65302) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65306) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65310) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65314) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65318) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65322) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65328) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65332) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65354) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65358) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 65362) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65365) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65369) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65372) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65376) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65380) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65384) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65389) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 65395) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65399) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65403) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65409) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65413) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 65417) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65422) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65426) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65432) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65438) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65457) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65462) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 65466) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65471) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65474) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65478) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65483) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65506) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65510) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65513) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65520) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 65535) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49155) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49159) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49163) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49167) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49171) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49196) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49201) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49206) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49209) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49214) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49220) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49226) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49246) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49250) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49253) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49256) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49261) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49265) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49269) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49272) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49290) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49298) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49301) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49305) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49310) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49314) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49318) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49321) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49326) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49330) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49352) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49357) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49360) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49367) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49371) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49375) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49381) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49385) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49389) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49393) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49416) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49421) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49424) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49429) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49434) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49439) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49443) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49447) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49451) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49455) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 49460) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49465) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49469) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49493) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49496) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49492 - "GET /api/drafts/38071bde-a949-4f36-8c1e-2b5495c74344 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 49500) - "WebSocket /ws/null" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49499 - "GET /api/drafts/38071bde-a949-4f36-8c1e-2b5495c74344 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 49503) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49506) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49511) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49515) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49519) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49523) - "WebSocket /ws/38071bde-a949-4f36-8c1e-2b5495c74344" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 49545) - "WebSocket /ws/null" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'tests/__init__.py'. Reloading...
 INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [40403]
-INFO:     Started server process [40697]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:50288 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50290 - "POST /api/leagues/create HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50292 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50294 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50297 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50299 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50301 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50303 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50305 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50307 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50310 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50312 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50314 - "POST /api/leagues/join HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50317 - "POST /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3/create-pairs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50319 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50451 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50453 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50453 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50451 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50473 - "OPTIONS /api/drafts/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50473 - "POST /api/drafts/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50473 - "OPTIONS /api/drafts/undefined HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50476 - "OPTIONS /api/drafts/undefined HTTP/1.1" 200 OK
-INFO:     ('127.0.0.1', 50477) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:50476 - "GET /api/drafts/undefined HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50473 - "GET /api/drafts/undefined HTTP/1.1" 404 Not Found
-INFO:     ('127.0.0.1', 50480) - "WebSocket /ws/undefined" [accepted]
 INFO:     connection closed
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50483) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50486) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50491) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 50499) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection closed
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50502) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50505) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50508) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50511) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50514) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 50517) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection closed
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50520) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:50528 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50529 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50529 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50528 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50531) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50534) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:50528 - "OPTIONS /api/drafts/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50528 - "POST /api/drafts/start HTTP/1.1" 400 Bad Request
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50537) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50540) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50543) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50546) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50551) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50554) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50563) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50569) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50574) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50577) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50580) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50583) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50586) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50590) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50594) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50598) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50602) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50605) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50608) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50611) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50614) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50617) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50620) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50623) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50628) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50634) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50639) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50642) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50645) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50648) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50651) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50654) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50658) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50661) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50664) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50667) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50670) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50673) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50676) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50680) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50683) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50687) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50690) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50693) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50696) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50699) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50703) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50706) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50709) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50712) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50715) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50718) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50721) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50724) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50728) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50732) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50735) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50740) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50743) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50746) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50749) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50752) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50755) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50758) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50763) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50766) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50769) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50772) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50775) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50780) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50784) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50787) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50802) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50805) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50808) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50811) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50814) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50817) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50820) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50824) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50844) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50847) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50850) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50853) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50856) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50859) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50862) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50865) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50873) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50876) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50891) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50900) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50905) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50908) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50911) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50916) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50932) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50935) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50938) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50941) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50944) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50948) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50968) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50971) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50974) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 50977) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50980) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50983) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 50986) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50990) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 50993) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51012) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51015) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51018) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51021) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51024) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51028) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51031) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51050) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51053) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51057) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51061) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51064) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51068) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51071) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51075) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51078) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
-INFO:     Shutting down
 INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40697]
-INFO:     Started server process [40846]
+INFO:     Finished server process [44621]
+INFO:     Started server process [44918]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 51092) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51094) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51097) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51100) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51103) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51106) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51110) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51113) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51126) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51129) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51132) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51135) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 51138) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51141) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51144) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51148) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51151) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51154) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51157) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51160) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51174) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
+WARNING:  WatchFiles detected changes in 'tests/conftest.py'. Reloading...
 INFO:     Shutting down
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40846]
-INFO:     Started server process [40891]
+INFO:     Finished server process [44918]
+INFO:     Started server process [44922]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 51178) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51180) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51183) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51186) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51189) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51193) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51196) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51199) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51203) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51206) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51209) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51212) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51215) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51218) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51221) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51224) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51227) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51230) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-WARNING:  WatchFiles detected changes in 'app/schemas.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'tests/test_auth.py'. Reloading...
 INFO:     Shutting down
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40891]
-INFO:     Started server process [40892]
+INFO:     Finished server process [44922]
+INFO:     Started server process [44929]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 51245) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 51248) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51251) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51255) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51258) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51261) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51265) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51268) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51271) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51274) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51277) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51280) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'tests/test_leagues.py'. Reloading...
 INFO:     Shutting down
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40892]
-INFO:     Started server process [40894]
+INFO:     Finished server process [44929]
+INFO:     Started server process [44959]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 51295) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51297) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51300) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51303) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51306) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51309) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51313) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51316) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51319) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51323) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51326) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51329) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'tests/test_drafts.py'. Reloading...
 INFO:     Shutting down
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40894]
-INFO:     Started server process [40903]
+INFO:     Finished server process [44959]
+INFO:     Started server process [44981]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 51344) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51347) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51350) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51353) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51356) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51359) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51363) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51366) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51369) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51372) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51375) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51395) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:51393 - "GET /api/drafts/undefined HTTP/1.1" 404 Not Found
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51399) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51401) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51405) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51407) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51410) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51412) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51415) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51417) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51420) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51422) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51426) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51428) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51431) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51433) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51436) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51438) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51441) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51443) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51446) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51448) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51451) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51453) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51456) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51458) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51461) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51463) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51485) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51487) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51490) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51492) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51495) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51497) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51500) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51502) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51505) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51507) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51510) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51512) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51516) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51518) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51521) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51523) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51526) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51528) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51531) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51533) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51536) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51538) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51541) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51543) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51546) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
+WARNING:  WatchFiles detected changes in 'tests/test_pool_division.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44981]
+INFO:     Started server process [45037]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'venv/lib/python3.13/site-packages/faker/providers/address/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/gsql.py', 'venv/lib/python3.13/site-packages/pygments/modeline.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ka_GE/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/python_api.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ta_IN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/bare.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/diff.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_luau_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/job/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/coverage/html.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ada.py', 'venv/lib/python3.13/site-packages/faker/providers/job/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/pascal.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ne_NP/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatter.py', 'venv/lib/python3.13/site-packages/faker/providers/person/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/usd.py', 'venv/lib/python3.13/site-packages/pygments/lexers/numbair.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/pluggy/_result.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ecl.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/autumn.py', 'venv/lib/python3.13/site-packages/_pytest/mark/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/config/exceptions.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/en_AU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/hi_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/soong.py', 'venv/lib/python3.13/site-packages/pygments/styles/bw.py', 'venv/lib/python3.13/site-packages/faker/providers/passport/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/ka_GE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/pastebin.py', 'venv/lib/python3.13/site-packages/pygments/lexers/igor.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/misc/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/barcode/fr_CA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/asm.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/en_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/native.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/fortran.py', 'venv/lib/python3.13/site-packages/faker/providers/company/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/yara.py', 'venv/lib/python3.13/site-packages/faker/providers/address/de/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/yang.py', 'venv/lib/python3.13/site-packages/faker/providers/credit_card/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/_io/wcwidth.py', 'venv/lib/python3.13/site-packages/pygments/lexers/mojo.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/token.py', 'venv/lib/python3.13/site-packages/coverage/version.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/perl.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/ar_BH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/codeql.py', 'venv/lib/python3.13/site-packages/faker/providers/color/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fr_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/prql.py', 'venv/lib/python3.13/site-packages/faker/providers/color/color.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/faker/utils/datasets.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/fr_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_MS/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/cplint.py', 'venv/lib/python3.13/site-packages/faker/sphinx/validator.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ta_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/es_CO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatters/pangomarkup.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_qlik_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/lt_LT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_googlesql_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ar_AE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/promql.py', 'venv/lib/python3.13/site-packages/faker/providers/company/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/gleam.py', 'venv/lib/python3.13/site-packages/faker/providers/job/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/pluggy/_tracing.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/openscad.py', 'venv/lib/python3.13/site-packages/pygments/lexers/markup.py', 'venv/lib/python3.13/site-packages/pygments/lexers/x10.py', 'venv/lib/python3.13/site-packages/faker/providers/job/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/srcinfo.py', 'venv/lib/python3.13/site-packages/_pytest/cacheprovider.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/coverage/inorout.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/_py/path.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fr_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/es/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/is_IS/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/rego.py', 'venv/lib/python3.13/site-packages/pygments/styles/trac.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/lisp.py', 'venv/lib/python3.13/site-packages/_pytest/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/en_IE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ga_IE/__init__.py', 'venv/lib/python3.13/site-packages/coverage/control.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_scheme_builtins.py', 'venv/lib/python3.13/site-packages/pygments/formatters/img.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/friendly.py', 'venv/lib/python3.13/site-packages/pygments/lexers/trafficscript.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/jvm.py', 'venv/lib/python3.13/site-packages/_pytest/config/compat.py', 'venv/lib/python3.13/site-packages/faker/providers/address/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/isbn/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/sas.py', 'venv/lib/python3.13/site-packages/faker/providers/address/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/graph.py', 'venv/lib/python3.13/site-packages/_pytest/_code/code.py', 'venv/lib/python3.13/site-packages/_pytest/monkeypatch.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/oberon.py', 'venv/lib/python3.13/site-packages/pygments/styles/rrt.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/praat.py', 'venv/lib/python3.13/site-packages/faker/providers/color/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/pytest_mock/_version.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Antarctica/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ambient.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_stata_builtins.py', 'venv/lib/python3.13/site-packages/pygments/lexers/monte.py', 'venv/lib/python3.13/site-packages/pytest_cov/compat.py', 'venv/lib/python3.13/site-packages/pygments/lexers/snobol.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/faker/decode/codes.py', 'venv/lib/python3.13/site-packages/_pytest/deprecated.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/rust.py', 'venv/lib/python3.13/site-packages/pygments/formatters/terminal.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/es/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/pawn.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/mark/structures.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/coverage/cmdline.py', 'venv/lib/python3.13/site-packages/_pytest/_argcomplete.py', 'venv/lib/python3.13/site-packages/pytest_mock/_util.py', 'venv/lib/python3.13/site-packages/_pytest/assertion/__init__.py', 'venv/lib/python3.13/site-packages/faker/utils/decorators.py', 'venv/lib/python3.13/site-packages/faker/providers/address/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/de_LU/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/America/Kentucky/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/sql.py', 'venv/lib/python3.13/site-packages/coverage/disposition.py', 'venv/lib/python3.13/site-packages/pygments/lexers/stata.py', 'venv/lib/python3.13/site-packages/_pytest/scope.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/c_cpp.py', 'venv/lib/python3.13/site-packages/pygments/lexers/html.py', 'venv/lib/python3.13/site-packages/pygments/lexers/foxpro.py', 'venv/lib/python3.13/site-packages/faker/providers/company/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/pluggy/_manager.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/lv_LV/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/wgsl.py', 'venv/lib/python3.13/site-packages/faker/providers/misc/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/lv_LV/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/coverage/pytracer.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ar_JO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/graphviz.py', 'venv/lib/python3.13/site-packages/faker/providers/isbn/isbn.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/utils/distribution.py', 'venv/lib/python3.13/site-packages/pygments/styles/material.py', 'venv/lib/python3.13/site-packages/tzdata/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_scilab_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_TH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/actionscript.py', 'venv/lib/python3.13/site-packages/faker/providers/person/bg_BG/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/coverage/files.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Mexico/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ml.py', 'venv/lib/python3.13/site-packages/faker/providers/company/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/fruity.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_mapping.py', 'venv/lib/python3.13/site-packages/faker/providers/misc/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/onedark.py', 'venv/lib/python3.13/site-packages/pytest_cov/embed.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/lt_LT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/bg_BG/__init__.py', 'venv/lib/python3.13/site-packages/coverage/env.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/coverage/python.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/de_LI/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/csound.py', 'venv/lib/python3.13/site-packages/faker/providers/address/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/stata_light.py', 'venv/lib/python3.13/site-packages/faker/providers/address/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/python.py', 'venv/lib/python3.13/site-packages/coverage/templite.py', 'venv/lib/python3.13/site-packages/pygments/sphinxext.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/inkpot.py', 'venv/lib/python3.13/site-packages/faker/providers/address/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/smithy.py', 'venv/lib/python3.13/site-packages/faker/providers/color/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/prolog.py', 'venv/lib/python3.13/site-packages/pygments/lexers/arrow.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/web.py', 'venv/lib/python3.13/site-packages/pygments/lexers/gcodelexer.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/qvt.py', 'venv/lib/python3.13/site-packages/faker/utils/text.py', 'venv/lib/python3.13/site-packages/pygments/lexers/email.py', 'venv/lib/python3.13/site-packages/pygments/lexers/varnish.py', 'venv/lib/python3.13/site-packages/pygments/lexers/lean.py', 'venv/lib/python3.13/site-packages/faker/providers/emoji/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/rnc.py', 'venv/lib/python3.13/site-packages/coverage/sysmon.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/passport/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_julia_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/ar_JO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/meson.py', 'venv/lib/python3.13/site-packages/faker/providers/company/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/uz_UZ/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/pytester_assertions.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Pacific/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/fr_CA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/webmisc.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/passport/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/iniconfig/_version.py', 'venv/lib/python3.13/site-packages/coverage/plugin.py', 'venv/lib/python3.13/site-packages/pygments/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/coffee.py', 'venv/lib/python3.13/site-packages/faker/providers/person/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/hexdump.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/manni.py', 'venv/lib/python3.13/site-packages/pluggy/_version.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/tw_GH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/clean.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/scdoc.py', 'venv/lib/python3.13/site-packages/pygments/lexers/pony.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/la/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/ar_AA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/factor.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_PK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tact.py', 'venv/lib/python3.13/site-packages/faker/providers/person/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ar_SA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/vyper.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/es/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/idl.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/verification.py', 'venv/lib/python3.13/site-packages/faker/providers/credit_card/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fr_QC/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/blueprint.py', 'venv/lib/python3.13/site-packages/faker/providers/person/lt_LT/__init__.py', 'venv/lib/python3.13/site-packages/pluggy/_warnings.py', 'venv/lib/python3.13/site-packages/faker/providers/person/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/et_EE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/skipping.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/stata_dark.py', 'venv/lib/python3.13/site-packages/pygments/lexers/hare.py', 'venv/lib/python3.13/site-packages/_pytest/reports.py', 'venv/lib/python3.13/site-packages/faker/utils/checksums.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/fantom.py', 'venv/lib/python3.13/site-packages/pygments/lexers/business.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/dk_DK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_AU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/vip.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/d.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/rdf.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/shell.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/passport/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/matlab.py', 'venv/lib/python3.13/site-packages/pygments/lexers/jsonnet.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/America/Indiana/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/misc/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/dalvik.py', 'venv/lib/python3.13/site-packages/faker/providers/address/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/coverage/phystokens.py', 'venv/lib/python3.13/site-packages/faker/providers/misc/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/emoji/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/en_IE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/scripting.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Canada/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tcl.py', 'venv/lib/python3.13/site-packages/pygments/lexers/javascript.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/__init__.py', 'venv/lib/python3.13/site-packages/faker/typing.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/coverage/exceptions.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/textfmts.py', 'venv/lib/python3.13/site-packages/pygments/lexers/julia.py', 'venv/lib/python3.13/site-packages/_pytest/debugging.py', 'venv/lib/python3.13/site-packages/pygments/lexers/func.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/chapel.py', 'venv/lib/python3.13/site-packages/faker/providers/credit_card/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/en_NZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_asy_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_NZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/inferno.py', 'venv/lib/python3.13/site-packages/pygments/styles/tango.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Indian/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/phix.py', 'venv/lib/python3.13/site-packages/faker/providers/python/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/supercollider.py', 'venv/lib/python3.13/site-packages/faker/providers/profile/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/cli.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_mysql_builtins.py', 'venv/lib/python3.13/site-packages/coverage/regions.py', 'venv/lib/python3.13/site-packages/pygments/lexers/webassembly.py', 'venv/lib/python3.13/site-packages/faker/providers/address/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/coverage/collector.py', 'venv/lib/python3.13/site-packages/faker/providers/company/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/bs_BA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/bibtex.py', 'venv/lib/python3.13/site-packages/pygments/lexers/boa.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/lt_LT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/configs.py', 'venv/lib/python3.13/site-packages/faker/sphinx/documentor.py', 'venv/lib/python3.13/site-packages/pygments/styles/staroffice.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/et_EE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_lasso_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/job/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/php.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/sphinx/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/gruvbox.py', 'venv/lib/python3.13/site-packages/pygments/lexers/maxima.py', 'venv/lib/python3.13/site-packages/faker/providers/address/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/thingsdb.py', 'venv/lib/python3.13/site-packages/faker/providers/company/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/monokai.py', 'venv/lib/python3.13/site-packages/faker/providers/address/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/arturo.py', 'venv/lib/python3.13/site-packages/pygments/lexers/spice.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/dns.py', 'venv/lib/python3.13/site-packages/faker/providers/job/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/capnproto.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/runner.py', 'venv/lib/python3.13/site-packages/pygments/lexers/dsls.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/America/Argentina/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_csound_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/color/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/parasail.py', 'venv/lib/python3.13/site-packages/faker/providers/python/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_IE/__init__.py', 'venv/lib/python3.13/site-packages/coverage/sqlitedb.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/eiffel.py', 'venv/lib/python3.13/site-packages/pygments/lexers/objective.py', 'venv/lib/python3.13/site-packages/pygments/lexers/zig.py', 'venv/lib/python3.13/site-packages/pygments/lexers/smalltalk.py', 'venv/lib/python3.13/site-packages/pygments/styles/rainbow_dash.py', 'venv/lib/python3.13/site-packages/faker/providers/barcode/en_CA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_stan_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/elpi.py', 'venv/lib/python3.13/site-packages/coverage/config.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/assertion/truncate.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ride.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/es_CO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/slash.py', 'venv/lib/python3.13/site-packages/pygments/lexers/make.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/en_CA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/basic.py', 'venv/lib/python3.13/site-packages/pygments/styles/emacs.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/user_agent/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/asc.py', 'venv/lib/python3.13/site-packages/pygments/lexers/j.py', 'venv/lib/python3.13/site-packages/faker/providers/file/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_vbscript_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatters/irc.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/user_agent/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/filter.py', 'venv/lib/python3.13/site-packages/pygments/filters/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ampl.py', 'venv/lib/python3.13/site-packages/pytest_asyncio/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ta_IN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/dylan.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/warnings.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/en_AU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/r.py', 'venv/lib/python3.13/site-packages/faker/providers/address/zu_ZA/__init__.py', 'venv/lib/python3.13/site-packages/faker/proxy.py', 'venv/lib/python3.13/site-packages/faker/providers/address/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexer.py', 'venv/lib/python3.13/site-packages/pygments/lexers/nit.py', 'venv/lib/python3.13/site-packages/_pytest/_code/source.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tls.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_AU/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/recwarn.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tablegen.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/coverage/types.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ka_GE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/wren.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es_CO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/pytest/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/int_fiction.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_css_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/doctest.py', 'venv/lib/python3.13/site-packages/faker/providers/person/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/de_LU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/automation.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/amdgpu.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/en_IN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_vim_builtins.py', 'venv/lib/python3.13/site-packages/iniconfig/_parse.py', 'venv/lib/python3.13/site-packages/pygments/lexers/iolang.py', 'venv/lib/python3.13/site-packages/faker/providers/job/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/raises.py', 'venv/lib/python3.13/site-packages/faker/providers/person/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/maple.py', 'venv/lib/python3.13/site-packages/faker/providers/address/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/teal.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/credit_card/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/floscript.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/coverage/tomlconfig.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/math.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/ar_AA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/timing.py', 'venv/lib/python3.13/site-packages/coverage/__main__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/lightbulb.py', 'venv/lib/python3.13/site-packages/pygments/lexers/gdscript.py', 'venv/lib/python3.13/site-packages/faker/providers/color/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/es_CO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/testing.py', 'venv/lib/python3.13/site-packages/faker/providers/color/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/factory.py', 'venv/lib/python3.13/site-packages/faker/providers/person/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/scanner.py', 'venv/lib/python3.13/site-packages/pygments/lexers/pointless.py', 'venv/lib/python3.13/site-packages/coverage/plugin_support.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/de/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/urbi.py', 'venv/lib/python3.13/site-packages/pygments/lexers/sas.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/es_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/installers.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/style.py', 'venv/lib/python3.13/site-packages/pygments/lexers/nix.py', 'venv/lib/python3.13/site-packages/pygments/styles/abap.py', 'venv/lib/python3.13/site-packages/coverage/report.py', 'venv/lib/python3.13/site-packages/faker/providers/job/fr_CH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_php_builtins.py', 'venv/lib/python3.13/site-packages/pygments/lexers/erlang.py', 'venv/lib/python3.13/site-packages/pygments/styles/zenburn.py', 'venv/lib/python3.13/site-packages/pygments/lexers/fift.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ncl.py', 'venv/lib/python3.13/site-packages/iniconfig/__init__.py', 'venv/lib/python3.13/site-packages/faker/__main__.py', 'venv/lib/python3.13/site-packages/_pytest/_py/error.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/hi_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ooc.py', 'venv/lib/python3.13/site-packages/pygments/formatters/svg.py', 'venv/lib/python3.13/site-packages/faker/providers/job/es/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/ar_SA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/mosel.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ne_NP/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/assertion/util.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ar_PS/__init__.py', 'venv/lib/python3.13/site-packages/pytest_asyncio/plugin.py', 'venv/lib/python3.13/site-packages/pygments/lexers/elm.py', 'venv/lib/python3.13/site-packages/faker/providers/file/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Africa/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/th/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/config/argparsing.py', 'venv/lib/python3.13/site-packages/pygments/styles/xcode.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_NZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/en_US/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/junitxml.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ar_EG/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/crystal.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/en_US/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/US/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/_code/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/coverage/execfile.py', 'venv/lib/python3.13/site-packages/faker/providers/job/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Chile/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/pytest_mock/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/ar_PS/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/typst.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_BD/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/kuin.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/unistring.py', 'venv/lib/python3.13/site-packages/faker/sphinx/autodoc.py', 'venv/lib/python3.13/site-packages/pygments/lexers/theorem.py', 'venv/lib/python3.13/site-packages/pygments/lexers/cddl.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/bs_BA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/uz_UZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/default.py', 'venv/lib/python3.13/site-packages/pygments/formatters/html.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/pddl.py', 'venv/lib/python3.13/site-packages/faker/providers/person/de_LI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/gu_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/barcode/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/gu_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/it_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/decode/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/_io/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/sq_AL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/mips.py', 'venv/lib/python3.13/site-packages/pygments/lexers/hdl.py', 'venv/lib/python3.13/site-packages/pygments/styles/vs.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/en_IN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/jmespath.py', 'venv/lib/python3.13/site-packages/coverage/bytecode.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/typoscript.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_tsql_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/threadexception.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/faker/utils/loading.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/documentor.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_mql_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/es_MX/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Brazil/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/hookspec.py', 'venv/lib/python3.13/site-packages/faker/providers/barcode/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/coverage/context.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/zu_ZA/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/tracemalloc.py', 'venv/lib/python3.13/site-packages/pygments/lexers/special.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_sourcemod_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/pygments/util.py', 'venv/lib/python3.13/site-packages/pygments/lexers/modeling.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/lv_LV/__init__.py', 'venv/lib/python3.13/site-packages/pytest_mock/plugin.py', 'venv/lib/python3.13/site-packages/coverage/data.py', 'venv/lib/python3.13/site-packages/pygments/styles/algol.py', 'venv/lib/python3.13/site-packages/coverage/numbits.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Asia/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/macaulay2.py', 'venv/lib/python3.13/site-packages/pygments/formatters/__init__.py', 'venv/lib/python3.13/site-packages/pluggy/_hooks.py', 'venv/lib/python3.13/site-packages/faker/providers/person/or_IN/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/nodes.py', 'venv/lib/python3.13/site-packages/pygments/lexers/console.py', 'venv/lib/python3.13/site-packages/pygments/lexers/grammar_notation.py', 'venv/lib/python3.13/site-packages/coverage/parser.py', 'venv/lib/python3.13/site-packages/pygments/styles/arduino.py', 'venv/lib/python3.13/site-packages/faker/providers/job/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/en_NZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/capture.py', 'venv/lib/python3.13/site-packages/pygments/styles/solarized.py', 'venv/lib/python3.13/site-packages/pygments/styles/dracula.py', 'venv/lib/python3.13/site-packages/pygments/styles/friendly_grayscale.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/en_CA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/solidity.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/c_like.py', 'venv/lib/python3.13/site-packages/faker/providers/person/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ruby.py', 'venv/lib/python3.13/site-packages/faker/providers/address/ka_GE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/bg_BG/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/ar_PS/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/igor.py', 'venv/lib/python3.13/site-packages/faker/providers/person/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/legacypath.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/carbon.py', 'venv/lib/python3.13/site-packages/_pytest/logging.py', 'venv/lib/python3.13/site-packages/pygments/lexers/modula2.py', 'venv/lib/python3.13/site-packages/pygments/styles/borland.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/es_CO/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/setupplan.py', 'venv/lib/python3.13/site-packages/faker/providers/company/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/ng_NG/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/lovelace.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Europe/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/resource.py', 'venv/lib/python3.13/site-packages/coverage/misc.py', 'venv/lib/python3.13/site-packages/pluggy/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/xorg.py', 'venv/lib/python3.13/site-packages/pygments/styles/paraiso_dark.py', 'venv/lib/python3.13/site-packages/faker/contrib/pytest/plugin.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/murphy.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/bg_BG/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/colorful.py', 'venv/lib/python3.13/site-packages/faker/providers/address/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/procfile.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/es/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/esoteric.py', 'venv/lib/python3.13/site-packages/pygments/formatters/latex.py', 'venv/lib/python3.13/site-packages/_pytest/warning_types.py', 'venv/lib/python3.13/site-packages/pygments/plugin.py', 'venv/lib/python3.13/site-packages/pygments/lexers/minecraft.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/no_NO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/berry.py', 'venv/lib/python3.13/site-packages/faker/providers/company/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Atlantic/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/faulthandler.py', 'venv/lib/python3.13/site-packages/faker/providers/color/uz_UZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/el_CY/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/credit_card/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_cocoa_builtins.py', 'venv/lib/python3.13/site-packages/pygments/lexers/verifpal.py', 'venv/lib/python3.13/site-packages/pygments/styles/lilypond.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_lua_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/rebol.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/unicon.py', 'venv/lib/python3.13/site-packages/_pytest/compat.py', 'venv/lib/python3.13/site-packages/_pytest/fixtures.py', 'venv/lib/python3.13/site-packages/faker/providers/address/fr_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/_py/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es_CA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatters/groff.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/bg_BG/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/en_NZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Australia/__init__.py', 'venv/lib/python3.13/site-packages/pytest/__main__.py', 'venv/lib/python3.13/site-packages/_pytest/freeze_support.py', 'venv/lib/python3.13/site-packages/pygments/lexers/data.py', 'venv/lib/python3.13/site-packages/pygments/regexopt.py', 'venv/lib/python3.13/site-packages/_pytest/tmpdir.py', 'venv/lib/python3.13/site-packages/pygments/lexers/robotframework.py', 'venv/lib/python3.13/site-packages/faker/providers/address/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/whiley.py', 'venv/lib/python3.13/site-packages/pygments/styles/nord.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/smv.py', 'venv/lib/python3.13/site-packages/pygments/lexers/other.py', 'venv/lib/python3.13/site-packages/faker/providers/color/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/json5.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/America/North_Dakota/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/graphics.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/unittest.py', 'venv/lib/python3.13/site-packages/pygments/formatters/_mapping.py', 'venv/lib/python3.13/site-packages/py.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_postgres_builtins.py', 'venv/lib/python3.13/site-packages/coverage/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/savi.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/bg_BG/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/zh_TW/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ezhil.py', 'venv/lib/python3.13/site-packages/faker/providers/profile/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/main.py', 'venv/lib/python3.13/site-packages/pluggy/_callers.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/America/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/barcode/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/barcode/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ul4.py', 'venv/lib/python3.13/site-packages/faker/providers/color/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/it_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/cmdline.py', 'venv/lib/python3.13/site-packages/pygments/lexers/functional.py', 'venv/lib/python3.13/site-packages/pygments/lexers/jsx.py', 'venv/lib/python3.13/site-packages/faker/providers/company/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ldap.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ar_AA/__init__.py', 'venv/lib/python3.13/site-packages/faker/contrib/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/config/findpaths.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ta_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/faker/generator.py', 'venv/lib/python3.13/site-packages/pygments/console.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/jslt.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/uz_UZ/__init__.py', 'venv/lib/python3.13/site-packages/pytest_asyncio/_version.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/lb_LU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/tw_GH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/coverage/multiproc.py', 'venv/lib/python3.13/site-packages/faker/providers/company/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/sbn/sbn.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/coverage/annotate.py', 'venv/lib/python3.13/site-packages/_pytest/outcomes.py', 'venv/lib/python3.13/site-packages/faker/providers/person/yo_NG/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/__init__.py', 'venv/lib/python3.13/site-packages/faker/exceptions.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/et_EE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/he_IL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/ru_RU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/uz_UZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/mime.py', 'venv/lib/python3.13/site-packages/faker/providers/address/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/ar_AA/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tlb.py', 'venv/lib/python3.13/site-packages/_pytest/_io/saferepr.py', 'venv/lib/python3.13/site-packages/faker/providers/color/hy_AM/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/stepwise.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/ka_GE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/futhark.py', 'venv/lib/python3.13/site-packages/pygments/lexers/archetype.py', 'venv/lib/python3.13/site-packages/_pytest/unraisableexception.py', 'venv/lib/python3.13/site-packages/pygments/lexers/asn1.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/sw/__init__.py', 'venv/lib/python3.13/site-packages/coverage/xmlreport.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_openedge_builtins.py', 'venv/lib/python3.13/site-packages/pygments/lexers/go.py', 'venv/lib/python3.13/site-packages/pygments/lexers/teraterm.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/sl_SI/__init__.py', 'venv/lib/python3.13/site-packages/faker/config.py', 'venv/lib/python3.13/site-packages/pygments/lexers/bdd.py', 'venv/lib/python3.13/site-packages/pygments/lexers/textedit.py', 'venv/lib/python3.13/site-packages/pygments/lexers/apdlexer.py', 'venv/lib/python3.13/site-packages/pygments/lexers/algebra.py', 'venv/lib/python3.13/site-packages/faker/providers/job/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/bqn.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/compiled.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_cl_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/company/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/nl_NL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ar_PS/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/vim.py', 'venv/lib/python3.13/site-packages/faker/providers/address/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/pytester.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/pytest_cov/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_IE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/felix.py', 'venv/lib/python3.13/site-packages/_pytest/helpconfig.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tnt.py', 'venv/lib/python3.13/site-packages/_pytest/_io/pprint.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/tr_TR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/dax.py', 'venv/lib/python3.13/site-packages/faker/providers/job/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/el_GR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/apl.py', 'venv/lib/python3.13/site-packages/faker/providers/job/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/isbn/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/sbn/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/es_ES/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/stash.py', 'venv/lib/python3.13/site-packages/pygments/styles/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatters/bbcode.py', 'venv/lib/python3.13/site-packages/pygments/styles/paraiso_light.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatters/rtf.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_usd_builtins.py', 'venv/lib/python3.13/site-packages/pygments/lexers/tal.py', 'venv/lib/python3.13/site-packages/faker/providers/job/ka_GE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/freefem.py', 'venv/lib/python3.13/site-packages/pygments/lexers/python.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/fa_IR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/parsers.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/sv_SE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/nl_BE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/rita.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Arctic/__init__.py', 'venv/lib/python3.13/site-packages/coverage/core.py', 'venv/lib/python3.13/site-packages/pygments/lexers/nimrod.py', 'venv/lib/python3.13/site-packages/pygments/formatters/terminal256.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/hi_IN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/text.py', 'venv/lib/python3.13/site-packages/_pytest/mark/expression.py', 'venv/lib/python3.13/site-packages/coverage/lcovreport.py', 'venv/lib/python3.13/site-packages/pygments/styles/_mapping.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/setuponly.py', 'venv/lib/python3.13/site-packages/pygments/lexers/sgf.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/kusto.py', 'venv/lib/python3.13/site-packages/coverage/jsonreport.py', 'venv/lib/python3.13/site-packages/_pytest/pathlib.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/bs_BA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/hr_HR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/gh_dark.py', 'venv/lib/python3.13/site-packages/faker/providers/job/pt_BR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/haxe.py', 'venv/lib/python3.13/site-packages/faker/providers/job/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/formatters/other.py', 'venv/lib/python3.13/site-packages/faker/providers/credit_card/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/en_IN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/devicetree.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_lilypond_builtins.py', 'venv/lib/python3.13/site-packages/faker/providers/job/uk_UA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/qlik.py', 'venv/lib/python3.13/site-packages/_pytest/_io/terminalwriter.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/wowtoc.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/fi_FI/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/de_DE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ne_NP/__init__.py', 'venv/lib/python3.13/site-packages/faker/contrib/pytest/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/ro_RO/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/config/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/templates.py', 'venv/lib/python3.13/site-packages/pygments/lexers/roboconf.py', 'venv/lib/python3.13/site-packages/faker/providers/color/az_AZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/es_AR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/terminal.py', 'venv/lib/python3.13/site-packages/coverage/sqldata.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/it_IT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/mt_MT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/zh_CN/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/lorem/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ja_JP/__init__.py', 'venv/lib/python3.13/site-packages/faker/sphinx/docstring.py', 'venv/lib/python3.13/site-packages/pytest_cov/plugin.py', 'venv/lib/python3.13/site-packages/faker/providers/isbn/__init__.py', 'venv/lib/python3.13/site-packages/pytest_cov/engine.py', 'venv/lib/python3.13/site-packages/faker/providers/job/pt_PT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/th_TH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/_ada_builtins.py', 'venv/lib/python3.13/site-packages/coverage/debug.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/tl_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/sbn/rules.py', 'venv/lib/python3.13/site-packages/faker/providers/doi/__init__.py', 'venv/lib/python3.13/site-packages/coverage/results.py', 'venv/lib/python3.13/site-packages/faker/providers/person/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/en_US/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/webidl.py', 'venv/lib/python3.13/site-packages/pygments/__main__.py', 'venv/lib/python3.13/site-packages/coverage/report_core.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/pl_PL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/fil_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/automotive/de_AT/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/company/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/hi_IN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/forth.py', 'venv/lib/python3.13/site-packages/tzdata/zoneinfo/Etc/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/ptx.py', 'venv/lib/python3.13/site-packages/pygments/styles/pastie.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/da_DK/__init__.py', 'venv/lib/python3.13/site-packages/_pytest/_version.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/vi_VN/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/algol_nu.py', 'venv/lib/python3.13/site-packages/pygments/lexers/haskell.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/hu_HU/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ko_KR/__init__.py', 'venv/lib/python3.13/site-packages/pygments/styles/perldoc.py', 'venv/lib/python3.13/site-packages/pygments/lexers/agile.py', 'venv/lib/python3.13/site-packages/pygments/lexers/comal.py', 'venv/lib/python3.13/site-packages/faker/providers/person/ar_AA/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/en_IE/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/person/id_ID/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/date_time/en_PH/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/q.py', 'venv/lib/python3.13/site-packages/faker/providers/color/de/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/geo/cs_CZ/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/address/es_CO/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/ssn/fr_FR/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/currency/de_CH/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/color/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/iniconfig/exceptions.py', 'venv/lib/python3.13/site-packages/faker/providers/phone_number/es_CL/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/sbn/en_US/__init__.py', 'venv/lib/python3.13/site-packages/faker/providers/job/bn_BD/__init__.py', 'venv/lib/python3.13/site-packages/faker/utils/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/sieve.py', 'venv/lib/python3.13/site-packages/pygments/lexers/lilypond.py', 'venv/lib/python3.13/site-packages/pygments/lexers/graphql.py', 'venv/lib/python3.13/site-packages/pygments/lexers/css.py', 'venv/lib/python3.13/site-packages/faker/providers/internet/en_GB/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/sophia.py', 'venv/lib/python3.13/site-packages/faker/providers/bank/sk_SK/__init__.py', 'venv/lib/python3.13/site-packages/pygments/lexers/dotnet.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45037]
+INFO:     Started server process [45066]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
 WARNING:  WatchFiles detected changes in 'app/api/leagues.py'. Reloading...
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51559) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
 INFO:     Shutting down
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40903]
-INFO:     Started server process [40907]
+INFO:     Finished server process [45066]
+INFO:     Started server process [45172]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 51563) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51565) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51567) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51570) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51572) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51575) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51577) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51580) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51582) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51585) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51587) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51591) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51593) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51596) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51598) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51601) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51603) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51606) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51608) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51612) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51614) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51619) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51621) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51624) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51626) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51633) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51635) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51640) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51642) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51645) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 51647) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51655) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51659) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51664) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51670) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51674) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51679) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51683) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51688) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51692) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51696) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51700) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51704) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51708) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51714) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51718) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51721) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51724) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 51729) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51734) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51738) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51742) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51746) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 51750) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51754) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51758) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51762) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51765) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51769) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51773) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51777) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51781) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51786) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51790) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51795) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51799) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51803) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51807) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51811) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51815) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51819) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51844) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51849) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51853) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51857) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51862) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51866) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51870) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51891) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51895) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51899) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51903) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51907) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51926) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51931) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51935) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51940) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51954) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51958) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51962) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51966) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51970) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51974) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51978) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 51982) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52002) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52006) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52010) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52015) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52019) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52023) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52033) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52037) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 52046) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52050) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52054) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52068) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52073) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52082) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52086) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52091) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52095) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52099) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52104) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52108) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 52111) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52114) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52119) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52129) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52133) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52137) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52142) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52146) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52151) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52155) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52159) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52163) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52167) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52172) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52176) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52180) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52184) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     ('127.0.0.1', 52188) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52191) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52195) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52200) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52204) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52208) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52212) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52216) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52221) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52225) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52229) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52234) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52239) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52243) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52247) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52251) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52255) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52259) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52263) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52267) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52271) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52275) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52279) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52283) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52288) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52293) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52298) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52302) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52306) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52310) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52314) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52318) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52322) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52326) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52329) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52334) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52339) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52343) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52347) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52352) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52356) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52362) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52372) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52387) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52412) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52460) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52507) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52511) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52515) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52527) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52531) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52539) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52543) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52547) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52551) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52555) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52560) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52564) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52568) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52573) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52583) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52589) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52593) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52597) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52600) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52604) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52608) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52612) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52616) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52622) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52626) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52644) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52652) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52657) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52665) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52669) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52673) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52677) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52682) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52687) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52694) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52715) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     connection closed
-INFO:     ('127.0.0.1', 52720) - "WebSocket /ws/null" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:52849 - "OPTIONS /api/drafts/undefined HTTP/1.1" 200 OK
-INFO:     ('127.0.0.1', 52850) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-INFO:     127.0.0.1:52849 - "GET /api/drafts/undefined HTTP/1.1" 404 Not Found
-WARNING:  WatchFiles detected changes in 'venv/lib/python3.13/site-packages/black/rusty.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/literals.py', 'venv/lib/python3.13/site-packages/black/nodes.py', 'venv/lib/python3.13/site-packages/black/cache.py', 'venv/lib/python3.13/site-packages/black/comments.py', 'venv/lib/python3.13/site-packages/packaging/tags.py', 'venv/lib/python3.13/site-packages/platformdirs/__main__.py', 'venv/lib/python3.13/site-packages/black/report.py', 'venv/lib/python3.13/site-packages/black/__main__.py', 'venv/lib/python3.13/site-packages/packaging/licenses/_spdx.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/tokenize.py', 'venv/lib/python3.13/site-packages/packaging/_elffile.py', 'venv/lib/python3.13/site-packages/platformdirs/windows.py', 'venv/lib/python3.13/site-packages/packaging/specifiers.py', 'venv/lib/python3.13/site-packages/pathspec/pathspec.py', 'venv/lib/python3.13/site-packages/black/lines.py', 'venv/lib/python3.13/site-packages/packaging/metadata.py', 'venv/lib/python3.13/site-packages/packaging/requirements.py', 'venv/lib/python3.13/site-packages/black/ranges.py', 'venv/lib/python3.13/site-packages/mypy_extensions.py', 'venv/lib/python3.13/site-packages/platformdirs/macos.py', 'venv/lib/python3.13/site-packages/platformdirs/__init__.py', 'venv/lib/python3.13/site-packages/packaging/utils.py', 'venv/lib/python3.13/site-packages/pathspec/pattern.py', 'venv/lib/python3.13/site-packages/blib2to3/pygram.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/driver.py', 'venv/lib/python3.13/site-packages/black/debug.py', 'venv/lib/python3.13/site-packages/packaging/_manylinux.py', 'venv/lib/python3.13/site-packages/black/handle_ipynb_magics.py', 'venv/lib/python3.13/site-packages/platformdirs/android.py', 'venv/lib/python3.13/site-packages/pathspec/patterns/gitwildmatch.py', 'venv/lib/python3.13/site-packages/pathspec/util.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/conv.py', 'venv/lib/python3.13/site-packages/black/concurrency.py', 'venv/lib/python3.13/site-packages/packaging/markers.py', 'venv/lib/python3.13/site-packages/packaging/_tokenizer.py', 'venv/lib/python3.13/site-packages/black/resources/__init__.py', 'venv/lib/python3.13/site-packages/packaging/version.py', 'venv/lib/python3.13/site-packages/black/const.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/token.py', 'venv/lib/python3.13/site-packages/blackd/__main__.py', 'venv/lib/python3.13/site-packages/packaging/_parser.py', 'venv/lib/python3.13/site-packages/pathspec/_meta.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/pgen.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/__init__.py', 'venv/lib/python3.13/site-packages/platformdirs/unix.py', 'venv/lib/python3.13/site-packages/pathspec/patterns/__init__.py', 'venv/lib/python3.13/site-packages/packaging/_musllinux.py', 'venv/lib/python3.13/site-packages/black/trans.py', 'venv/lib/python3.13/site-packages/blib2to3/__init__.py', 'venv/lib/python3.13/site-packages/black/linegen.py', 'venv/lib/python3.13/site-packages/packaging/licenses/__init__.py', 'venv/lib/python3.13/site-packages/black/schema.py', 'venv/lib/python3.13/site-packages/pathspec/__init__.py', 'venv/lib/python3.13/site-packages/platformdirs/api.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/grammar.py', 'venv/lib/python3.13/site-packages/black/parsing.py', 'venv/lib/python3.13/site-packages/packaging/__init__.py', 'venv/lib/python3.13/site-packages/blib2to3/pytree.py', 'venv/lib/python3.13/site-packages/platformdirs/version.py', 'venv/lib/python3.13/site-packages/black/mode.py', 'venv/lib/python3.13/site-packages/black/__init__.py', 'venv/lib/python3.13/site-packages/packaging/_structures.py', 'venv/lib/python3.13/site-packages/blib2to3/pgen2/parse.py', 'venv/lib/python3.13/site-packages/black/brackets.py', 'venv/lib/python3.13/site-packages/pathspec/gitignore.py', 'venv/lib/python3.13/site-packages/black/output.py', 'venv/lib/python3.13/site-packages/blackd/__init__.py', 'venv/lib/python3.13/site-packages/blackd/middlewares.py', 'venv/lib/python3.13/site-packages/black/strings.py', 'venv/lib/python3.13/site-packages/black/numerics.py', 'venv/lib/python3.13/site-packages/_black_version.py', 'venv/lib/python3.13/site-packages/black/files.py', 'venv/lib/python3.13/site-packages/black/_width_table.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'tests/test_drafts.py'. Reloading...
 INFO:     Shutting down
-INFO:     connection closed
-INFO:     connection closed
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [40907]
-INFO:     Started server process [41578]
+INFO:     Finished server process [45172]
+INFO:     Started server process [45174]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 53158) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
-WARNING:  WatchFiles detected changes in 'app/schemas.py', 'app/models/draft.py', 'app/websocket.py', 'app/api/players.py', 'app/config.py', 'main.py', 'app/api/drafts.py', 'app/models/player.py', 'app/services/sleeper_api.py', 'app/models/league.py', 'app/services/pool_division.py', 'app/models/__init__.py', 'app/database.py', 'app/api/leagues.py'. Reloading...
+WARNING:  WatchFiles detected changes in 'tests/test_pool_division.py'. Reloading...
 INFO:     Shutting down
-INFO:     connection closed
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [41578]
-INFO:     Started server process [41623]
+INFO:     Finished server process [45174]
+INFO:     Started server process [45178]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 53209) - "WebSocket /ws/undefined" [accepted]
-INFO:     connection open
+WARNING:  WatchFiles detected changes in 'app/auth/utils.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45178]
+INFO:     Started server process [45179]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/auth/utils.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45179]
+INFO:     Started server process [45180]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/auth/utils.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45180]
+INFO:     Started server process [45182]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/auth/utils.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45182]
+INFO:     Started server process [45184]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/auth/utils.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45184]
+INFO:     Started server process [45186]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/auth.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45186]
+INFO:     Started server process [45187]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/auth.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45187]
+INFO:     Started server process [45188]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45188]
+INFO:     Started server process [45190]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45190]
+INFO:     Started server process [45192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/api/drafts.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45192]
+INFO:     Started server process [45193]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'tests/test_leagues.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45193]
+INFO:     Started server process [45210]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'tests/test_leagues.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45210]
+INFO:     Started server process [45216]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'tests/test_leagues.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45216]
+INFO:     Started server process [45233]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

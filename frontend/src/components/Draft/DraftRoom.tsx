@@ -4,6 +4,7 @@ import { api, Draft, DraftPick, Player, LeagueUser } from '../../services/api';
 import { wsService } from '../../services/websocket';
 import PlayerList from './PlayerList';
 import DraftBoard from './DraftBoard';
+import NavBar from '../Navigation/NavBar';
 
 export default function DraftRoom() {
   const { draftId } = useParams<{ draftId: string }>();
@@ -71,15 +72,19 @@ export default function DraftRoom() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-sleeper-darker flex items-center justify-center">
-        <div className="text-xl">Loading draft...</div>
+      <div className="min-h-screen bg-sleeper-darker">
+        <NavBar />
+        <div className="flex items-center justify-center h-96">
+          <div className="text-xl">Loading draft...</div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-sleeper-darker">
-      <div className="flex h-screen">
+      <NavBar />
+      <div className="flex" style={{ height: 'calc(100vh - 73px)' }}>
         {/* Left Panel - Draft Board */}
         <div className="w-96 bg-sleeper-dark border-r border-gray-800 overflow-y-auto">
           <div className="p-4 border-b border-gray-800">

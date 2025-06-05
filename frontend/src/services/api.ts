@@ -62,18 +62,52 @@ export interface DraftPick {
   player?: Player;
 }
 
+interface AuthTokens {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+}
+
+interface User {
+  id: string;
+  email: string;
+  username: string;
+  is_active: boolean;
+  is_verified: boolean;
+  created_at: string;
+  theme: string;
+  notification_preferences: string;
+}
+
 class API {
+  private authToken: string | null = null;
+
+  setAuthToken(token: string | null) {
+    this.authToken = token;
+  }
+
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+
+    if (this.authToken) {
+      headers['Authorization'] = `Bearer ${this.authToken}`;
+    }
+
+    // Merge with any headers from options
+    if (options?.headers) {
+      Object.assign(headers, options.headers);
+    }
+
     const response = await fetch(`${API_URL}${endpoint}`, {
       ...options,
-      headers: {
-        'Content-Type': 'application/json',
-        ...options?.headers,
-      },
+      headers,
     });
 
     if (!response.ok) {
-      throw new Error(`API Error: ${response.statusText}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.detail || `API Error: ${response.statusText}`);
     }
 
     return response.json();
@@ -119,6 +153,20 @@ class API {
         email,
       }),
     });
+  }
+
+  async getLeagues() {
+    return this.request<League[]>('/api/leagues');
+  }
+
+  async getMyLeagues() {
+    return this.request<Array<{
+      league: League;
+      user_count: number;
+      my_pair_id: number | null;
+      active_draft: { id: string; status: string } | null;
+      is_commissioner: boolean;
+    }>>('/api/leagues/my-leagues');
   }
 
   async getLeague(leagueId: string) {
@@ -172,6 +220,52 @@ class API {
 
   async getDraftRosters(draftId: string) {
     return this.request(`/api/drafts/${draftId}/rosters`);
+  }
+
+  // Auth endpoints
+  async register(email: string, username: string, password: string): Promise<User> {
+    return this.request<User>('/api/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({ email, username, password }),
+    });
+  }
+
+  async login(username: string, password: string): Promise<AuthTokens> {
+    const formData = new URLSearchParams();
+    formData.append('username', username);
+    formData.append('password', password);
+
+    const response = await fetch(`${API_URL}/api/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.detail || `Login failed: ${response.statusText}`);
+    }
+
+    return response.json();
+  }
+
+  async getCurrentUser(): Promise<User> {
+    return this.request<User>('/api/auth/me');
+  }
+
+  async refreshToken(refreshToken: string): Promise<AuthTokens> {
+    return this.request<AuthTokens>('/api/auth/refresh', {
+      method: 'POST',
+      body: JSON.stringify({ refresh_token: refreshToken }),
+    });
+  }
+
+  async logout(): Promise<void> {
+    await this.request('/api/auth/logout', {
+      method: 'POST',
+    });
   }
 }
 

@@ -1,13 +1,56 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 from app.database import get_db
-from app.models import League, LeagueUser, DraftPair
+from app.models import League, LeagueUser, DraftPair, User
+from app.auth.dependencies import get_current_user
 from pydantic import BaseModel
 import uuid
 import random
 
 router = APIRouter()
+
+
+@router.get("/my-leagues")
+async def get_my_leagues(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Get all leagues the current user is in"""
+    # Get all league memberships for the user
+    league_users = db.query(LeagueUser).filter_by(user_id=current_user.id).all()
+    
+    # Get the league details for each membership
+    user_leagues = []
+    for lu in league_users:
+        league = db.query(League).filter_by(id=lu.league_id).first()
+        if league:
+            # Get user count for each league
+            user_count = db.query(LeagueUser).filter_by(league_id=league.id).count()
+            
+            # Check if user has an active draft
+            from app.models import Draft
+            active_draft = None
+            if lu.pair_id:
+                draft = db.query(Draft).filter_by(
+                    pair_id=lu.pair_id,
+                    status="active"
+                ).first()
+                if draft:
+                    active_draft = {
+                        "id": draft.id,
+                        "status": draft.status
+                    }
+            
+            user_leagues.append({
+                "league": league,
+                "user_count": user_count,
+                "my_pair_id": lu.pair_id,
+                "active_draft": active_draft,
+                "is_commissioner": league.commissioner_id == current_user.id
+            })
+    
+    return user_leagues
 
 
 class CreateLeagueRequest(BaseModel):
@@ -23,12 +66,16 @@ class JoinLeagueRequest(BaseModel):
 
 
 @router.post("/create")
-async def create_league(request: CreateLeagueRequest, db: Session = Depends(get_db)):
+async def create_league(
+    request: CreateLeagueRequest,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
     """Create a new league"""
     league = League(
         id=str(uuid.uuid4()),
         name=request.name,
-        commissioner_id=str(uuid.uuid4()),
+        commissioner_id=current_user.id,
         settings={
             "roster_spots": {
                 "QB": 1,
@@ -44,12 +91,12 @@ async def create_league(request: CreateLeagueRequest, db: Session = Depends(get_
         },
     )
     db.add(league)
-
+    
     commissioner = LeagueUser(
         league_id=league.id,
-        user_id=league.commissioner_id,
-        email=request.commissioner_email,
-        display_name=request.commissioner_name,
+        user_id=current_user.id,
+        email=current_user.email,
+        display_name=request.commissioner_name or current_user.username,
     )
     db.add(commissioner)
 
@@ -58,11 +105,23 @@ async def create_league(request: CreateLeagueRequest, db: Session = Depends(get_
 
 
 @router.post("/join")
-async def join_league(request: JoinLeagueRequest, db: Session = Depends(get_db)):
+async def join_league(
+    request: JoinLeagueRequest,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
     """Join an existing league"""
     league = db.query(League).filter_by(id=request.league_id).first()
     if not league:
         raise HTTPException(status_code=404, detail="League not found")
+
+    # Check if current user is already in the league
+    existing_user = db.query(LeagueUser).filter_by(
+        league_id=league.id,
+        user_id=current_user.id
+    ).first()
+    if existing_user:
+        raise HTTPException(status_code=400, detail="You are already in this league")
 
     current_users = db.query(LeagueUser).filter_by(league_id=league.id).count()
     if current_users >= 12:
@@ -70,9 +129,9 @@ async def join_league(request: JoinLeagueRequest, db: Session = Depends(get_db))
 
     user = LeagueUser(
         league_id=league.id,
-        user_id=str(uuid.uuid4()),
-        email=request.email,
-        display_name=request.user_name,
+        user_id=current_user.id,
+        email=current_user.email,
+        display_name=request.user_name or current_user.username,
     )
     db.add(user)
     db.commit()
