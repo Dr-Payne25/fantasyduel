@@ -1,0 +1,361 @@
+INFO:     Will watch for changes in these directories: ['/Users/alexpayne/code/fantasyduel/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [40400] using WatchFiles
+INFO:     Started server process [40403]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:49383 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49459 - "GET /api/players/pools/0 HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'venv/lib/python3.13/site-packages/urllib3/connectionpool.py', 'venv/lib/python3.13/site-packages/requests/_internal_utils.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/pyopenssl.py', 'venv/lib/python3.13/site-packages/urllib3/_version.py', 'venv/lib/python3.13/site-packages/requests/exceptions.py', 'venv/lib/python3.13/site-packages/urllib3/__init__.py', 'venv/lib/python3.13/site-packages/requests/__init__.py', 'venv/lib/python3.13/site-packages/requests/hooks.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/socks.py', 'venv/lib/python3.13/site-packages/charset_normalizer/__main__.py', 'venv/lib/python3.13/site-packages/urllib3/poolmanager.py', 'venv/lib/python3.13/site-packages/requests/auth.py', 'venv/lib/python3.13/site-packages/urllib3/util/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/http2/probe.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/connection.py', 'venv/lib/python3.13/site-packages/charset_normalizer/version.py', 'venv/lib/python3.13/site-packages/charset_normalizer/constant.py', 'venv/lib/python3.13/site-packages/charset_normalizer/cli/__main__.py', 'venv/lib/python3.13/site-packages/charset_normalizer/models.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/util/proxy.py', 'venv/lib/python3.13/site-packages/charset_normalizer/cd.py', 'venv/lib/python3.13/site-packages/charset_normalizer/utils.py', 'venv/lib/python3.13/site-packages/requests/models.py', 'venv/lib/python3.13/site-packages/urllib3/filepost.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/response.py', 'venv/lib/python3.13/site-packages/urllib3/util/response.py', 'venv/lib/python3.13/site-packages/urllib3/_request_methods.py', 'venv/lib/python3.13/site-packages/charset_normalizer/md.py', 'venv/lib/python3.13/site-packages/requests/help.py', 'venv/lib/python3.13/site-packages/urllib3/util/wait.py', 'venv/lib/python3.13/site-packages/urllib3/util/util.py', 'venv/lib/python3.13/site-packages/requests/__version__.py', 'venv/lib/python3.13/site-packages/requests/compat.py', 'venv/lib/python3.13/site-packages/urllib3/util/timeout.py', 'venv/lib/python3.13/site-packages/urllib3/response.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/request.py', 'venv/lib/python3.13/site-packages/requests/sessions.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/emscripten/fetch.py', 'venv/lib/python3.13/site-packages/requests/adapters.py', 'venv/lib/python3.13/site-packages/urllib3/exceptions.py', 'venv/lib/python3.13/site-packages/charset_normalizer/cli/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/http2/connection.py', 'venv/lib/python3.13/site-packages/urllib3/http2/__init__.py', 'venv/lib/python3.13/site-packages/requests/cookies.py', 'venv/lib/python3.13/site-packages/urllib3/_collections.py', 'venv/lib/python3.13/site-packages/urllib3/util/request.py', 'venv/lib/python3.13/site-packages/charset_normalizer/__init__.py', 'venv/lib/python3.13/site-packages/requests/api.py', 'venv/lib/python3.13/site-packages/requests/structures.py', 'venv/lib/python3.13/site-packages/requests/status_codes.py', 'venv/lib/python3.13/site-packages/urllib3/contrib/__init__.py', 'venv/lib/python3.13/site-packages/urllib3/util/ssl_.py', 'venv/lib/python3.13/site-packages/urllib3/connection.py', 'venv/lib/python3.13/site-packages/urllib3/util/retry.py', 'venv/lib/python3.13/site-packages/charset_normalizer/api.py', 'venv/lib/python3.13/site-packages/urllib3/util/ssl_match_hostname.py', 'venv/lib/python3.13/site-packages/urllib3/util/connection.py', 'venv/lib/python3.13/site-packages/urllib3/util/url.py', 'venv/lib/python3.13/site-packages/urllib3/util/ssltransport.py', 'venv/lib/python3.13/site-packages/urllib3/_base_connection.py', 'venv/lib/python3.13/site-packages/requests/packages.py', 'venv/lib/python3.13/site-packages/requests/utils.py', 'venv/lib/python3.13/site-packages/charset_normalizer/legacy.py', 'venv/lib/python3.13/site-packages/urllib3/fields.py', 'venv/lib/python3.13/site-packages/requests/certs.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40403]
+INFO:     Started server process [40697]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:50288 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50290 - "POST /api/leagues/create HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50292 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50294 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50297 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50299 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50301 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50303 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50305 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50307 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50310 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50312 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50314 - "POST /api/leagues/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50317 - "POST /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3/create-pairs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50319 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50451 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50453 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50453 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50451 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50473 - "OPTIONS /api/drafts/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50473 - "POST /api/drafts/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50473 - "OPTIONS /api/drafts/undefined HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50476 - "OPTIONS /api/drafts/undefined HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 50477) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50476 - "GET /api/drafts/undefined HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50473 - "GET /api/drafts/undefined HTTP/1.1" 404 Not Found
+INFO:     ('127.0.0.1', 50480) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50483) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50486) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50491) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 50499) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50502) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50505) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50508) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50511) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50514) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 50517) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection closed
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50520) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50528 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50529 - "OPTIONS /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50529 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50528 - "GET /api/leagues/96f65d1c-d4ca-478c-8d2f-95c5cd177cf3 HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50531) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50534) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50528 - "OPTIONS /api/drafts/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50528 - "POST /api/drafts/start HTTP/1.1" 400 Bad Request
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50537) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50540) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50543) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50546) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50551) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50554) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50563) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50569) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50574) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50577) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50580) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50583) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50586) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50590) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50594) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50598) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50602) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50605) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50608) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50611) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50614) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50617) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50620) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50623) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50628) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50634) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50639) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50642) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50645) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50648) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50651) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50654) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50658) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50661) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50664) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50667) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50670) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50673) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50676) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50680) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50683) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50687) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50690) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50693) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50696) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50699) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50703) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50706) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50709) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50712) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50715) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50718) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50721) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50724) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50728) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50732) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50735) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50740) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50743) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50746) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50749) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50752) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50755) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50758) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50763) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50766) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50769) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50772) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50775) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50780) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50784) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50787) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50802) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50805) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50808) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50811) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50814) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50817) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50820) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50824) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50844) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50847) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50850) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50853) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50856) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50859) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50862) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50865) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50873) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     ('127.0.0.1', 50876) - "WebSocket /ws/undefined" [accepted]
+INFO:     connection open

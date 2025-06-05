@@ -94,7 +94,10 @@ class API {
 
   // League endpoints
   async createLeague(name: string, commissionerName: string, email: string) {
-    return this.request('/api/leagues/create', {
+    return this.request<{
+      league: League;
+      invite_code: string;
+    }>('/api/leagues/create', {
       method: 'POST',
       body: JSON.stringify({
         name,
@@ -105,7 +108,10 @@ class API {
   }
 
   async joinLeague(leagueId: string, userName: string, email: string) {
-    return this.request('/api/leagues/join', {
+    return this.request<{
+      message: string;
+      user: LeagueUser;
+    }>('/api/leagues/join', {
       method: 'POST',
       body: JSON.stringify({
         league_id: leagueId,
