@@ -32,35 +32,8 @@ repos:
   #       files: ^backend/
   #       additional_dependencies: [types-requests]
 
-  # Frontend linting with ESLint
-  - repo: local
-    hooks:
-      - id: eslint
-        name: eslint
-        entry: bash -c 'cd frontend && npm run lint'
-        language: system
-        files: \.(js|jsx|ts|tsx)$
-        pass_filenames: false
-
-  # Frontend type checking
-  - repo: local
-    hooks:
-      - id: typescript
-        name: TypeScript type check
-        entry: bash -c 'cd frontend && npx tsc --noEmit'
-        language: system
-        files: \.(ts|tsx)$
-        pass_filenames: false
-
-  # Prettier formatting for frontend (optional - if you want to add it)
-  # - repo: local
-  #   hooks:
-  #     - id: prettier
-  #       name: prettier
-  #       entry: bash -c 'cd frontend && npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,scss,json}"'
-  #       language: system
-  #       files: \.(js|jsx|ts|tsx|css|scss|json)$
-  #       pass_filenames: false
+  # Frontend checks are handled by the separate frontend CI job
+  # This avoids needing to install frontend dependencies in pre-commit environment
 
   # Security checks
   - repo: https://github.com/PyCQA/bandit
