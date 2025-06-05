@@ -20,20 +20,15 @@ export default function DraftRoom() {
   const [loading, setLoading] = useState(true);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 
-  useEffect(() => {
-    if (draftId) {
-      loadDraft();
-      wsService.connect(draftId);
-
-      const unsubscribe = wsService.addMessageHandler(handleWebSocketMessage);
-      return () => {
-        unsubscribe();
-        wsService.disconnect();
-      };
+  const handleWebSocketMessage = useCallback((message: any) => {
+    if (message.type === 'pick_made') {
+      setPicks(prev => [...prev, message.pick]);
+      setAvailablePlayers(prev => prev.filter(p => p.id !== message.pick.player_id));
+      setDraft(prev => prev ? { ...prev, current_picker_id: message.next_picker } : null);
     }
-  }, [draftId]);
+  }, []);
 
-  const loadDraft = async () => {
+  const loadDraft = useCallback(async () => {
     try {
       const data = await api.getDraft(draftId!);
       setDraft(data.draft);
@@ -45,15 +40,20 @@ export default function DraftRoom() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [draftId]);
 
-  const handleWebSocketMessage = useCallback((message: any) => {
-    if (message.type === 'pick_made') {
-      setPicks(prev => [...prev, message.pick]);
-      setAvailablePlayers(prev => prev.filter(p => p.id !== message.pick.player_id));
-      setDraft(prev => prev ? { ...prev, current_picker_id: message.next_picker } : null);
+  useEffect(() => {
+    if (draftId) {
+      loadDraft();
+      wsService.connect(draftId);
+
+      const unsubscribe = wsService.addMessageHandler(handleWebSocketMessage);
+      return () => {
+        unsubscribe();
+        wsService.disconnect();
+      };
     }
-  }, []);
+  }, [draftId, handleWebSocketMessage, loadDraft]);
 
   const makePick = async () => {
     if (!selectedPlayer || !currentUserId || draft?.current_picker_id !== currentUserId) return;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { api, League, LeagueUser, DraftPair } from '../../services/api';
 
@@ -12,13 +12,7 @@ export default function LeagueDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (leagueId) {
-      loadLeague();
-    }
-  }, [leagueId]);
-
-  const loadLeague = async () => {
+  const loadLeague = useCallback(async () => {
     try {
       const data = await api.getLeague(leagueId!);
       setLeague(data.league);
@@ -31,7 +25,13 @@ export default function LeagueDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [leagueId]);
+
+  useEffect(() => {
+    if (leagueId) {
+      loadLeague();
+    }
+  }, [leagueId, loadLeague]);
 
   const createPairs = async () => {
     try {

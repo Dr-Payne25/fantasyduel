@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 
+
 # Player schemas
 class PlayerBase(BaseModel):
     id: str
@@ -16,9 +17,10 @@ class PlayerBase(BaseModel):
     status: str
     composite_rank: Optional[float]
     pool_assignment: Optional[int]
-    
+
     class Config:
         from_attributes = True
+
 
 # League schemas
 class LeagueUserBase(BaseModel):
@@ -28,9 +30,10 @@ class LeagueUserBase(BaseModel):
     email: str
     display_name: str
     pair_id: Optional[int]
-    
+
     class Config:
         from_attributes = True
+
 
 # Draft schemas
 class DraftBase(BaseModel):
@@ -41,9 +44,10 @@ class DraftBase(BaseModel):
     pick_timer_seconds: int
     started_at: Optional[datetime]
     completed_at: Optional[datetime]
-    
+
     class Config:
         from_attributes = True
+
 
 class DraftPickBase(BaseModel):
     id: int
@@ -53,6 +57,6 @@ class DraftPickBase(BaseModel):
     player_id: str
     picked_at: datetime
     player: Optional[PlayerBase] = None
-    
+
     class Config:
         from_attributes = True
