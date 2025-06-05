@@ -1,0 +1,128 @@
+{
+  "league_id": "96f65d1c-d4ca-478c-8d2f-95c5cd177cf3",
+  "created_at": "2025-06-04T18:42:49.226344",
+  "users": [
+    {
+      "user_id": "7d7a69de-d3de-476b-bd65-3d78818d77ff",
+      "name": "Alex Commissioner",
+      "email": "alex@test.com",
+      "pair_id": 6
+    },
+    {
+      "user_id": "55b416e8-4ac0-4f83-8032-73bb48856cd5",
+      "name": "Blake Richardson",
+      "email": "blake@test.com",
+      "pair_id": 1
+    },
+    {
+      "user_id": "15144709-bdc5-4498-ac51-c56023acdf50",
+      "name": "Casey Thompson",
+      "email": "casey@test.com",
+      "pair_id": 5
+    },
+    {
+      "user_id": "62e6f1f7-0b1f-40ee-a512-ff0e10dca780",
+      "name": "Drew Mitchell",
+      "email": "drew@test.com",
+      "pair_id": 2
+    },
+    {
+      "user_id": "6e0cf204-1296-48d6-a85d-6ddd99c2d3d2",
+      "name": "Emma Watson",
+      "email": "emma@test.com",
+      "pair_id": 5
+    },
+    {
+      "user_id": "727aa912-f7e0-44e9-85af-20b129e67a73",
+      "name": "Felix Rodriguez",
+      "email": "felix@test.com",
+      "pair_id": 2
+    },
+    {
+      "user_id": "c2926b12-91cc-46fd-8b59-3059ccf63db5",
+      "name": "Grace Chen",
+      "email": "grace@test.com",
+      "pair_id": 4
+    },
+    {
+      "user_id": "4fdd3828-40cf-415c-8404-8fcc464b43f5",
+      "name": "Henry Davis",
+      "email": "henry@test.com",
+      "pair_id": 6
+    },
+    {
+      "user_id": "8180667a-382d-4f36-b878-aebdc7be9167",
+      "name": "Iris Johnson",
+      "email": "iris@test.com",
+      "pair_id": 3
+    },
+    {
+      "user_id": "9b296733-0e64-43c3-b55f-ff7d527210a5",
+      "name": "Jake Williams",
+      "email": "jake@test.com",
+      "pair_id": 4
+    },
+    {
+      "user_id": "598d9afb-03b6-4ef9-a0b9-6425ee8ffac7",
+      "name": "Kelly Brown",
+      "email": "kelly@test.com",
+      "pair_id": 1
+    },
+    {
+      "user_id": "6f83bb91-f355-4eb4-98de-71cdadf491ad",
+      "name": "Liam O'Brien",
+      "email": "liam@test.com",
+      "pair_id": 3
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": 1,
+      "pool_number": 0,
+      "users": [
+        "Blake Richardson",
+        "Blake Richardson"
+      ]
+    },
+    {
+      "pair_id": 2,
+      "pool_number": 1,
+      "users": [
+        "Drew Mitchell",
+        "Drew Mitchell"
+      ]
+    },
+    {
+      "pair_id": 3,
+      "pool_number": 2,
+      "users": [
+        "Iris Johnson",
+        "Iris Johnson"
+      ]
+    },
+    {
+      "pair_id": 4,
+      "pool_number": 3,
+      "users": [
+        "Grace Chen",
+        "Grace Chen"
+      ]
+    },
+    {
+      "pair_id": 5,
+      "pool_number": 4,
+      "users": [
+        "Casey Thompson",
+        "Casey Thompson"
+      ]
+    },
+    {
+      "pair_id": 6,
+      "pool_number": 5,
+      "users": [
+        "Alex Commissioner",
+        "Alex Commissioner"
+      ]
+    }
+  ]
+}
