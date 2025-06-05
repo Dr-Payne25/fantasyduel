@@ -99,9 +99,9 @@ export default function Login() {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-purple-400 hover:text-purple-300">
+              <button type="button" className="font-medium text-purple-400 hover:text-purple-300" onClick={() => alert('Password reset coming soon!')}>
                 Forgot your password?
-              </a>
+              </button>
             </div>
           </div>
 

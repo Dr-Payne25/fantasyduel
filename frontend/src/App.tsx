@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import LeagueDashboard from './components/League/LeagueDashboard';
 import DraftRoom from './components/Draft/DraftRoom';
@@ -12,7 +12,7 @@ import { api } from './services/api';
 
 function HomePage() {
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [leagueName, setLeagueName] = useState('');
   const [inviteCode, setInviteCode] = useState('');
   const [joinCode, setJoinCode] = useState('');
@@ -34,7 +34,7 @@ function HomePage() {
     
     try {
       setError(null);
-      const result = await api.joinLeague(joinCode, user.username, user.email);
+      await api.joinLeague(joinCode, user.username, user.email);
       navigate(`/league/${joinCode}`);
     } catch (error: any) {
       console.error('Error joining league:', error);

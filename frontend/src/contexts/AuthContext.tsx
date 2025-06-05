@@ -73,7 +73,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   };
 
   const register = async (email: string, username: string, password: string) => {
-    const newUser = await api.register(email, username, password);
+    await api.register(email, username, password);
     
     // Auto-login after registration
     await login(username, password);

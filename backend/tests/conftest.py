@@ -1,6 +1,7 @@
 """
 Pytest configuration and fixtures
 """
+
 import pytest
 import asyncio
 from typing import Generator, AsyncGenerator
@@ -42,17 +43,18 @@ def db() -> Generator[Session, None, None]:
 @pytest.fixture(scope="function")
 def client(db: Session) -> Generator[TestClient, None, None]:
     """Create a test client with the test database"""
+
     def override_get_db():
         try:
             yield db
         finally:
             pass
-    
+
     app.dependency_overrides[get_db] = override_get_db
-    
+
     with TestClient(app) as test_client:
         yield test_client
-    
+
     app.dependency_overrides.clear()
 
 
@@ -65,7 +67,7 @@ def test_user(db: Session) -> User:
         username="testuser",
         password_hash=get_password_hash("testpass123"),
         is_active=True,
-        is_verified=True
+        is_verified=True,
     )
     db.add(user)
     db.commit()
@@ -78,7 +80,7 @@ def auth_headers(client: TestClient, test_user: User) -> dict:
     """Get authentication headers for a test user"""
     response = client.post(
         "/api/auth/login",
-        data={"username": test_user.username, "password": "testpass123"}
+        data={"username": test_user.username, "password": "testpass123"},
     )
     assert response.status_code == 200
     token = response.json()["access_token"]
@@ -95,11 +97,17 @@ def test_league(db: Session, test_user: User) -> League:
         status="setup",
         settings={
             "roster_spots": {
-                "QB": 1, "RB": 2, "WR": 2, "TE": 1,
-                "FLEX": 1, "K": 1, "DEF": 1, "BENCH": 6
+                "QB": 1,
+                "RB": 2,
+                "WR": 2,
+                "TE": 1,
+                "FLEX": 1,
+                "K": 1,
+                "DEF": 1,
+                "BENCH": 6,
             },
-            "scoring": "PPR"
-        }
+            "scoring": "PPR",
+        },
     )
     db.add(league)
     db.commit()
@@ -112,7 +120,7 @@ def sample_players(db: Session) -> list[Player]:
     """Create sample players for testing"""
     positions = ["QB", "RB", "WR", "TE", "K", "DEF"]
     players = []
-    
+
     for i, position in enumerate(positions * 10):  # 60 players total
         player = Player(
             id=str(uuid.uuid4()),
@@ -126,11 +134,11 @@ def sample_players(db: Session) -> list[Player]:
             age=20 + (i % 15),
             status="active",
             composite_rank=float(i + 1),
-            pool_assignment=i % 6
+            pool_assignment=i % 6,
         )
         players.append(player)
         db.add(player)
-    
+
     db.commit()
     return players
 

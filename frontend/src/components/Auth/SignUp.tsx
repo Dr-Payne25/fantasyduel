@@ -147,13 +147,13 @@ export default function SignUp() {
 
           <p className="mt-2 text-center text-xs text-gray-400">
             By signing up, you agree to our{' '}
-            <a href="#" className="text-purple-400 hover:text-purple-300">
+            <button type="button" className="text-purple-400 hover:text-purple-300" onClick={() => alert('Terms of Service coming soon!')}>
               Terms of Service
-            </a>{' '}
+            </button>{' '}
             and{' '}
-            <a href="#" className="text-purple-400 hover:text-purple-300">
+            <button type="button" className="text-purple-400 hover:text-purple-300" onClick={() => alert('Privacy Policy coming soon!')}>
               Privacy Policy
-            </a>
+            </button>
           </p>
         </form>
       </div>

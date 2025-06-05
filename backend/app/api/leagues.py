@@ -13,13 +13,12 @@ router = APIRouter()
 
 @router.get("/my-leagues")
 async def get_my_leagues(
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
+    current_user: User = Depends(get_current_user), db: Session = Depends(get_db)
 ):
     """Get all leagues the current user is in"""
     # Get all league memberships for the user
     league_users = db.query(LeagueUser).filter_by(user_id=current_user.id).all()
-    
+
     # Get the league details for each membership
     user_leagues = []
     for lu in league_users:
@@ -27,29 +26,30 @@ async def get_my_leagues(
         if league:
             # Get user count for each league
             user_count = db.query(LeagueUser).filter_by(league_id=league.id).count()
-            
+
             # Check if user has an active draft
             from app.models import Draft
+
             active_draft = None
             if lu.pair_id:
-                draft = db.query(Draft).filter_by(
-                    pair_id=lu.pair_id,
-                    status="active"
-                ).first()
+                draft = (
+                    db.query(Draft)
+                    .filter_by(pair_id=lu.pair_id, status="active")
+                    .first()
+                )
                 if draft:
-                    active_draft = {
-                        "id": draft.id,
-                        "status": draft.status
-                    }
-            
-            user_leagues.append({
-                "league": league,
-                "user_count": user_count,
-                "my_pair_id": lu.pair_id,
-                "active_draft": active_draft,
-                "is_commissioner": league.commissioner_id == current_user.id
-            })
-    
+                    active_draft = {"id": draft.id, "status": draft.status}
+
+            user_leagues.append(
+                {
+                    "league": league,
+                    "user_count": user_count,
+                    "my_pair_id": lu.pair_id,
+                    "active_draft": active_draft,
+                    "is_commissioner": league.commissioner_id == current_user.id,
+                }
+            )
+
     return user_leagues
 
 
@@ -69,7 +69,7 @@ class JoinLeagueRequest(BaseModel):
 async def create_league(
     request: CreateLeagueRequest,
     current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
 ):
     """Create a new league"""
     league = League(
@@ -91,7 +91,7 @@ async def create_league(
         },
     )
     db.add(league)
-    
+
     commissioner = LeagueUser(
         league_id=league.id,
         user_id=current_user.id,
@@ -108,7 +108,7 @@ async def create_league(
 async def join_league(
     request: JoinLeagueRequest,
     current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
 ):
     """Join an existing league"""
     league = db.query(League).filter_by(id=request.league_id).first()
@@ -116,10 +116,11 @@ async def join_league(
         raise HTTPException(status_code=404, detail="League not found")
 
     # Check if current user is already in the league
-    existing_user = db.query(LeagueUser).filter_by(
-        league_id=league.id,
-        user_id=current_user.id
-    ).first()
+    existing_user = (
+        db.query(LeagueUser)
+        .filter_by(league_id=league.id, user_id=current_user.id)
+        .first()
+    )
     if existing_user:
         raise HTTPException(status_code=400, detail="You are already in this league")
 
