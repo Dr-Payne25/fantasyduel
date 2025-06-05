@@ -1,6 +1,13 @@
-# FantasyDuel
+# FantasyDuel 🏈
 
 A unique fantasy football app with 1v1 draft mechanics where 12 players are split into 6 pairs, each drafting from equally-valued player pools.
+
+## Recent Updates (December 2024)
+- ✅ Full authentication system with JWT tokens
+- ✅ Navigation improvements with user dashboard
+- ✅ Comprehensive test suites (Backend: 81% coverage, Frontend: 39 tests)
+- ✅ CI/CD pipeline with GitHub Actions
+- ✅ Pre-commit hooks for code quality
 
 ## Quick Start
 
