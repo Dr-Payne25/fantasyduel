@@ -88,7 +88,7 @@ class TestLeagueEndpoints:
         assert league_user is not None
 
     @pytest.mark.unit
-    def test_join_full_league(self, client: TestClient, db: Session, test_league: League):
+    def test_join_full_league(self, client: TestClient, db: Session, test_league: League, auth_headers: dict):
         """Test joining a league that's already full"""
         # Add 12 users to make league full
         for i in range(12):
@@ -108,6 +108,7 @@ class TestLeagueEndpoints:
                 "user_name": "latecomer",
                 "email": "late@example.com",
             },
+            headers=auth_headers,
         )
 
         assert response.status_code == 400
