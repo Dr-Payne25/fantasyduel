@@ -38,7 +38,10 @@ export default function DraftRoom() {
 
   const loadDraft = useCallback(async () => {
     try {
+      console.log('[DraftRoom] Loading draft with ID:', draftId);
+      console.log('[DraftRoom] Current user ID:', currentUserId);
       const data = await api.getDraft(draftId!);
+      console.log('[DraftRoom] Draft data loaded:', data);
       setDraft(data.draft);
       setUsers(data.users);
       setPicks(data.picks);
@@ -100,9 +103,13 @@ export default function DraftRoom() {
 
   // Get the current user's display name
   const myUser = users.find(u => u.user_id === currentUserId);
-  const otherUser = users.find(u => u.user_id !== currentUserId);
-  const myPickCount = picks.filter(p => p.user_id === currentUserId).length;
-  const otherPickCount = picks.filter(p => p.user_id === otherUser?.user_id).length;
+  const isSpectator = !myUser && currentUserId; // User is logged in but not a participant
+
+  // For spectators, just show the two participants
+  const [user1, user2] = users;
+  const otherUser = myUser ? users.find(u => u.user_id !== currentUserId) : user2;
+  const myPickCount = myUser ? picks.filter(p => p.user_id === currentUserId).length : 0;
+  const otherPickCount = otherUser ? picks.filter(p => p.user_id === otherUser.user_id).length : 0;
 
   return (
     <div className="min-h-screen bg-sleeper-darker">
@@ -121,32 +128,35 @@ export default function DraftRoom() {
 
               {/* Turn Indicator */}
               <div className="flex items-center gap-3">
+                {isSpectator && (
+                  <span className="text-sm text-yellow-400 font-semibold mr-2">SPECTATOR MODE</span>
+                )}
                 <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${
-                  draft?.current_picker_id === myUser?.user_id
+                  draft?.current_picker_id === (isSpectator ? user1?.user_id : myUser?.user_id)
                     ? 'bg-sleeper-primary text-white'
                     : 'bg-gray-800 text-gray-400'
                 }`}>
                   <div className={`w-2 h-2 rounded-full ${
-                    draft?.current_picker_id === myUser?.user_id
+                    draft?.current_picker_id === (isSpectator ? user1?.user_id : myUser?.user_id)
                       ? 'bg-white animate-pulse'
                       : 'bg-gray-600'
                   }`} />
-                  <span className="text-sm font-medium">{myUser?.display_name || 'You'}</span>
+                  <span className="text-sm font-medium">{isSpectator ? user1?.display_name : (myUser?.display_name || 'You')}</span>
                 </div>
 
                 <span className="text-gray-600 text-sm">vs</span>
 
                 <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full ${
-                  draft?.current_picker_id === otherUser?.user_id
+                  draft?.current_picker_id === (isSpectator ? user2?.user_id : otherUser?.user_id)
                     ? 'bg-sleeper-primary text-white'
                     : 'bg-gray-800 text-gray-400'
                 }`}>
                   <div className={`w-2 h-2 rounded-full ${
-                    draft?.current_picker_id === otherUser?.user_id
+                    draft?.current_picker_id === (isSpectator ? user2?.user_id : otherUser?.user_id)
                       ? 'bg-white animate-pulse'
                       : 'bg-gray-600'
                   }`} />
-                  <span className="text-sm font-medium">{otherUser?.display_name || 'Opponent'}</span>
+                  <span className="text-sm font-medium">{isSpectator ? user2?.display_name : (otherUser?.display_name || 'Opponent')}</span>
                 </div>
               </div>
             </div>
@@ -165,17 +175,17 @@ export default function DraftRoom() {
                 <p className="text-2xl font-bold tabular-nums">1:30</p>
               </div>
 
-              {/* Draft Button - Always visible but disabled when not your turn */}
+              {/* Draft Button - Always visible but disabled when not your turn or spectating */}
               <button
                 onClick={makePick}
-                disabled={!isMyTurn || !selectedPlayer}
+                disabled={!isMyTurn || !selectedPlayer || isSpectator}
                 className={`px-6 py-2.5 rounded-full font-bold transition-all ${
-                  isMyTurn && selectedPlayer
+                  isMyTurn && selectedPlayer && !isSpectator
                     ? 'bg-sleeper-primary hover:bg-blue-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
                     : 'bg-gray-800 text-gray-500 cursor-not-allowed'
                 }`}
               >
-                DRAFT
+                {isSpectator ? 'SPECTATING' : 'DRAFT'}
               </button>
             </div>
           </div>
@@ -263,7 +273,7 @@ export default function DraftRoom() {
               players={availablePlayers}
               onSelectPlayer={setSelectedPlayer}
               selectedPlayer={selectedPlayer}
-              canSelect={isMyTurn}
+              canSelect={isMyTurn && !isSpectator}
             />
           </div>
         </div>
@@ -277,7 +287,7 @@ export default function DraftRoom() {
           <div className="flex-1 overflow-y-auto p-4">
             <div className="space-y-6">
               {users.map(user => {
-                const isCurrentUser = user.user_id === currentUserId;
+                const isCurrentUser = !isSpectator && user.user_id === currentUserId;
                 const userPicks = picks.filter(p => p.user_id === user.user_id);
                 const allPlayers = [...availablePlayers, ...draftedPlayers];
 
