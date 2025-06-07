@@ -51,18 +51,28 @@ export default function DraftRoom() {
     }
   }, [draftId]);
 
+  // Separate effect for initial load
   useEffect(() => {
     if (draftId) {
+      console.log('[DraftRoom] Loading draft data for draftId:', draftId);
       loadDraft();
+    }
+  }, [draftId, loadDraft]);
+
+  // Separate effect for WebSocket connection
+  useEffect(() => {
+    if (draftId) {
+      console.log('[DraftRoom] Connecting WebSocket for draftId:', draftId);
       wsService.connect(draftId);
 
       const unsubscribe = wsService.addMessageHandler(handleWebSocketMessage);
       return () => {
+        console.log('[DraftRoom] Cleaning up - unsubscribing and disconnecting WebSocket');
         unsubscribe();
         wsService.disconnect();
       };
     }
-  }, [draftId, handleWebSocketMessage, loadDraft]);
+  }, [draftId, handleWebSocketMessage]);
 
   const makePick = async () => {
     if (!selectedPlayer || !currentUserId || draft?.current_picker_id !== currentUserId) return;

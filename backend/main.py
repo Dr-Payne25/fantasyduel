@@ -43,13 +43,34 @@ async def root():
 
 @app.websocket("/ws/{draft_id}")
 async def websocket_endpoint(websocket: WebSocket, draft_id: str):
+    print(f"[WS Backend] Connection attempt for draft_id: {draft_id}")
+    print(f"[WS Backend] Headers: {dict(websocket.headers)}")
+
     await manager.connect(websocket, draft_id)
+    print(f"[WS Backend] Connected for draft_id: {draft_id}")
+
     try:
         while True:
+            print(f"[WS Backend] Waiting for message from draft_id: {draft_id}")
             data = await websocket.receive_text()
+            print(f"[WS Backend] Received from draft_id {draft_id}: {data}")
+
+            # Echo the message back for now
             await manager.broadcast(draft_id, data)
-    except WebSocketDisconnect:
+            print(f"[WS Backend] Broadcasted to draft_id {draft_id}: {data}")
+
+    except WebSocketDisconnect as e:
+        print(
+            f"[WS Backend] Disconnected for draft_id: {draft_id} (code: {e.code}, reason: {e.reason})"
+        )
         manager.disconnect(websocket, draft_id)
+    except Exception as e:
+        print(f"[WS Backend] Error for draft_id {draft_id}: {type(e).__name__}: {e}")
+        import traceback
+
+        traceback.print_exc()
+        manager.disconnect(websocket, draft_id)
+        raise
 
 
 if __name__ == "__main__":

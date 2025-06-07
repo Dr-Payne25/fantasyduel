@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Debug Test</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        #log { background: #f0f0f0; padding: 10px; height: 400px; overflow-y: auto; }
+        .log-entry { margin: 2px 0; }
+        .error { color: red; }
+        .success { color: green; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>WebSocket Debug Test</h1>
+    <button onclick="testConnection()">Test Connection</button>
+    <button onclick="clearLog()">Clear Log</button>
+    <div id="log"></div>
+
+    <script>
+        let ws = null;
+        let reconnectCount = 0;
+
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+            reconnectCount = 0;
+        }
+
+        function testConnection() {
+            const draftId = 'test-draft-1';
+            const wsUrl = `ws://localhost:8000/ws/${draftId}`;
+
+            log(`Attempting to connect to: ${wsUrl}`, 'info');
+
+            if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
+                log('Closing existing connection...', 'info');
+                ws.close();
+            }
+
+            try {
+                ws = new WebSocket(wsUrl);
+
+                ws.onopen = () => {
+                    log('Connected successfully!', 'success');
+                    log(`WebSocket readyState: ${ws.readyState}`, 'info');
+                    log(`WebSocket URL: ${ws.url}`, 'info');
+
+                    // Send a ping message
+                    const message = JSON.stringify({ type: 'ping', draftId });
+                    log(`Sending message: ${message}`, 'info');
+                    ws.send(message);
+                };
+
+                ws.onmessage = (event) => {
+                    log(`Message received: ${event.data}`, 'success');
+                };
+
+                ws.onclose = (event) => {
+                    log(`Disconnected - Code: ${event.code}, Reason: ${event.reason || 'none'}`, 'error');
+                    log(`Was clean close: ${event.wasClean}`, 'info');
+                    log(`Close details: code=${event.code}, reason="${event.reason}", wasClean=${event.wasClean}`, 'info');
+
+                    // Check for specific close codes
+                    if (event.code === 1006) {
+                        log('Abnormal closure - connection lost', 'error');
+                    } else if (event.code === 1000) {
+                        log('Normal closure', 'info');
+                    }
+                };
+
+                ws.onerror = (error) => {
+                    log('WebSocket error occurred', 'error');
+                    log(`Error type: ${error.type}`, 'error');
+                    if (error.target) {
+                        log(`Target readyState: ${error.target.readyState}`, 'error');
+                        log(`Target URL: ${error.target.url}`, 'error');
+                    }
+                };
+
+            } catch (e) {
+                log(`Exception creating WebSocket: ${e.message}`, 'error');
+            }
+        }
+
+        // Test on page load
+        window.onload = () => {
+            log('Page loaded, ready to test WebSocket connection', 'info');
+        };
+    </script>
+</body>
+</html>
