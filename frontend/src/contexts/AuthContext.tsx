@@ -47,6 +47,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         try {
           const response = await api.getCurrentUser();
           setUser(response);
+          localStorage.setItem('userId', response.id);
         } catch (error) {
           // Token might be expired
           localStorage.removeItem('access_token');
@@ -70,6 +71,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
     // Get user info
     const userInfo = await api.getCurrentUser();
     setUser(userInfo);
+
+    // Store user ID for components that need it
+    localStorage.setItem('userId', userInfo.id);
   };
 
   const register = async (email: string, username: string, password: string) => {
@@ -82,6 +86,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const logout = () => {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
+    localStorage.removeItem('userId');
     api.setAuthToken(null);
     setUser(null);
   };

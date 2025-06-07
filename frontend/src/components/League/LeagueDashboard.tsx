@@ -17,6 +17,8 @@ export default function LeagueDashboard() {
   const loadLeague = useCallback(async () => {
     try {
       const data = await api.getLeague(leagueId!);
+      console.log('League data loaded:', data);
+      console.log('Current userId from localStorage:', currentUserId);
       setLeague(data.league);
       setUsers(data.users);
       setPairs(data.pairs);
@@ -99,7 +101,7 @@ export default function LeagueDashboard() {
 
         {/* Users Section */}
         <div className="bg-sleeper-dark rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">League Members ({users.length}/12)</h2>
+          <h2 className="text-2xl font-semibold mb-4">League Members ({users.length})</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {users.map((user) => (
               <div key={user.id} className="bg-sleeper-gray rounded p-4">
@@ -119,7 +121,7 @@ export default function LeagueDashboard() {
         </div>
 
         {/* Draft Pairs Section */}
-        {users.length === 12 && (
+        {users.length >= 12 && (
           <div className="bg-sleeper-dark rounded-lg p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-semibold">Draft Pairs</h2>
