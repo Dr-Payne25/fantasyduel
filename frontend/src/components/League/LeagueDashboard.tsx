@@ -12,6 +12,7 @@ export default function LeagueDashboard() {
   const [drafts, setDrafts] = useState<Record<number, { id: string; status: string; started_at: string | null }>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [currentUserId] = useState(() => localStorage.getItem('userId') || '');
 
   const loadLeague = useCallback(async () => {
     try {
@@ -132,10 +133,35 @@ export default function LeagueDashboard() {
               )}
             </div>
 
+            {/* Check if current user is a spectator/admin (not in any pair) */}
+            {(() => {
+              const currentUser = users.find(u => u.user_id === currentUserId);
+              const isSpectator = currentUser && !currentUser.pair_id;
+              const isCommissioner = league?.commissioner_id === currentUserId;
+
+              if (isSpectator && pairs.length > 0) {
+                return (
+                  <div className="mb-4 p-4 bg-yellow-900/20 border border-yellow-700 rounded">
+                    <p className="text-sm font-semibold text-yellow-300">
+                      {isCommissioner ? 'Commissioner View' : 'Spectator Mode'}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      You can view all drafts but cannot make picks
+                    </p>
+                  </div>
+                );
+              }
+              return null;
+            })()}
+
             {pairs.length > 0 && (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {pairs.map((pair) => {
                   const pairUsers = users.filter(u => u.pair_id === pair.id);
+                  const currentUser = users.find(u => u.user_id === currentUserId);
+                  const isInThisPair = currentUser?.pair_id === pair.id;
+                  const isSpectator = currentUser && !currentUser.pair_id;
+
                   return (
                     <div key={pair.id} className="bg-sleeper-gray rounded p-4">
                       <h3 className="font-semibold mb-2">Pool {pair.pool_number + 1}</h3>
@@ -149,14 +175,19 @@ export default function LeagueDashboard() {
                           onClick={() => navigate(`/drafts/${drafts[pair.id].id}`)}
                           className="w-full py-2 bg-sleeper-primary hover:bg-blue-600 rounded text-sm font-semibold transition"
                         >
-                          {drafts[pair.id].status === 'completed' ? 'View Draft' : 'Continue Draft'}
+                          {isSpectator ? 'View Draft' : (drafts[pair.id].status === 'completed' ? 'View Draft' : 'Continue Draft')}
                         </button>
                       ) : (
                         <button
-                          onClick={() => startDraft(pair.id)}
-                          className="w-full py-2 bg-sleeper-secondary hover:bg-pink-600 rounded text-sm font-semibold transition"
+                          onClick={() => isInThisPair ? startDraft(pair.id) : null}
+                          disabled={!isInThisPair && !isSpectator}
+                          className={`w-full py-2 rounded text-sm font-semibold transition ${
+                            isInThisPair
+                              ? 'bg-sleeper-secondary hover:bg-pink-600'
+                              : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                          }`}
                         >
-                          Start Draft
+                          {isInThisPair ? 'Start Draft' : (isSpectator ? 'No Draft Started' : 'Not Your Pair')}
                         </button>
                       )}
                     </div>
