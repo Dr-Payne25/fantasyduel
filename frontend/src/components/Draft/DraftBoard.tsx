@@ -14,26 +14,6 @@ export default function DraftBoard({ picks, users, availablePlayers, draftedPlay
   // Combine all players for lookup
   const allPlayers = [...availablePlayers, ...draftedPlayers];
 
-  // Position color mapping
-  const getPositionColor = (position: string) => {
-    switch (position) {
-      case 'QB':
-        return 'bg-red-500/20 border-red-500/50 text-red-400';
-      case 'RB':
-        return 'bg-green-500/20 border-green-500/50 text-green-400';
-      case 'WR':
-        return 'bg-blue-500/20 border-blue-500/50 text-blue-400';
-      case 'TE':
-        return 'bg-orange-500/20 border-orange-500/50 text-orange-400';
-      case 'K':
-        return 'bg-purple-500/20 border-purple-500/50 text-purple-400';
-      case 'DEF':
-        return 'bg-gray-500/20 border-gray-500/50 text-gray-400';
-      default:
-        return 'bg-gray-500/20 border-gray-500/50 text-gray-400';
-    }
-  };
-
   // Get current user ID (same logic as in DraftRoom)
   const currentUserId = (() => {
     const urlParams = new URLSearchParams(window.location.search);

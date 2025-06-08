@@ -29,7 +29,7 @@ export default function LeagueDashboard() {
     } finally {
       setLoading(false);
     }
-  }, [leagueId]);
+  }, [leagueId, currentUserId]);
 
   useEffect(() => {
     if (leagueId) {

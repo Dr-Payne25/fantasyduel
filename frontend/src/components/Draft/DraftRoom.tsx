@@ -52,7 +52,7 @@ export default function DraftRoom() {
     } finally {
       setLoading(false);
     }
-  }, [draftId]);
+  }, [draftId, currentUserId]);
 
   // Separate effect for initial load
   useEffect(() => {
@@ -103,13 +103,11 @@ export default function DraftRoom() {
 
   // Get the current user's display name
   const myUser = users.find(u => u.user_id === currentUserId);
-  const isSpectator = !myUser && currentUserId; // User is logged in but not a participant
+  const isSpectator = !myUser && !!currentUserId; // User is logged in but not a participant
 
   // For spectators, just show the two participants
   const [user1, user2] = users;
   const otherUser = myUser ? users.find(u => u.user_id !== currentUserId) : user2;
-  const myPickCount = myUser ? picks.filter(p => p.user_id === currentUserId).length : 0;
-  const otherPickCount = otherUser ? picks.filter(p => p.user_id === otherUser.user_id).length : 0;
 
   return (
     <div className="min-h-screen bg-sleeper-darker">
